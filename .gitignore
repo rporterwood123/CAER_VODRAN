@@ -1,0 +1,15 @@
+# Compiled bytecode (game + compiler build output)
+*.class
+ActionC/target/
+ActionC/project/target/
+ActionC/project/project/
+
+# Python generator cache
+__pycache__/
+*.pyc
+
+# Game runtime files (data tables are rewritten on boot; saves are per-player)
+vodran_*.dat
+
+# OS / editor cruft
+.DS_Store
