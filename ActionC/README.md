@@ -104,6 +104,9 @@ sbt test
 | **Continue** | `KEEP MOVING` | Various |
 | **Switch/Case** | `CHOOSE YOUR DESTINY` / `FINISH HIM` | Mortal Kombat |
 
+`GET OUT` breaks out of the innermost loop *or* switch; `KEEP MOVING` always continues
+the innermost loop, even from inside a switch.
+
 ### Data Types
 | Feature | Keyword | Movie |
 |---------|---------|-------|
@@ -125,6 +128,11 @@ sbt test
 | **Bitwise XOR** | `FRIEND OR FOE` | Various |
 | **Left Shift** | `MOVE IT` | Various |
 | **Right Shift** | `FALL BACK` | Various |
+
+Comparisons are type-aware: strings compare by content with `YOU ARE NOT YOU YOU ARE
+ME` (==) and `IT'S JUST BEEN REVOKED` (!=) — ordering operators reject strings at
+compile time — and floats work with all six operators (an int side is promoted
+automatically).
 
 ### Comments
 | Feature | Keyword | Movie |
@@ -533,6 +541,10 @@ IT'S SHOWTIME
     TALK TO THE HAND answer
 YOU HAVE BEEN TERMINATED
 ```
+
+Async blocks run on daemon threads, so the JVM exits when main ends — await a block
+with `HOLD THE LINE` if you need it to finish. If the body throws, the exception is
+reported on stderr, the await still completes, and `.result` stays 0.
 
 Output:
 ```

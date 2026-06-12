@@ -29,6 +29,30 @@ class ArithmeticTest extends ArnoldGeneratorTest {
     getOutput(code) should equal("-111\n")
   }
 
+  it should "print an integer literal beyond the 16-bit SIPUSH range" in {
+    val code: String =
+      "IT'S SHOWTIME\n" +
+        "TALK TO THE HAND 100000\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("100000\n")
+  }
+
+  it should "print a negative integer literal beyond the 16-bit SIPUSH range" in {
+    val code: String =
+      "IT'S SHOWTIME\n" +
+        "TALK TO THE HAND -100000\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("-100000\n")
+  }
+
+  it should "print the Int.MinValue literal" in {
+    val code: String =
+      "IT'S SHOWTIME\n" +
+        "TALK TO THE HAND -2147483648\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("-2147483648\n")
+  }
+
   it should "evaluate when a 'boolean' is printed" in {
     val code: String =
       "IT'S SHOWTIME\n" +

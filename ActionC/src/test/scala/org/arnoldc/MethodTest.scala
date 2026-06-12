@@ -4,6 +4,71 @@ import org.parboiled.errors.ParsingException
 
 class MethodTest extends ArnoldGeneratorTest {
 
+  it should "reject passing a string argument to a method at compile time" in {
+    // Method descriptors are int-only by design; a string argument must be a
+    // compile error, not a VerifyError at class load.
+    val code =
+      "LISTEN TO ME VERY CAREFULLY shout\n" +
+        "I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE value\n" +
+        "TALK TO THE HAND value\n" +
+        "HASTA LA VISTA, BABY\n" +
+        "IT'S SHOWTIME\n" +
+        "I HAVE COME HERE TO CHEW BUBBLEGUM msg\n" +
+        "AND KICK ASS \"hi\"\n" +
+        "DO IT NOW shout msg\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    a[ParsingException] should be thrownBy getOutput(code)
+  }
+
+  it should "reject passing a float argument to a method at compile time" in {
+    val code =
+      "LISTEN TO ME VERY CAREFULLY shout\n" +
+        "I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE value\n" +
+        "TALK TO THE HAND value\n" +
+        "HASTA LA VISTA, BABY\n" +
+        "IT'S SHOWTIME\n" +
+        "NOW I HAVE A MACHINE GUN f\n" +
+        "HO HO HO 1.5\n" +
+        "DO IT NOW shout f\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    a[ParsingException] should be thrownBy getOutput(code)
+  }
+
+  it should "reject returning a string from a method at compile time" in {
+    val code =
+      "LISTEN TO ME VERY CAREFULLY getWord\n" +
+        "GIVE THESE PEOPLE AIR\n" +
+        "I HAVE COME HERE TO CHEW BUBBLEGUM word\n" +
+        "AND KICK ASS \"hello\"\n" +
+        "I'LL BE BACK word\n" +
+        "HASTA LA VISTA, BABY\n" +
+        "IT'S SHOWTIME\n" +
+        "DO IT NOW getWord\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    a[ParsingException] should be thrownBy getOutput(code)
+  }
+
+  it should "throw at runtime when a value-returning method ends without I'LL BE BACK" in {
+    val code =
+      "LISTEN TO ME VERY CAREFULLY broken\n" +
+        "GIVE THESE PEOPLE AIR\n" +
+        "BECAUSE I'M GOING TO SAY PLEASE @I LIED\n" +
+        "I'LL BE BACK 42\n" +
+        "YOU HAVE NO RESPECT FOR LOGIC\n" +
+        "HASTA LA VISTA, BABY\n" +
+        "IT'S SHOWTIME\n" +
+        "LET'S SEE WHAT YOU'VE GOT\n" +
+        "HEY CHRISTMAS TREE r\n" +
+        "YOU SET US UP 0\n" +
+        "GET YOUR ASS TO MARS r\n" +
+        "DO IT NOW broken\n" +
+        "GOTCHA err\n" +
+        "TALK TO THE HAND err\n" +
+        "THAT'S A WRAP\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("METHOD broken ENDED WITHOUT I'LL BE BACK\n")
+  }
+
   it should "evalute method other than main" in {
     val code =
       "LISTEN TO ME VERY CAREFULLY mymethod\n" +

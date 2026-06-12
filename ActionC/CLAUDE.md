@@ -17,15 +17,13 @@ This file has two parts:
 
 ## Toolchain
 
-The build needs **JDK 21** and **sbt**. On this machine they are not on the default
-`PATH`; export them first:
+The build needs **JDK 21** and **sbt** (any JDK 21 + sbt 1.x works; `build.sbt` pins
+Scala 2.12.18). If they are not on your default `PATH`, export them first:
 
 ```bash
-export JAVA_HOME=/home/pwood/tools/jdk-21.0.11+10
-export PATH="$JAVA_HOME/bin:/home/pwood/tools/sbt/bin:$PATH"
+export JAVA_HOME=/path/to/your/jdk-21
+export PATH="$JAVA_HOME/bin:/path/to/your/sbt/bin:$PATH"
 ```
-
-(On other machines, any JDK 21 + sbt 1.x works. `build.sbt` pins Scala 2.12.18.)
 
 ## Commands
 
@@ -45,7 +43,7 @@ state — keep it that way.
 
 # Part 1 — Working on the compiler
 
-## Status (ground truth, verified 2026-06-09)
+## Status (ground truth, verified 2026-06-11)
 
 All language tiers are **implemented and tested**: comments, the full
 comparison/bitwise/logical operator set, for/break/continue/switch, strings, floats,
@@ -55,8 +53,24 @@ instance methods, lambdas + function references, and async. Float **arithmetic**
 conversions landed in the Tier 1 numerics pass; Tier 2 added the string toolkit
 (`replace`, `startsWith`, `endsWith`, `charAt`, `reverse`); Tier 3 added typed arrays
 (float & string) and `split`; a follow-up let `TALK TO THE HAND` print string-returning
-functions directly. **`sbt test` →
-205 passing, 0 failing, 35 suites.** `sbt assembly` produces a runnable jar.
+functions directly. A robustness pass (2026-06-11) fixed stdin reads to share one
+program-wide `Scanner` (multiple reads now survive piped input), gave int literals the
+full 32-bit range (`SIPUSH` used to truncate anything past ±32767), made comparisons
+type-aware (string content equality via `String.equals`, float comparisons via
+`FCMPL`/`FCMPG` — see `ComparisonCodegen.scala`), and made async blocks
+exception-safe (`done` is set in a finally so `HOLD THE LINE` can't spin forever) on
+daemon threads. A second pass the same day fixed try/catch/finally (the finally now
+runs when the catch body throws, and nested try blocks dispatch to the innermost
+handler), let `GET OUT` break out of a switch, scoped main's locals into their own
+frame table (so async blocks/lambdas referencing outer variables fail at compile time
+instead of miscompiling), enforced int-only method arguments/returns at compile time,
+made a value-returning method that ends without `I'LL BE BACK` throw instead of
+silently returning a default, and fixed the CLI: class names come from the source
+file's basename, all `.class` files land next to the source, `-run` works from
+subdirectories, parse errors print one line (exit 1) instead of a stack trace, and
+runtime stack traces blame `<program>.actionc` instead of a hardcoded `Hello.java`.
+**`sbt test` →
+236 passing, 0 failing, 37 suites.** `sbt assembly` produces a runnable jar.
 
 The implementation roadmap (`TODO.md`) has been removed now that all tiers are done;
 treat the verified test run as ground truth, and this file as the live guide.
@@ -247,8 +261,18 @@ stdlib, classes with constructors and inheritance, instance methods + `this`
 
 - **Conditions take a pre-computed boolean** (above) — the big one.
 - **Object fields are int-only.** No string/float/object fields.
+- **Methods are int-only too.** Arguments and `I'LL BE BACK` values must be integers —
+  passing or returning a string/float is a compile error. A value-returning method
+  that reaches its end without `I'LL BE BACK` throws at runtime.
+- **No closure capture.** Lambdas and async blocks run in their own JVM frame:
+  referencing a variable declared outside them is a compile error
+  (`VARIABLE: x NOT DECLARED!`) — pass values through parameters or declare inside.
 - **Lambdas** are top-level (declared like functions, not nested in `IT'S SHOWTIME`),
   and their body uses **infix** arithmetic: `CALL ME SNAKE double (x) => x YOU'RE FIRED 2`.
+- **`GET OUT` in a switch exits the switch** (cases never fall through anyway, so it's
+  only needed for an early exit); `KEEP MOVING` inside a switch continues the
+  enclosing loop. `finally` runs even when the catch body throws, and nested
+  try blocks dispatch to the innermost handler.
 - **Floats** support full arithmetic now (`GET UP`/`GET DOWN`/`YOU'RE FIRED`/`HE HAD TO
   SPLIT`/`I LET HIM GO` in an assignment block). Mixing an int into a float expression
   promotes the int automatically; a pure-int expression assigned into a float variable
@@ -259,6 +283,15 @@ stdlib, classes with constructors and inheritance, instance methods + `this`
   destination. So `7 HE HAD TO SPLIT 2` is **integer** division (`= 3`) even when stored
   into a float variable; it only coerces to `3.0` at the store, never `3.5`. Write a
   float literal (`7.0` or `2.0`) to force float division. This matches C/Java semantics.
+- **Comparisons are type-aware.** Strings compare by *content* with
+  `YOU ARE NOT YOU YOU ARE ME` (==) and `IT'S JUST BEEN REVOKED` (!=); the four
+  ordering operators reject strings at compile time, as does comparing a string with
+  a number. Floats work with all six operators (an int side is promoted; NaN compares
+  false, like Java).
+- **Async blocks are exception-safe and run on daemon threads.** If the body throws,
+  the thread reports the exception, `HOLD THE LINE` still completes, and `.result`
+  stays 0. Because the threads are daemons, the JVM exits when main ends — await a
+  block if you need it to finish.
 - **Convert numbers and strings:** `SPELL IT OUT <n>` turns an int or float into a
   string (for printing/concatenation); `DO THE MATH <str>` parses a string to an int.
 - **Arrays come in three element types.** Int (`I AIN'T GOT TIME TO BLEED`) and float

@@ -22,8 +22,7 @@ case class InstanceMethodNode(methodName: String, params: List[VariableNode],
     params.foreach(p => methodSymbols.putVariable(p.variableName))
     body.foreach(_.generate(mv, methodSymbols))
     if (returnsValue) {
-      mv.visitInsn(ICONST_0)
-      mv.visitInsn(IRETURN)
+      MissingReturn.throwMissingReturn(mv, methodName)
     } else {
       mv.visitInsn(RETURN)
     }
@@ -45,6 +44,7 @@ case class ClassDefNode(className: String, parent: Option[String], fields: List[
   def generateClass(globalSymbols: SymbolTable): Array[Byte] = {
     val cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES)
     cw.visit(V1_7, ACC_PUBLIC + ACC_SUPER, className, null, parentInternal, null)
+    cw.visitSource(globalSymbols.getFileName() + ".actionc", null)
 
     fields.foreach { f =>
       val access = if (f.isPublic) ACC_PUBLIC else ACC_PRIVATE
@@ -134,6 +134,10 @@ case class InstanceMethodCallNode(resultVariable: String, objectVariable: String
         "METHOD " + methodName + " NOT DECLARED ON CLASS " + className))
     val descriptor = "(" + "I" * method.numberOfArguments + ")" + (if (method.returnsValue) "I" else "V")
 
+    arguments.zipWithIndex.foreach { case (argument, index) =>
+      TypeInference.requireInt(argument, symbolTable,
+        "ARGUMENT " + (index + 1) + " TO METHOD " + methodName)
+    }
     mv.visitVarInsn(ALOAD, symbolTable.getVariableAddress(objectVariable))
     arguments.foreach(_.generate(mv, symbolTable))
     mv.visitMethodInsn(INVOKEVIRTUAL, className, methodName, descriptor)

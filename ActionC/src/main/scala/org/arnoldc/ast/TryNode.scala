@@ -15,13 +15,16 @@ case class TryNode(tryBody: List[AstNode], catchVar: String, catchBody: List[Ast
     val start = new Label()
     val end = new Label()
     val handler = new Label()
+    val catchEnd = new Label()
+    val rethrow = new Label()
     val done = new Label()
-
-    mv.visitTryCatchBlock(start, end, handler, "java/lang/Exception")
 
     mv.visitLabel(start)
     tryBody.foreach(_.generate(mv, symbolTable))
     mv.visitLabel(end)
+    // Registered after generating the body so nested try blocks (which register
+    // during it) come first in the exception table — the JVM takes the first match.
+    mv.visitTryCatchBlock(start, end, handler, "java/lang/Exception")
     // normal path: run finally, then skip the handler
     finallyBody.foreach(_.foreach(_.generate(mv, symbolTable)))
     mv.visitJumpInsn(GOTO, done)
@@ -34,8 +37,17 @@ case class TryNode(tryBody: List[AstNode], catchVar: String, catchBody: List[Ast
     mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/Exception", "getMessage", "()Ljava/lang/String;")
     mv.visitVarInsn(ASTORE, symbolTable.getVariableAddress(catchVar))
     catchBody.foreach(_.generate(mv, symbolTable))
-    finallyBody.foreach(_.foreach(_.generate(mv, symbolTable)))
-
+    mv.visitLabel(catchEnd)
+    finallyBody.foreach { fin =>
+      // The finally must also run when the catch body itself throws: cover the
+      // catch body with a catch-all that runs the finally and rethrows.
+      mv.visitTryCatchBlock(handler, catchEnd, rethrow, null)
+      fin.foreach(_.generate(mv, symbolTable))
+      mv.visitJumpInsn(GOTO, done)
+      mv.visitLabel(rethrow) // stack: [throwable]
+      fin.foreach(_.generate(mv, symbolTable))
+      mv.visitInsn(ATHROW)
+    }
     mv.visitLabel(done)
   }
 }

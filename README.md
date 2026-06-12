@@ -126,11 +126,14 @@ a **pre-computed boolean**, and `print` always adds a newline. So:
   (`build/content.py`) by `build/gen.py` via a small emitter (`build/emit.py`). The committed
   `.actionc` is real ActionC that compiles and runs on the stock compiler.
 
-**One change was made to the ActionC compiler:** its `Read` keyword created a *new* `Scanner` on
-every read, which under piped/redirected input makes the first read swallow the whole stream and
-the next read hit EOF — breaking any interactive (multi-read) program. The fix uses a **single
-shared `Scanner`** (`CallReadMethodNode.scala` + a static field added in `RootNode.scala`). All 205
-of the compiler's own tests still pass.
+**The vendored compiler is now stock upstream — no local patch.** This game once needed a
+local fix: ActionC's `Read` created a *new* `Scanner` on every read, which under piped/redirected
+input makes the first read swallow the whole stream and the next read hit EOF — breaking any
+interactive (multi-read) program. That fix — a **single shared `Scanner`** (a static `$scanner`
+field initialised once and reused by every `Read`) — has since been merged **upstream** (ActionC
+`master`) as part of a broader robustness/correctness pass (typed comparisons, switch `break`,
+try/finally, frame scoping, int-only method validation, CLI fixes). So `ActionC/` now tracks stock
+upstream master with no local changes, and the game compiles and runs on it unmodified.
 
 ---
 
@@ -142,7 +145,7 @@ build/content.py        all content as plain data (classes, weapons, NPCs, bosse
 build/gen.py            generator: content -> ActionC
 build/emit.py           the ActionC emitter (idioms, control flow, strings, bitops)
 build.sh                regenerate + compile (+ run)
-ActionC/                the ActionC compiler (with the shared-Scanner fix)
+ActionC/                the ActionC compiler (stock upstream master)
 ```
 
 *"Hasta la vista, Delver."*

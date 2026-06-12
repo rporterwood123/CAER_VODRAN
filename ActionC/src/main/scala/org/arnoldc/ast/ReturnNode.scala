@@ -12,9 +12,11 @@ case class ReturnNode(operand: Option[OperandNode]) extends StatementNode {
     // synthetic future's `result` field instead of returning from the method.
     symbolTable.asyncResultClass match {
       case Some(asyncClass) =>
+        val resultOperand =
+          operand.getOrElse(throw new ParsingException("ASYNC BLOCK MUST RETURN A VALUE"))
+        TypeInference.requireInt(resultOperand, symbolTable, "I'LL BE BACK VALUE IN AN ASYNC BLOCK")
         mv.visitVarInsn(ALOAD, 0)
-        operand.getOrElse(throw new ParsingException("ASYNC BLOCK MUST RETURN A VALUE"))
-          .generate(mv, symbolTable)
+        resultOperand.generate(mv, symbolTable)
         mv.visitFieldInsn(PUTFIELD, asyncClass, "result", "I")
         return
       case None =>
@@ -29,6 +31,8 @@ case class ReturnNode(operand: Option[OperandNode]) extends StatementNode {
       if (!symbolTable.getCurrentMethod().returnsValue) {
         throw new ParsingException("VOID METHOD: " + symbolTable.currentMethod + " CANNOT RETURN AN ARGUMENT")
       }
+      TypeInference.requireInt(operand.get, symbolTable,
+        "RETURN VALUE OF METHOD " + symbolTable.currentMethod)
       operand.get.generate(mv, symbolTable)
       mv.visitInsn(IRETURN)
 

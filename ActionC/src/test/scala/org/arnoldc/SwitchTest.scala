@@ -62,4 +62,50 @@ class SwitchTest extends ArnoldGeneratorTest {
         "YOU HAVE BEEN TERMINATED\n"
     getOutput(code) should equal("neg\n")
   }
+
+  it should "exit the switch early with GET OUT" in {
+    val code =
+      "IT'S SHOWTIME\n" +
+        "HEY CHRISTMAS TREE x\n" +
+        "YOU SET US UP 2\n" +
+        "CHOOSE YOUR DESTINY x\n" +
+        "WHAT IF I TOLD YOU 2\n" +
+        "TALK TO THE HAND \"before\"\n" +
+        "GET OUT\n" +
+        "TALK TO THE HAND \"after\"\n" +
+        "FINISH HIM\n" +
+        "TALK TO THE HAND \"done\"\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("before\ndone\n")
+  }
+
+  it should "break only the switch when nested in a loop" in {
+    val code =
+      "IT'S SHOWTIME\n" +
+        "LET'S ROCK i FROM 1 TO 3\n" +
+        "CHOOSE YOUR DESTINY i\n" +
+        "WHAT IF I TOLD YOU 2\n" +
+        "TALK TO THE HAND \"hit\"\n" +
+        "GET OUT\n" +
+        "TALK TO THE HAND \"skipped\"\n" +
+        "FINISH HIM\n" +
+        "TALK TO THE HAND i\n" +
+        "GAME OVER MAN GAME OVER\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("1\nhit\n2\n3\n")
+  }
+
+  it should "let KEEP MOVING inside a switch continue the enclosing loop" in {
+    val code =
+      "IT'S SHOWTIME\n" +
+        "LET'S ROCK i FROM 1 TO 3\n" +
+        "CHOOSE YOUR DESTINY i\n" +
+        "WHAT IF I TOLD YOU 2\n" +
+        "KEEP MOVING\n" +
+        "FINISH HIM\n" +
+        "TALK TO THE HAND i\n" +
+        "GAME OVER MAN GAME OVER\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("1\n3\n")
+  }
 }

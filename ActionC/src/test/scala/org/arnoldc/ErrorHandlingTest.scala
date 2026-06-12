@@ -17,6 +17,40 @@ class ErrorHandlingTest extends ArnoldGeneratorTest {
     getOutput(code) should equal("before\ncaught\nboom\n")
   }
 
+  it should "dispatch an exception to the innermost enclosing catch" in {
+    val code =
+      "IT'S SHOWTIME\n" +
+        "LET'S SEE WHAT YOU'VE GOT\n" +
+        "LET'S SEE WHAT YOU'VE GOT\n" +
+        "WELCOME TO THE PARTY PAL \"inner boom\"\n" +
+        "GOTCHA inner\n" +
+        "TALK TO THE HAND \"inner caught\"\n" +
+        "THAT'S A WRAP\n" +
+        "GOTCHA outer\n" +
+        "TALK TO THE HAND \"outer caught\"\n" +
+        "THAT'S A WRAP\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("inner caught\n")
+  }
+
+  it should "run the finally block when the catch body itself throws" in {
+    val code =
+      "IT'S SHOWTIME\n" +
+        "LET'S SEE WHAT YOU'VE GOT\n" +
+        "LET'S SEE WHAT YOU'VE GOT\n" +
+        "WELCOME TO THE PARTY PAL \"first\"\n" +
+        "GOTCHA inner\n" +
+        "WELCOME TO THE PARTY PAL \"second\"\n" +
+        "CLEAN UP ON AISLE FIVE\n" +
+        "TALK TO THE HAND \"FINALLY RAN\"\n" +
+        "THAT'S A WRAP\n" +
+        "GOTCHA outer\n" +
+        "TALK TO THE HAND outer\n" +
+        "THAT'S A WRAP\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("FINALLY RAN\nsecond\n")
+  }
+
   it should "run the finally block when no exception occurs" in {
     val code =
       "IT'S SHOWTIME\n" +

@@ -19,6 +19,26 @@ class InputTest extends ArnoldGeneratorTest{
     getOutput(code) should equal("Input a number:\n123\nBye\n")
   }
 
+  it should "read two integers from piped input" in {
+    writeToFile(path, "5\n7\n")
+    val code =
+      "IT'S SHOWTIME\n" +
+      "HEY CHRISTMAS TREE a\n" +
+      "YOU SET US UP 0\n" +
+      "HEY CHRISTMAS TREE b\n" +
+      "YOU SET US UP 0\n" +
+      "GET YOUR ASS TO MARS a\n" +
+      "DO IT NOW\n" +
+      "I WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY\n" +
+      "GET YOUR ASS TO MARS b\n" +
+      "DO IT NOW\n" +
+      "I WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY\n" +
+      "TALK TO THE HAND a\n" +
+      "TALK TO THE HAND b\n" +
+      "YOU HAVE BEEN TERMINATED\n"
+    getOutput(code) should equal("5\n7\n")
+  }
+
   val path = "test.in"
 
   override val byteCodeExecutor = new ByteCodeExecutor{

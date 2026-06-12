@@ -50,12 +50,17 @@ case class SymbolTable(upperLevel: Option[SymbolTable], currentMethod: String) {
   def getFunctionRef(variableName: String): Option[String] =
     functionRefs.get(variableName).orElse(upperLevel.flatMap(_.getFunctionRef(variableName)))
 
-  // Stack of (continueLabel, breakLabel) for the enclosing loops, innermost last.
+  // Stack of enclosing breakable constructs, innermost first. Loops carry a
+  // continue label and a break label; switches carry only a break label.
   // Used by GET OUT (break) and KEEP MOVING (continue).
-  private var loopContexts: List[(Label, Label)] = Nil
+  private var loopContexts: List[(Option[Label], Label)] = Nil
 
   def enterLoop(continueLabel: Label, breakLabel: Label): Unit = {
-    loopContexts = (continueLabel, breakLabel) :: loopContexts
+    loopContexts = (Some(continueLabel), breakLabel) :: loopContexts
+  }
+
+  def enterSwitch(breakLabel: Label): Unit = {
+    loopContexts = (None, breakLabel) :: loopContexts
   }
 
   def exitLoop(): Unit = {
@@ -64,13 +69,13 @@ case class SymbolTable(upperLevel: Option[SymbolTable], currentMethod: String) {
 
   def currentBreakLabel: Label = loopContexts match {
     case (_, breakLabel) :: _ => breakLabel
-    case Nil => throw new ParsingException("GET OUT USED OUTSIDE OF A LOOP")
+    case Nil => throw new ParsingException("GET OUT USED OUTSIDE OF A LOOP OR SWITCH")
   }
 
-  def currentContinueLabel: Label = loopContexts match {
-    case (continueLabel, _) :: _ => continueLabel
-    case Nil => throw new ParsingException("KEEP MOVING USED OUTSIDE OF A LOOP")
-  }
+  // continue ignores switch frames: it targets the nearest enclosing loop.
+  def currentContinueLabel: Label =
+    loopContexts.collectFirst { case (Some(continueLabel), _) => continueLabel }
+      .getOrElse(throw new ParsingException("KEEP MOVING USED OUTSIDE OF A LOOP"))
 
   val initialNextVarAddress: Int = FirstSymbolTableAddress
 
@@ -180,5 +185,11 @@ case class SymbolTable(upperLevel: Option[SymbolTable], currentMethod: String) {
       upperLevel.get.getFileName()
     }
   }
+
+  // The root (global) table: methods, classes, and synthetic-class state live
+  // there. Code generated into a different JVM frame should parent to this so
+  // enclosing-method locals (whose slot numbers belong to another frame) are
+  // not visible.
+  def rootTable: SymbolTable = upperLevel.map(_.rootTable).getOrElse(this)
 
 }

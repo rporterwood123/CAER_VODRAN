@@ -37,12 +37,20 @@ case class RootNode(classes: List[ClassDefNode], methods: List[AbstractMethodNod
     val cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES)
     def generateClassHeader() = {
       cw.visit(V1_7, ACC_PUBLIC + ACC_SUPER, className, null, "java/lang/Object", null)
-      cw.visitSource("Hello.java", null)
-      // A single shared Scanner over System.in, reused by every read across all
-      // classes. Creating a fresh Scanner per read (the old behaviour) made the
-      // first read buffer the whole stream and discard it, so any program that
-      // reads more than once broke under piped/redirected input. See CallReadMethodNode.
-      cw.visitField(ACC_PUBLIC + ACC_STATIC, "ACTIONC_IN", "Ljava/util/Scanner;", null, null).visitEnd()
+      cw.visitSource(className + ".actionc", null)
+      // One program-wide stdin Scanner: a fresh Scanner per read would buffer ahead
+      // and starve later reads under piped/redirected input.
+      cw.visitField(ACC_PUBLIC + ACC_STATIC + ACC_FINAL, "$scanner", "Ljava/util/Scanner;", null, null).visitEnd()
+      val clinit = cw.visitMethod(ACC_STATIC, "<clinit>", "()V", null, null)
+      clinit.visitCode()
+      clinit.visitTypeInsn(NEW, "java/util/Scanner")
+      clinit.visitInsn(DUP)
+      clinit.visitFieldInsn(GETSTATIC, "java/lang/System", "in", "Ljava/io/InputStream;")
+      clinit.visitMethodInsn(INVOKESPECIAL, "java/util/Scanner", "<init>", "(Ljava/io/InputStream;)V")
+      clinit.visitFieldInsn(PUTSTATIC, className, "$scanner", "Ljava/util/Scanner;")
+      clinit.visitInsn(RETURN)
+      clinit.visitMaxs(0, 0)
+      clinit.visitEnd()
       val mv = cw.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null)
       mv.visitVarInsn(ALOAD, 0)
       mv.visitMethodInsn(INVOKESPECIAL,

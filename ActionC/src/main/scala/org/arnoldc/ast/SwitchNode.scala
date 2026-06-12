@@ -23,6 +23,8 @@ case class SwitchNode(value: OperandNode, cases: List[CaseClause], default: Opti
     value.generate(mv, symbolTable)
     mv.visitLookupSwitchInsn(defaultLabel, keys, caseLabels)
 
+    // GET OUT inside a case exits the switch (KEEP MOVING still targets the loop).
+    symbolTable.enterSwitch(end)
     sorted.zip(caseLabels).foreach { case (clause, label) =>
       mv.visitLabel(label)
       clause.statements.foreach(_.generate(mv, symbolTable))
@@ -31,6 +33,7 @@ case class SwitchNode(value: OperandNode, cases: List[CaseClause], default: Opti
 
     mv.visitLabel(defaultLabel)
     default.foreach(_.foreach(_.generate(mv, symbolTable)))
+    symbolTable.exitLoop()
     mv.visitLabel(end)
   }
 }

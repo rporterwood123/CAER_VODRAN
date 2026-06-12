@@ -17,6 +17,10 @@ case class CallMethodNode(returnVar: String, methodName: String, arguments: List
       throw new ParsingException("INVALID NUMBER OF ARGUMENTS WHEN CALLING METHOD: " + actualMethod + "\n" +
         "EXPECTED: " + argumentsExpected + ", GOT: " + arguments.size)
     }
+    arguments.zipWithIndex.foreach { case (argument, index) =>
+      TypeInference.requireInt(argument, symbolTable,
+        "ARGUMENT " + (index + 1) + " TO METHOD " + actualMethod)
+    }
     arguments.foreach(_.generate(mv, symbolTable))
     mv.visitMethodInsn(INVOKESTATIC, symbolTable.getFileName(), actualMethod, symbolTable.getMethodDescription(actualMethod))
     handleStackAfterCall

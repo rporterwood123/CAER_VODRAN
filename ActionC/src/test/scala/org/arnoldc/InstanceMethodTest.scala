@@ -1,6 +1,25 @@
 package org.arnoldc
 
+import org.parboiled.errors.ParsingException
+
 class InstanceMethodTest extends ArnoldGeneratorTest {
+
+  it should "reject passing a string argument to an instance method at compile time" in {
+    val code =
+      "MY NAME IS MAXIMUS Player\n" +
+        "COMMANDER IN CHIEF speak\n" +
+        "I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE what\n" +
+        "TALK TO THE HAND what\n" +
+        "DISMISSED SOLDIER\n" +
+        "STRENGTH AND HONOR\n" +
+        "IT'S SHOWTIME\n" +
+        "WELCOME TO EARTH hero AS Player\n" +
+        "I HAVE COME HERE TO CHEW BUBBLEGUM msg\n" +
+        "AND KICK ASS \"hi\"\n" +
+        "DO IT NOW hero.speak msg\n" +
+        "YOU HAVE BEEN TERMINATED\n"
+    a[ParsingException] should be thrownBy getOutput(code)
+  }
 
   it should "call an instance method that mutates and returns a field via this" in {
     val code =
@@ -36,7 +55,6 @@ class InstanceMethodTest extends ArnoldGeneratorTest {
     val code =
       "MY NAME IS MAXIMUS Greeter\n" +
         "COMMANDER IN CHIEF greet\n" +
-        "GIVE THESE PEOPLE AIR\n" +
         "TALK TO THE HAND \"hello from method\"\n" +
         "DISMISSED SOLDIER\n" +
         "STRENGTH AND HONOR\n" +

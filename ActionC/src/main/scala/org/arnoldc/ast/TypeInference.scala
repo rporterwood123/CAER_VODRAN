@@ -4,6 +4,7 @@ import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes._
 import org.arnoldc.SymbolTable
 import org.arnoldc.VariableType
+import org.parboiled.errors.ParsingException
 
 // Compile-time numeric type inference for arithmetic operands. ActionC numbers are
 // either int or 32-bit float; an expression is float if any leaf is a float literal
@@ -33,5 +34,31 @@ object TypeInference {
   def generateAsFloat(node: AstNode, mv: MethodVisitor, symbolTable: SymbolTable) {
     node.generate(mv, symbolTable)
     if (!isFloat(node, symbolTable)) mv.visitInsn(I2F)
+  }
+
+  // Does this operand/expression evaluate to a String at runtime?
+  def isString(node: AstNode, symbolTable: SymbolTable): Boolean = node match {
+    case _: StringNode => true
+    case VariableNode(name) =>
+      symbolTable.containsVariable(name) &&
+        symbolTable.getVariableType(name) == VariableType.StringType
+    case ArrayAccessNode(name, _) =>
+      symbolTable.containsVariable(name) &&
+        symbolTable.getVariableType(name) == VariableType.StringArrayType
+    case _: UpperNode | _: LowerNode | _: TrimNode | _: SubstringNode |
+         _: ReplaceNode | _: CharAtNode | _: ReverseNode | _: NumToStringNode |
+         _: ReadFileNode => true
+    case _ => false
+  }
+
+  // Method signatures are int-only by design: reject string/float operands where
+  // an int is required, instead of emitting bytecode the verifier rejects.
+  def requireInt(node: AstNode, symbolTable: SymbolTable, context: String) {
+    if (isString(node, symbolTable)) {
+      throw new ParsingException(context + " MUST BE AN INTEGER, GOT A STRING")
+    }
+    if (isFloat(node, symbolTable)) {
+      throw new ParsingException(context + " MUST BE AN INTEGER, GOT A FLOAT")
+    }
   }
 }

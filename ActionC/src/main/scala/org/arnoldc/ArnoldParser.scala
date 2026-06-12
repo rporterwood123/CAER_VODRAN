@@ -542,8 +542,9 @@ class ArnoldParser extends Parser {
   }
 
   def Number: Rule1[NumberNode] = rule {
-    oneOrMore("0" - "9") ~> ((matched: String) => NumberNode(matched.toInt)) |
-      "-" ~ oneOrMore("0" - "9") ~> ((matched: String) => NumberNode(-matched.toInt))
+    // Capture the sign together with the digits so Int.MinValue parses: negating
+    // "2147483648".toInt would overflow before the minus is applied.
+    group(optional("-") ~ oneOrMore("0" - "9")) ~> ((matched: String) => NumberNode(matched.toInt))
   }
 
   def Boolean: Rule1[NumberNode] = rule {

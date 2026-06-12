@@ -1,6 +1,26 @@
 package org.arnoldc
 
+import org.parboiled.errors.ParsingException
+
 class LambdaTest extends ArnoldGeneratorTest {
+
+  it should "reject a lambda referencing a main-method variable" in {
+    // Lambdas compile to static methods with their own frame — no closure capture.
+    // Even when the lambda is generated after main, the reference must be rejected
+    // at compile time instead of silently reading the wrong frame's slot.
+    val code =
+      "IT'S SHOWTIME\n" +
+        "HEY CHRISTMAS TREE outer\n" +
+        "YOU SET US UP 5\n" +
+        "HEY CHRISTMAS TREE r\n" +
+        "YOU SET US UP 0\n" +
+        "GET YOUR ASS TO MARS r\n" +
+        "DO IT NOW addBase 10\n" +
+        "TALK TO THE HAND r\n" +
+        "YOU HAVE BEEN TERMINATED\n" +
+        "CALL ME SNAKE addBase (x) => x GET UP outer\n"
+    a[ParsingException] should be thrownBy getOutput(code)
+  }
 
   it should "define and call a single-parameter lambda" in {
     val code =

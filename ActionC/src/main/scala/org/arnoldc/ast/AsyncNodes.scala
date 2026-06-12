@@ -26,11 +26,15 @@ case class AsyncBlockNode(name: String, body: List[StatementNode]) extends State
     mv.visitMethodInsn(INVOKESPECIAL, asyncClassName, "<init>", "()V")
     mv.visitVarInsn(ASTORE, symbolTable.getVariableAddress(name))
 
-    // new Thread(future).start()
+    // new Thread(future) { setDaemon(true) }.start() — daemon so an unfinished or
+    // never-awaited block can't keep the JVM alive after main returns.
     mv.visitTypeInsn(NEW, "java/lang/Thread")
     mv.visitInsn(DUP)
     mv.visitVarInsn(ALOAD, symbolTable.getVariableAddress(name))
     mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Thread", "<init>", "(Ljava/lang/Runnable;)V")
+    mv.visitInsn(DUP)
+    mv.visitInsn(ICONST_1)
+    mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/Thread", "setDaemon", "(Z)V")
     mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/Thread", "start", "()V")
   }
 
@@ -38,6 +42,7 @@ case class AsyncBlockNode(name: String, body: List[StatementNode]) extends State
     val cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES)
     cw.visit(V1_7, ACC_PUBLIC + ACC_SUPER, asyncClassName, null, "java/lang/Object",
       Array("java/lang/Runnable"))
+    cw.visitSource(globalSymbols.getFileName() + ".actionc", null)
     cw.visitField(ACC_PUBLIC, "result", "I", null, null).visitEnd()
     cw.visitField(ACC_PUBLIC + ACC_VOLATILE, "done", "I", null, null).visitEnd()
 
@@ -50,18 +55,34 @@ case class AsyncBlockNode(name: String, body: List[StatementNode]) extends State
     init.visitMaxs(0, 0)
     init.visitEnd()
 
-    // run() { <body>; this.done = 1; }
+    // run() { try { <body> } finally { this.done = 1 } } — done must be set even
+    // when the body throws, or HOLD THE LINE spins forever. The exception is
+    // rethrown so the thread's default handler still reports it.
     val run = cw.visitMethod(ACC_PUBLIC, "run", "()V", null, null)
     run.visitCode()
-    val runSymbols = new SymbolTable(Some(globalSymbols), "run")
+    // Parent to the ROOT table, not the call site: run() is a different JVM frame,
+    // so the enclosing method's locals must not resolve here (their slot numbers
+    // would read this frame's unrelated locals).
+    val runSymbols = new SymbolTable(Some(globalSymbols.rootTable), "run")
     runSymbols.currentClass = Some(asyncClassName)
     runSymbols.asyncResultClass = Some(asyncClassName)
     runSymbols.putVariable("$this") // reserve local slot 0 for `this`
+    val tryStart = new Label()
+    val tryEnd = new Label()
+    val handler = new Label()
+    run.visitTryCatchBlock(tryStart, tryEnd, handler, null)
+    run.visitLabel(tryStart)
     body.foreach(_.generate(run, runSymbols))
+    run.visitLabel(tryEnd)
     run.visitVarInsn(ALOAD, 0)
     run.visitInsn(ICONST_1)
     run.visitFieldInsn(PUTFIELD, asyncClassName, "done", "I")
     run.visitInsn(RETURN)
+    run.visitLabel(handler) // stack: [throwable]
+    run.visitVarInsn(ALOAD, 0)
+    run.visitInsn(ICONST_1)
+    run.visitFieldInsn(PUTFIELD, asyncClassName, "done", "I")
+    run.visitInsn(ATHROW)
     run.visitMaxs(0, 0)
     run.visitEnd()
 

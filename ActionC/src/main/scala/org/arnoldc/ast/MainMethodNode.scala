@@ -11,8 +11,12 @@ case class MainMethodNode(statements: List[StatementNode]) extends AbstractMetho
   val returnsValue = false
 
   def generate(mv: MethodVisitor, symbolTable: SymbolTable) = {
+    // Main's locals get their own frame table: putting them on the shared global
+    // table would leak them into lambdas, async blocks, and class methods, which
+    // run in different JVM frames where those slot numbers mean something else.
+    val mainSymbols = new SymbolTable(Some(symbolTable), methodName)
     mv.visitCode()
-    statements.foreach(_.generate(mv, symbolTable))
+    statements.foreach(_.generate(mv, mainSymbols))
     mv.visitInsn(RETURN)
     mv.visitMaxs(100, 100)
     mv.visitEnd()
