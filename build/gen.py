@@ -32,6 +32,15 @@ POOL = "vodran_pool.dat"
 
 NW = 18  # weapons per class
 
+# Global difficulty dial: enemy & boss HP and ATK are scaled by this at emit time.
+# Content tables hold base numbers; this is the one knob for "+20% difficulty".
+DIFFICULTY = 1.2
+
+
+def _d(x):
+    """Scale a base stat by DIFFICULTY (rounded)."""
+    return int(round(x * DIFFICULTY))
+
 # ---- all int fields ----
 FIELDS = [
     "cls", "level", "xp", "xpnext", "started", "mode",
@@ -207,8 +216,8 @@ def _records(rows):
 def gen_boot(e):
     e.imethod("boot")
     e.comment("write all data files (idempotent each run)")
-    # monsters: name#hp#atk#def#xp#gold#abil
-    mon = "|".join("#".join(str(x) for x in (m[0], m[2], m[3], m[4], m[5], m[6], m[7])) for m in C.MONSTERS)
+    # monsters: name#hp#atk#def#xp#gold#abil  (hp & atk scaled by DIFFICULTY)
+    mon = "|".join("#".join(str(x) for x in (m[0], _d(m[2]), _d(m[3]), m[4], m[5], m[6], m[7])) for m in C.MONSTERS)
     e.string("dm", e.lit(mon)); e.write_file("dm", MON)
     # weapons (all 36, global id = cls*12+idx): name#tier#mat#power#price#special
     wrows = []
@@ -226,7 +235,7 @@ def gen_boot(e):
                   for i, r in enumerate(C.TRINKETS))
     e.string("dt", e.lit(tr)); e.write_file("dt", TRK)
     # bosses: name#hp#atk#def#xp#gold
-    br = "|".join("#".join(str(x) for x in (b["name"], b["hp"], b["atk"], b["df"], b["xp"], b["gold"])) for b in C.BOSSES)
+    br = "|".join("#".join(str(x) for x in (b["name"], _d(b["hp"]), _d(b["atk"]), b["df"], b["xp"], b["gold"])) for b in C.BOSSES)
     e.string("db", e.lit(br)); e.write_file("db", BOSS)
     # per-floor monster id pools (record per floor, ids comma-separated)
     pool = "|".join(",".join(str(i) for i in floor_pool(f)) for f in range(1, 31))

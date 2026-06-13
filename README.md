@@ -20,19 +20,20 @@ JVM bytecode).
 
 ## What it is
 
-A complete, menu-driven dungeon crawl: descend through a forest-swallowed castle across **3 acts /
-12 floors**, fighting your way to the star at the bottom. Everything is numbers-and-text in your
+A complete, menu-driven dungeon crawl: descend through a forest-swallowed castle across **10 acts /
+30 floors**, fighting your way to the star at the bottom. Everything is numbers-and-text in your
 terminal.
 
 | | |
 |---|---|
 | **Classes** | 3 — Fighter, Mage, Rogue — each with **3 attacks** (one unique signature) |
-| **Weapons** | **36** (12 per class) across *normal / magic / unique* tiers and iron/leather/mythril/star materials |
-| **Armor & trinkets** | 13 armors (cloth/leather/iron/mythril/star) + 8 trinkets, all tiered |
-| **Enemies** | **50 named NPCs** across **12 races** (goblins, hollow knights, wraiths, voidspawn, …) |
-| **Bosses** | **3 unique**, each multi-phase, with their own lore and a signature drop |
-| **Systems** | leveling (1→~15) with per-class growth, a camp hub, a wandering merchant/shop, equipment, consumables, random rooms & events, and **save / continue** |
-| **Length** | a careful first run is roughly **2–3 hours** |
+| **Weapons** | **54** (18 per class) across *normal / magic / unique* tiers and iron/leather/mythril/eclipse/voidglass/star materials |
+| **Armor & trinkets** | 20 armors + 14 trinkets, all tiered — some grant passive **effects** (thorns reflect, evasion dodge) |
+| **Enemies** | **~98 named NPCs** across 18 races (goblins, hollow knights, wraiths, voidspawn, constructs, crystal-horrors, mirror-selves, …) |
+| **Bosses** | **10 unique**, each multi-phase, with their own lore and a signature drop |
+| **Rooms** | combat, elite, **ambush**, events, **random chests** (incl. mimics), treasure, **shrines**, **hazards**, **lore vaults**, and rest |
+| **Systems** | leveling (1→~25-30) with per-class growth, a camp hub, a wandering merchant/shop, equipment, consumables, varied rooms & events, and **save / continue** |
+| **Length** | a careful first run is roughly **5–7 hours** |
 
 ---
 
@@ -100,12 +101,21 @@ your **last save** (so save at camp often).
 
 ### The descent
 
-- **Act I — The Mirewood Approach** (floors 1–4) → boss **The Warden of Thorns**
-- **Act II — The Hollow Halls** (floors 5–8) → boss **Maerith, the Hollow Choir**
-- **Act III — The Sunken Vault** (floors 9–12) → boss **Vodran, the Sunken Crown**
+Ten acts, three floors each (two to explore, one boss), down from the bog to the star's heart:
 
-Each boss shifts behavior as its health falls (hardening, healing, draining your focus, enraging)
-and drops a unique piece of gear.
+- **Act I — The Drowned Mire** → **The Mire-Warden**
+- **Act II — The Broken Barbican** → **The Gate-Golem**
+- **Act III — The Flooded Wards** → **Sir Caedric, the Drowned**
+- **Act IV — The Hollow Halls** → **The Echo**
+- **Act V — The Sunken Archive** → **The Ink-Wraith**
+- **Act VI — The Ash Barracks** → **Captain Vurm, Unfallen**
+- **Act VII — The Chapel of the Choir** → **Maerith of the Choir**
+- **Act VIII — The Star-Crypt** → **The Crystalline Horror**
+- **Act IX — The Whispering Deep** → **The Mirror** (a copy of you)
+- **Act X — The Vault of the Crown** → **Vodran, the Sunken Crown**
+
+Each boss shifts behavior as its health falls (growing fiercer, mending itself, raging)
+and drops a unique piece of gear. Enemies and bosses hit ~20% harder than their base tuning.
 
 ---
 
@@ -122,7 +132,7 @@ a **pre-computed boolean**, and `print` always adds a newline. So:
 - Static methods are pure int math; **all text tables** (monster/weapon/armor names, etc.) live in
   data files the game writes at boot and reads back with `split` + parse, since strings can't be
   returned or stored in fields.
-- The ActionC source (`caer_vodran.actionc`, ~8.5k lines) is **generated** from clean Python data
+- The ActionC source (`caer_vodran.actionc`, ~9.6k lines) is **generated** from clean Python data
   (`build/content.py`) by `build/gen.py` via a small emitter (`build/emit.py`). The committed
   `.actionc` is real ActionC that compiles and runs on the stock compiler.
 
