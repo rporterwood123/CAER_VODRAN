@@ -44,6 +44,7 @@ FIELDS = [
     "eid", "ehp", "emaxhp", "eatk", "edef", "eabil",
     "estun", "epoison", "eweak", "pshield", "ppoison", "pweak",
     "isboss", "bossid", "bphase", "pendmon", "pendev",
+    "crumb",
 ]
 
 SAVE_FIELDS = ["cls", "level", "xp", "xpnext", "hp", "basehp", "res", "baseres",
@@ -51,6 +52,85 @@ SAVE_FIELDS = ["cls", "level", "xp", "xpnext", "hp", "basehp", "res", "baseres",
                "wid", "aid", "tid", "ownw", "owna", "ownt",
                "potHeal", "potRes", "potCure", "bombs", "elixir",
                "act", "floor", "b0", "b1", "b2"]
+
+
+# =====================================================================  screen presentation
+# Every input screen opens with a clear + a header so each new screen is
+# unmistakable. The header is a breadcrumb of the screen you came from plus a
+# banner naming the current request. The breadcrumb reads `this.crumb`, an int
+# the conductor sets to "the screen we just left" after each dispatch.
+CRUMB_SENTINEL = 99  # no previous screen (boot) -> breadcrumb suppressed
+CRUMB_NAMES = {
+    M_TITLE: "the threshold",
+    M_CLASS: "the choosing",
+    M_ACTINTRO: "the tale",
+    M_CAMP: "Camp",
+    M_SHOP: "the Mire-Pedlar",
+    M_EQUIP: "your gear",
+    M_EXPLORE: "the descent",
+    M_COMBAT: "the fight",
+    M_BOSS: "the boss",
+    M_EVENT: "an omen",
+    M_GAMEOVER: "death",
+    M_VICTORY: "victory",
+}
+
+
+def clear_screen(e):
+    # Real ANSI clear: erase screen + scrollback, home the cursor. The raw ESC
+    # byte (0x1b) is fine in an ActionC string literal (only \\ and " are illegal).
+    e.say("\x1b[2J\x1b[3J\x1b[H")
+
+
+def crumb_line(e, cur_mode):
+    # "  > from:  <prev screen>" unless there is no previous screen, or we just
+    # looped back onto the same screen (e.g. room-to-room descent).
+    def sw():
+        cases = []
+        for mode, name in CRUMB_NAMES.items():
+            cases.append((mode, (lambda nm: (lambda: e.say("  > from:  " + nm)))(name)))
+        e.switch(e.f("crumb"), cases, default=None)
+    e.if_cmp(e.f("crumb"), "!=", CRUMB_SENTINEL,
+             lambda: e.if_cmp(e.f("crumb"), "!=", cur_mode, sw))
+
+
+def banner(e, name, request):
+    # A fixed-width "==== NAME ====" bar with the request on the line below.
+    title = " " + name + " "
+    width = 44
+    side = max(1, (width - len(title)) // 2)
+    bar = "=" * side + title + "=" * max(1, width - side - len(title))
+    e.say("  " + bar)
+    if request:
+        e.say("  " + request)
+    e.say_blank()
+
+
+def stats_line(e):
+    # Always-on compact vitals, shown on every screen once a character exists
+    # (started==1 keeps it off the title / class-select screens).
+    def show():
+        e.say_string(e.lit("  HP "), e.num(e.f("hp")), e.lit("/"), e.num(e.f("maxhp")),
+                     e.lit("  res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")),
+                     e.lit("  Lv "), e.num(e.f("level")),
+                     e.lit("  Gold "), e.num(e.f("gold")),
+                     e.lit("  Floor "), e.num(e.f("floor")), e.lit("/12"))
+        e.say_blank()
+    e.if_cmp(e.f("started"), "==", 1, show)
+
+
+def screen_top(e, name, request, mode):
+    """Clear the window and draw the breadcrumb + title banner + vitals for a screen."""
+    clear_screen(e)
+    crumb_line(e, mode)
+    banner(e, name, request)
+    stats_line(e)
+
+
+def read_choice(e, var):
+    """Read a numbered choice, then always emit a trailing blank line."""
+    e.read_into(var)
+    e.say_blank()
 
 
 # ---- floor -> monster id pool (ids whose [minfloor,maxfloor] covers the floor) ----
@@ -82,9 +162,11 @@ def gen_class(e):
     e.blank()
     e.ctor()
     e.assign("LOOK AT ME.mode", M_TITLE)
+    e.assign("LOOK AT ME.crumb", CRUMB_SENTINEL)
     e.end_ctor()
     e.blank()
     gen_boot(e)
+    gen_setcrumb(e)
     gen_title(e)
     gen_class_select(e)
     gen_initclass(e)
@@ -135,6 +217,13 @@ def gen_boot(e):
     e.end_imethod()
 
 
+# conductor calls this after each screen so the next screen can show a breadcrumb
+def gen_setcrumb(e):
+    e.imethod("setcrumb", args=["n"])
+    e.assign("LOOK AT ME.crumb", "n")
+    e.end_imethod()
+
+
 # read record `idx` from a #/|-delimited file; returns the field-array var name.
 def read_record(e, path, idx_operand):
     raw = e.tmp("s"); recs = e.tmp("a"); rec = e.tmp("a")
@@ -147,6 +236,8 @@ def read_record(e, path, idx_operand):
 # -----------------------------------------------------------------  title
 def gen_title(e):
     e.imethod("title")
+    clear_screen(e)
+    crumb_line(e, M_TITLE)
     e.say_blank()
     e.say("  ================================================================")
     e.say("          C A E R   V O D R A N")
@@ -163,7 +254,7 @@ def gen_title(e):
     e.say_blank()
     e.say("  Enter a number:")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.switch("c", [
         (1, lambda: e.assign("LOOK AT ME.mode", M_CLASS)),
         (2, lambda: title_continue(e)),
@@ -182,16 +273,14 @@ def title_continue(e):
 # -----------------------------------------------------------------  class select
 def gen_class_select(e):
     e.imethod("classSelect")
-    e.say_blank()
-    e.say("  Choose your path, Delver:")
-    e.say_blank()
+    screen_top(e, "THE CHOOSING", "choose your path, Delver", M_CLASS)
     for cid in (0, 1, 2):
         c = C.CLASSES[cid]
         e.say("   %d) %-8s - %s" % (cid + 1, c["name"], c["blurb"]))
     e.say_blank()
     e.say("  Enter a number:")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.declare("k", 0)
     e.assign("k", "c", ("-", 1))
     e.if_cmp("k", "<", 0, lambda: e.set("k", 0))
@@ -285,7 +374,7 @@ def emit_clamp(e):
 # -----------------------------------------------------------------  act intro
 def gen_actintro(e):
     e.imethod("actintro")
-    e.say_blank()
+    screen_top(e, "THE TALE", "the story so far", M_ACTINTRO)
     e.say("  ----------------------------------------------------------------")
     def show(aid):
         for ln in C.ACT_INTRO[aid]:
@@ -295,7 +384,7 @@ def gen_actintro(e):
     e.say_blank()
     e.say("  (press 1 to continue)")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.assign("LOOK AT ME.mode", M_CAMP)
     e.end_imethod()
 
@@ -303,15 +392,11 @@ def gen_actintro(e):
 # -----------------------------------------------------------------  camp hub
 def gen_camp(e):
     e.imethod("camp")
-    e.say_blank()
-    e.say("  ====================== CAMP ======================")
+    screen_top(e, "CAMP", "choose an action", M_CAMP)
     floor_name_switch(e, "  You make camp before:  ")
-    e.say_string(e.lit("  HP "), e.num(e.f("hp")), e.lit("/"), e.num(e.f("maxhp")),
-                 e.lit("    "), e.lit(""), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")),
-                 e.lit(" res    Lv "), e.num(e.f("level")),
-                 e.lit("  XP "), e.num(e.f("xp")), e.lit("/"), e.num(e.f("xpnext")))
-    e.say_string(e.lit("  Gold "), e.num(e.f("gold")), e.lit("    Kills "), e.num(e.f("kills")),
-                 e.lit("    Floor "), e.num(e.f("floor")), e.lit("/12"))
+    # vitals (HP/res/Lv/Gold/Floor) are in the always-on stats line; show only the rest
+    e.say_string(e.lit("  XP "), e.num(e.f("xp")), e.lit("/"), e.num(e.f("xpnext")),
+                 e.lit("    Kills "), e.num(e.f("kills")))
     gear_line(e)
     e.say_blank()
     e.say("   1) Descend into the floor")
@@ -324,7 +409,7 @@ def gen_camp(e):
     e.say_blank()
     e.say("  Enter a number:")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.switch("c", [
         (1, lambda: (e.assign("LOOK AT ME.room", 0), set_roomcount(e), e.assign("LOOK AT ME.mode", M_EXPLORE))),
         (2, lambda: camp_rest(e)),
@@ -381,7 +466,7 @@ def camp_inventory(e):
     e.say_blank()
     e.say("  Use which?  1)Mirewine 2)Star Tonic 3)Antidote 4)Greater Elixir 0)back")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.switch("c", [
         (1, lambda: use_item_camp(e, "potHeal", "hp", 24, "Mirewine Draught (+24 HP)")),
         (2, lambda: use_item_camp(e, "potRes", "res", 18, "Star Tonic (+18 resource)")),
@@ -419,6 +504,7 @@ def elixir_camp(e):
 # -----------------------------------------------------------------  shop
 def gen_shop(e):
     e.imethod("shop")
+    screen_top(e, "THE MIRE-PEDLAR", "spend your gold", M_SHOP)
     e.declare("shopping", 1)
     e.declare("c", 0)
     e.declare("buf", 0)
@@ -429,7 +515,7 @@ def gen_shop(e):
         e.say_string(e.lit("  Your gold: "), e.num(e.f("gold")))
         e.say("   1) Weapons   2) Armor   3) Trinkets   4) Consumables   0) Leave")
         e.say("  Enter a number:")
-        e.read_into("c")
+        read_choice(e, "c")
         e.switch("c", [
             (1, lambda: shop_weapons(e)),
             (2, lambda: shop_list(e, "armor")),
@@ -468,7 +554,7 @@ def shop_weapons(e):
     e.say("   0) back")
     e.say("  Buy which number?")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.if_cmp("c", ">", 0, lambda: buy_weapon(e, "c"))
 
 
@@ -513,7 +599,7 @@ def shop_list(e, kind):
     e.say("   0) back")
     e.say("  Buy which number?")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.if_cmp("c", ">", 0, lambda: buy_gear(e, "c", kind))
 
 
@@ -549,7 +635,7 @@ def shop_consum(e):
     e.say("   0) back")
     e.say("  Buy which number?")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     cases = []
     for i, (fld, label, price, note) in enumerate(C.CONSUMABLES):
         cases.append((i + 1, (lambda fld=fld, price=price, label=label: (lambda: buy_consum(e, fld, price, label)))()))
@@ -567,6 +653,7 @@ def buy_consum(e, fld, price, label):
 # -----------------------------------------------------------------  equipment screen
 def gen_equip(e):
     e.imethod("equip")
+    screen_top(e, "EQUIPMENT", "manage your gear", M_EQUIP)
     e.declare("managing", 1)
     e.declare("c", 0)
 
@@ -581,7 +668,7 @@ def gen_equip(e):
         e.say("   3) Equip a trinket you own")
         e.say("   0) Done")
         e.say("  Enter a number:")
-        e.read_into("c")
+        read_choice(e, "c")
         e.switch("c", [
             (1, lambda: equip_pick(e, "weapon")),
             (2, lambda: equip_pick(e, "armor")),
@@ -621,7 +708,7 @@ def equip_pick(e, kind):
             e.if_cmp(cond_owned, "==", 1, (lambda idx=idx, nm=nm: (lambda: e.say("   %2d) %s" % (idx + 1, nm))))())
     e.say("  Equip which number?")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     e.declare("idx", "c")
     e.assign("idx", "c", ("-", 1))
     def doit():
@@ -645,6 +732,7 @@ def equip_pick(e, kind):
 # -----------------------------------------------------------------  explore (floor rooms)
 def gen_explore(e):
     e.imethod("explore")
+    screen_top(e, "THE DESCENT", "you press deeper", M_EXPLORE)
     e.assign("LOOK AT ME.room", e.f("room"), ("+", 1))
     # floor complete?
     e.declare("done", 0)
@@ -740,7 +828,7 @@ def room_treasure(e):
                                     e.say("  ...and a Mirewine Draught!")))
     e.say("  (press 1 to continue)")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
 
 
 def room_rest(e):
@@ -753,7 +841,7 @@ def room_rest(e):
     e.say_string(e.lit("  Recovered "), e.num("h"), e.lit(" HP."))
     e.say("  (press 1 to continue)")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
 
 
 def room_event(e):
@@ -774,6 +862,7 @@ _patch_emit()
 # -----------------------------------------------------------------  events
 def gen_event(e):
     e.imethod("event")
+    screen_top(e, "AN OMEN", "the dark offers a choice", M_EVENT)
     cases = []
     for i, ev in enumerate(C.EVENTS):
         cases.append((i, (lambda ev=ev: (lambda: event_body(e, ev)))()))
@@ -791,7 +880,7 @@ def event_body(e, ev):
         e.say("   %d) %s" % (i + 1, label))
     e.say("  Enter a number:")
     e.declare("c", 0)
-    e.read_into("c")
+    read_choice(e, "c")
     cases = []
     for i, (label, eff) in enumerate(ev["choices"]):
         cases.append((i + 1, (lambda eff=eff: (lambda: apply_effect(e, eff)))()))
@@ -820,7 +909,7 @@ def apply_effect(e, eff):
                                              e.say("  The whisper bites back - you feel sick.")))
         elif tok == "brandbuff":
             e.assign("LOOK AT ME.brandbuff", 8)
-            e.say("  Your weapon drinks the light. Your next strikes burn brighter.")
+            e.say("  Your weapon drinks the starlight. Your next 8 hits each deal +4 damage.")
         elif tok == "chestloot":
             e.declare("cl", Emit.rnd(100))
             def trap():
@@ -874,6 +963,7 @@ def apply_effect(e, eff):
 # -----------------------------------------------------------------  combat (regular)
 def gen_combat(e):
     e.imethod("combat")
+    screen_top(e, "COMBAT", "to battle", M_COMBAT)
     e.comment("load monster by pendmon")
     rec = read_record(e, MON, e.f("pendmon"))
     e.assign("LOOK AT ME.ehp", Emit.parse(Emit.aget(rec, 1)))
@@ -939,7 +1029,7 @@ def combat_loop(e, xpr, goldr, is_boss):
                      e.lit("   res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")))
         combat_menu(e)
         e.say("  [1]attack [2]signature [3]skill [4]item [5]flee")
-        e.read_into("choice")
+        read_choice(e, "choice")
         e.set("pdmg", 0)
         e.set("acted", 1)
         e.switch("choice", [
@@ -995,6 +1085,9 @@ def combat_loop(e, xpr, goldr, is_boss):
             e.assign("LOOK AT ME.kills", e.f("kills"), ("+", 1))
             e.say_string(e.lit("  +"), e.num(xpr), e.lit(" XP, +"), e.num(goldr), e.lit(" gold."))
             check_levelup(e)
+            e.say_blank()
+            e.say("  (press 1 to gather the spoils)")
+            read_choice(e, "choice")
             e.assign("LOOK AT ME.mode", M_EXPLORE)
 
         def enemy_turn():
@@ -1151,7 +1244,7 @@ def atk_skill(e):
 def combat_item(e):
     e.say("   Use: 1)Mirewine(+24) 2)Tonic(+18 res) 3)Antidote 4)Thornbomb 5)Elixir")
     e.declare("ic", 0)
-    e.read_into("ic")
+    read_choice(e, "ic")
     e.set("pdmg", 0)
     def bomb():
         def yes():
@@ -1250,6 +1343,7 @@ def grow(e, cls):
 # -----------------------------------------------------------------  boss fight
 def gen_bossfight(e):
     e.imethod("bossfight")
+    screen_top(e, "BOSS", "to battle", M_BOSS)
     e.comment("which boss: by act (1->0, 2->1, 3->2)")
     e.declare("bi", e.f("act"))
     e.assign("bi", e.f("act"), ("-", 1))
@@ -1321,7 +1415,7 @@ def boss_loop(e, xpr, goldr):
                      e.lit("   res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")))
         combat_menu(e)
         e.say("  [1]attack [2]signature [3]skill [4]item [5]brace")
-        e.read_into("choice")
+        read_choice(e, "choice")
         e.set("pdmg", 0)
         e.set("acted", 1)
         e.switch("choice", [
@@ -1472,6 +1566,9 @@ def boss_defeat(e, xpr, goldr):
         e.assign("LOOK AT ME.b2", 1)
     e.switch(e.f("bossid"), [(0, b0), (1, b1), (2, b2)])
     e.assign("LOOK AT ME.isboss", 0)
+    e.say_blank()
+    e.say("  (press 1 to gather the spoils)")
+    read_choice(e, "choice")
     # final boss -> victory; else advance floor+act, save, actintro
     def finalwin():
         e.assign("LOOK AT ME.mode", M_VICTORY)
@@ -1519,13 +1616,14 @@ def boss_drop_effect(e, b):
 # -----------------------------------------------------------------  gameover / victory
 def gen_gameover(e):
     e.imethod("gameover")
-    e.say_blank()
-    e.say("  ================================================================")
+    screen_top(e, "YOU DIED", "the Mirewood drinks another Delver", M_GAMEOVER)
     e.say("    You fall. The Mirewood drinks another Delver.")
-    e.say("  ================================================================")
     e.say_string(e.lit("    Level "), e.num(e.f("level")), e.lit(", "), e.num(e.f("kills")), e.lit(" kills, floor "),
                  e.num(e.f("floor")), e.lit("."))
     e.say_blank()
+    e.say("  (press 1 to return)")
+    e.declare("c", 0)
+    read_choice(e, "c")
     e.declare("hs", e.file_exists(SAVE))
     def reload():
         e.say("    The dark spits you back to your last camp...")
@@ -1544,7 +1642,7 @@ def gen_gameover(e):
 
 def gen_victory(e):
     e.imethod("victory")
-    e.say_blank()
+    screen_top(e, "VICTORY", "the Sunken Crown is broken", M_VICTORY)
     e.say("  ================================================================")
     for ln in C.ENDING:
         e.say("   " + ln) if ln else e.say_blank()
@@ -1608,6 +1706,8 @@ def gen_main(e):
         ], default=lambda: e.set("running", 0))
         e.declare("q", "g.mode")
         e.cmp("running", "q", "!=", M_QUIT, declare=False)
+        e.comment("record the screen we just left for the next screen's breadcrumb")
+        e.call_method("g", "setcrumb", "m")
     e.while_("running", loop)
     e.say_blank()
     e.say("  Hasta la vista, Delver.")

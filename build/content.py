@@ -295,7 +295,7 @@ EVENTS = [
          desc=["A basin of starlit water murmurs in a voice almost like yours.",
                "Drinking from it might sharpen the mind - or invite the whisper in."],
          choices=[("Drink deep (restore resource, small risk)", "res+99 riskcurse"),
-                  ("Wet your blade in it (a charge of power)", "brandbuff"),
+                  ("Wet your blade in it (+4 damage on your next 8 hits)", "brandbuff"),
                   ("Refuse the whisper", "nothing")]),
     dict(key="merchant", title="The Mire-Pedlar",
          desc=["A hunched figure in a coat of stitched hides waves a lantern.",
