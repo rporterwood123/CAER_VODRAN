@@ -278,6 +278,28 @@ IT'S SHOWTIME
 YOU HAVE BEEN TERMINATED
 ```
 
+String literals support C/Java-style backslash escapes:
+
+| Escape | Meaning |
+|--------|---------|
+| `\n` | newline |
+| `\t` | tab |
+| `\r` | carriage return |
+| `\"` | double quote (embed a quote without ending the string) |
+| `\\` | a single backslash |
+| `\0` | NUL character |
+| `\uXXXX` | unicode code point (exactly four hex digits) |
+
+```actionc
+TALK TO THE HAND "line one\nline two"
+TALK TO THE HAND "she said \"hi\""
+TALK TO THE HAND "path: C:\\temp"
+TALK TO THE HAND "café = café"
+```
+
+A backslash followed by anything else (e.g. `\q`) or a malformed `\uXXXX` is a
+compile-time error.
+
 ### Arrays
 
 ```actionc

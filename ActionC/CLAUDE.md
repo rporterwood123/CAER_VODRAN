@@ -28,7 +28,7 @@ export PATH="$JAVA_HOME/bin:/path/to/your/sbt/bin:$PATH"
 ## Commands
 
 ```bash
-sbt test                                          # run the suite — 175 tests, ~2s
+sbt test                                          # run the suite — 247 tests, ~2s
 sbt assembly                                      # build target/scala-2.12/ActionC.jar
 java -jar target/scala-2.12/ActionC.jar prog.actionc   # compile prog.actionc -> prog.class
 java -jar target/scala-2.12/ActionC.jar -run prog.actionc   # compile AND run
@@ -69,8 +69,12 @@ silently returning a default, and fixed the CLI: class names come from the sourc
 file's basename, all `.class` files land next to the source, `-run` works from
 subdirectories, parse errors print one line (exit 1) instead of a stack trace, and
 runtime stack traces blame `<program>.actionc` instead of a hardcoded `Hello.java`.
+A later pass (2026-06-13) added backslash escape sequences to string literals
+(`\n \t \r \" \\ \0` and `\uXXXX`): the `String` grammar rule now consumes an escape
+as a unit (so `\"` no longer terminates the literal) and `StringNode.generate` decodes
+the captured raw text, throwing `ParsingException` on an invalid/malformed escape.
 **`sbt test` →
-236 passing, 0 failing, 37 suites.** `sbt assembly` produces a runnable jar.
+247 passing, 0 failing, 38 suites.** `sbt assembly` produces a runnable jar.
 
 The implementation roadmap (`TODO.md`) has been removed now that all tiers are done;
 treat the verified test run as ground truth, and this file as the live guide.
@@ -250,7 +254,7 @@ Booleans are ints: `@NO PROBLEMO` = true, `@I LIED` = false.
 Loops (`LET'S ROCK … FROM … TO … / GAME OVER MAN GAME OVER`, `STICK AROUND … CHILL`,
 `GET OUT` break, `KEEP MOVING` continue), switch (`CHOOSE YOUR DESTINY … FINISH HIM`,
 no fall-through), strings (declare/concat/length/upper/lower/trim/substring/contains/
-indexOf/replace/startsWith/endsWith/charAt/reverse), int/float/string arrays (string
+indexOf/replace/startsWith/endsWith/charAt/reverse, plus backslash escapes), int/float/string arrays (string
 arrays via `split`), try/catch/finally +
 throw + assert, the math/string/time/file
 stdlib, classes with constructors and inheritance, instance methods + `this`
@@ -294,6 +298,10 @@ stdlib, classes with constructors and inheritance, instance methods + `this`
   block if you need it to finish.
 - **Convert numbers and strings:** `SPELL IT OUT <n>` turns an int or float into a
   string (for printing/concatenation); `DO THE MATH <str>` parses a string to an int.
+- **String literals take backslash escapes** (C/Java style): `\n \t \r \" \\ \0` and
+  `\uXXXX` (four hex digits). Use `\"` to embed a quote and `\\` for a literal
+  backslash (so a Windows path is `"C:\\temp"`). An unrecognized escape (`\q`) or a
+  malformed `\uXXXX` is a compile-time error.
 - **Arrays come in three element types.** Int (`I AIN'T GOT TIME TO BLEED`) and float
   (`LOCK AND LOAD`) arrays declare `WITH <n> UGLY MOTHERFUCKERS` and support read/write/
   length. String arrays are produced by `split` (`DIVIDE AND CONQUER <name> <str>

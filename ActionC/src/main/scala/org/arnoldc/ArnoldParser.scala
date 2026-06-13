@@ -553,9 +553,13 @@ class ArnoldParser extends Parser {
   }
 
   def String: Rule1[StringNode] = rule {
+    // Consume an escape (backslash + following char) as a single unit so an
+    // escaped quote (\") doesn't terminate the literal; ordinary chars are
+    // anything but an unescaped quote or backslash. The raw text (backslashes
+    // intact) is captured here and decoded later in StringNode.generate.
     zeroOrMore(rule {
-      !anyOf("\"\\") ~ ANY
-    }) ~> StringNode
+      ("\\" ~ ANY) | (!anyOf("\"\\") ~ ANY)
+    }) ~> ((s: String) => StringNode(s))
   }
 
   def parse(expression: String): RootNode = {
