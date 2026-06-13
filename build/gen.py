@@ -76,9 +76,24 @@ CRUMB_NAMES = {
 }
 
 
+# ---- ANSI colors. The ESC byte is written via "\x1b" here; safe_str renders it
+# as a readable  escape in the source, which the compiler decodes at runtime.
+A_RST = "\x1b[0m"
+A_RED = "\x1b[31m"
+A_GRN = "\x1b[32m"
+A_YEL = "\x1b[33m"
+A_MAG = "\x1b[35m"
+A_CYN = "\x1b[36m"
+
+
+def col(text, code):
+    """Wrap text in an ANSI style+reset. code is an SGR string like '31' or '1;36'."""
+    return "\x1b[" + code + "m" + text + A_RST
+
+
 def clear_screen(e):
-    # Real ANSI clear: erase screen + scrollback, home the cursor. The raw ESC
-    # byte (0x1b) is fine in an ActionC string literal (only \\ and " are illegal).
+    # Real ANSI clear: erase screen + scrollback, home the cursor. The ESC byte
+    # is emitted as a  escape (see safe_str) that the compiler decodes.
     e.say("\x1b[2J\x1b[3J\x1b[H")
 
 
@@ -88,21 +103,22 @@ def crumb_line(e, cur_mode):
     def sw():
         cases = []
         for mode, name in CRUMB_NAMES.items():
-            cases.append((mode, (lambda nm: (lambda: e.say("  > from:  " + nm)))(name)))
+            cases.append((mode, (lambda nm: (lambda: e.say(col("  > from:  " + nm, "2"))))(name)))
         e.switch(e.f("crumb"), cases, default=None)
     e.if_cmp(e.f("crumb"), "!=", CRUMB_SENTINEL,
              lambda: e.if_cmp(e.f("crumb"), "!=", cur_mode, sw))
 
 
-def banner(e, name, request):
-    # A fixed-width "==== NAME ====" bar with the request on the line below.
+def banner(e, name, request, tone="1;36"):
+    # A fixed-width "==== NAME ====" bar (bold cyan by default; tone overridable)
+    # with the request on the dim line below.
     title = " " + name + " "
     width = 44
     side = max(1, (width - len(title)) // 2)
     bar = "=" * side + title + "=" * max(1, width - side - len(title))
-    e.say("  " + bar)
+    e.say("  " + col(bar, tone))
     if request:
-        e.say("  " + request)
+        e.say("  " + col(request, "2"))
     e.say_blank()
 
 
@@ -110,20 +126,20 @@ def stats_line(e):
     # Always-on compact vitals, shown on every screen once a character exists
     # (started==1 keeps it off the title / class-select screens).
     def show():
-        e.say_string(e.lit("  HP "), e.num(e.f("hp")), e.lit("/"), e.num(e.f("maxhp")),
-                     e.lit("  res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")),
+        e.say_string(e.lit("  " + A_RED + "HP "), e.num(e.f("hp")), e.lit("/"), e.num(e.f("maxhp")), e.lit(A_RST),
+                     e.lit("  " + A_CYN + "res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")), e.lit(A_RST),
                      e.lit("  Lv "), e.num(e.f("level")),
-                     e.lit("  Gold "), e.num(e.f("gold")),
+                     e.lit("  " + A_YEL + "Gold "), e.num(e.f("gold")), e.lit(A_RST),
                      e.lit("  Floor "), e.num(e.f("floor")), e.lit("/12"))
         e.say_blank()
     e.if_cmp(e.f("started"), "==", 1, show)
 
 
-def screen_top(e, name, request, mode):
+def screen_top(e, name, request, mode, tone="1;36"):
     """Clear the window and draw the breadcrumb + title banner + vitals for a screen."""
     clear_screen(e)
     crumb_line(e, mode)
-    banner(e, name, request)
+    banner(e, name, request, tone)
     stats_line(e)
 
 
@@ -979,7 +995,7 @@ def gen_combat(e):
     e.assign("LOOK AT ME.estun", 0); e.assign("LOOK AT ME.epoison", 0)
     e.assign("LOOK AT ME.eweak", 0); e.assign("LOOK AT ME.pshield", 0)
     e.say_blank()
-    e.say_string(e.lit("  A "), "ename", e.lit(" attacks!"))
+    e.say_string(e.lit("  A " + A_RED), "ename", e.lit(A_RST + " attacks!"))
     combat_loop(e, "xpr", "goldr", is_boss=False)
     e.end_imethod()
 
@@ -1024,7 +1040,7 @@ def combat_loop(e, xpr, goldr, is_boss):
         e.if_cmp(e.f("ppoison"), ">", 0, ppois)
         # status
         e.say_blank()
-        e.say_string(e.lit("  "), "ename", e.lit("   HP "), e.num(e.f("ehp")), e.lit("/"), e.num(e.f("emaxhp")))
+        e.say_string(e.lit("  " + A_RED), "ename", e.lit(A_RST + "   HP "), e.num(e.f("ehp")), e.lit("/"), e.num(e.f("emaxhp")))
         e.say_string(e.lit("  You      HP "), e.num(e.f("hp")), e.lit("/"), e.num(e.f("maxhp")),
                      e.lit("   res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")))
         combat_menu(e)
@@ -1047,7 +1063,7 @@ def combat_loop(e, xpr, goldr, is_boss):
                                                         e.assign("LOOK AT ME.brandbuff", e.f("brandbuff"), ("-", 1))))
             e.set("cr", Emit.rnd(100))
             e.if_cmp("cr", "<", "critc", lambda: (e.assign("pdmg", "pdmg", ("*", 2)),
-                                                  e.say("  *** CRITICAL! ***")))
+                                                  e.say(col("  *** CRITICAL! ***", "1;33"))))
             # weapon special 5 brand => +2; 6 executioner => +50% vs low hp; 1 lifesteal
             e.if_cmp(e.f("wspec"), "==", 6, lambda: combat_execute(e))
             e.assign("LOOK AT ME.ehp", e.f("ehp"), ("-", "pdmg"))
@@ -1079,11 +1095,11 @@ def combat_loop(e, xpr, goldr, is_boss):
         def enemy_dead():
             e.set("fighting", 0)
             e.say_blank()
-            e.say_string(e.lit("  The "), "ename", e.lit(" is slain."))
+            e.say_string(e.lit("  " + A_GRN + "The "), "ename", e.lit(" is slain." + A_RST))
             e.assign("LOOK AT ME.xp", e.f("xp"), ("+", xpr))
             e.assign("LOOK AT ME.gold", e.f("gold"), ("+", goldr))
             e.assign("LOOK AT ME.kills", e.f("kills"), ("+", 1))
-            e.say_string(e.lit("  +"), e.num(xpr), e.lit(" XP, +"), e.num(goldr), e.lit(" gold."))
+            e.say_string(e.lit("  " + A_GRN + "+"), e.num(xpr), e.lit(" XP, +"), e.num(goldr), e.lit(" gold." + A_RST))
             check_levelup(e)
             e.say_blank()
             e.say("  (press 1 to gather the spoils)")
@@ -1104,7 +1120,7 @@ def combat_loop(e, xpr, goldr, is_boss):
                 e.if_cmp(e.f("eabil"), "==", 5, lambda: enemy_crit(e))
                 e.if_cmp("edmg", "<", 1, lambda: e.set("edmg", 1))
                 e.assign("LOOK AT ME.hp", e.f("hp"), ("-", "edmg"))
-                e.say_string(e.lit("  The "), "ename", e.lit(" hits you for "), e.num("edmg"), e.lit("."))
+                e.say_string(e.lit("  " + A_RED + "The "), "ename", e.lit(" hits you for "), e.num("edmg"), e.lit("." + A_RST))
                 enemy_ability_post(e)
             e.if_cmp(e.f("estun"), ">", 0, stunned, else_body=strike)
             e.if_cmp(e.f("pshield"), ">", 0, lambda: e.assign("LOOK AT ME.pshield", e.f("pshield"), ("-", 1)))
@@ -1324,7 +1340,7 @@ def check_levelup(e):
         e.declare("bump", e.f("level"))
         e.assign("bump", e.f("level"), ("*", e.f("level")), ("*", 4))
         e.assign("LOOK AT ME.xpnext", 30, ("+", "bump"))
-        e.say_string(e.lit("  *** You reach level "), e.num(e.f("level")), e.lit("! ***"))
+        e.say_string(e.lit("  " + A_MAG + "*** You reach level "), e.num(e.f("level")), e.lit("! ***" + A_RST))
         e.cmp("canlvl", e.f("xp"), ">=", e.f("xpnext"), declare=False)
 
     e.while_("canlvl", lvlloop)
@@ -1410,7 +1426,7 @@ def boss_loop(e, xpr, goldr):
         e.if_cmp(e.f("ppoison"), ">", 0, ppois)
         boss_phasecheck(e)
         e.say_blank()
-        e.say_string(e.lit("  "), "ename", e.lit("   HP "), e.num(e.f("ehp")), e.lit("/"), e.num(e.f("emaxhp")))
+        e.say_string(e.lit("  " + A_RED), "ename", e.lit(A_RST + "   HP "), e.num(e.f("ehp")), e.lit("/"), e.num(e.f("emaxhp")))
         e.say_string(e.lit("  You      HP "), e.num(e.f("hp")), e.lit("/"), e.num(e.f("maxhp")),
                      e.lit("   res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")))
         combat_menu(e)
@@ -1430,7 +1446,7 @@ def boss_loop(e, xpr, goldr):
             e.if_cmp(e.f("brandbuff"), ">", 0, lambda: (e.assign("pdmg", "pdmg", ("+", 4)),
                                                         e.assign("LOOK AT ME.brandbuff", e.f("brandbuff"), ("-", 1))))
             e.set("cr", Emit.rnd(100))
-            e.if_cmp("cr", "<", "critc", lambda: (e.assign("pdmg", "pdmg", ("*", 2)), e.say("  *** CRITICAL! ***")))
+            e.if_cmp("cr", "<", "critc", lambda: (e.assign("pdmg", "pdmg", ("*", 2)), e.say(col("  *** CRITICAL! ***", "1;33"))))
             e.if_cmp(e.f("wspec"), "==", 6, lambda: combat_execute(e))
             e.assign("LOOK AT ME.ehp", e.f("ehp"), ("-", "pdmg"))
             e.say_string(e.lit("  You hit "), "ename", e.lit(" for "), e.num("pdmg"), e.lit("."))
@@ -1461,7 +1477,7 @@ def boss_loop(e, xpr, goldr):
                 e.assign("edmg", "eat", ("+", Emit.rnd(5)), ("-", "defu"), ("-", e.f("pshield")))
                 e.if_cmp("edmg", "<", 1, lambda: e.set("edmg", 1))
                 e.assign("LOOK AT ME.hp", e.f("hp"), ("-", "edmg"))
-                e.say_string(e.lit("  "), "ename", e.lit(" strikes you for "), e.num("edmg"), e.lit("."))
+                e.say_string(e.lit("  " + A_RED), "ename", e.lit(" strikes you for "), e.num("edmg"), e.lit("." + A_RST))
             e.if_cmp(e.f("estun"), ">", 0, stunned, else_body=strike)
             e.if_cmp(e.f("pshield"), ">", 0, lambda: e.assign("LOOK AT ME.pshield", e.f("pshield"), ("-", 1)))
             def dead():
@@ -1549,7 +1565,7 @@ def boss_defeat(e, xpr, goldr):
     e.assign("LOOK AT ME.xp", e.f("xp"), ("+", xpr))
     e.assign("LOOK AT ME.gold", e.f("gold"), ("+", goldr))
     e.assign("LOOK AT ME.kills", e.f("kills"), ("+", 1))
-    e.say_string(e.lit("  +"), e.num(xpr), e.lit(" XP, +"), e.num(goldr), e.lit(" gold."))
+    e.say_string(e.lit("  " + A_GRN + "+"), e.num(xpr), e.lit(" XP, +"), e.num(goldr), e.lit(" gold." + A_RST))
     # grant boss drop (mark owned) by bossid
     drop_cases = []
     for b in C.BOSSES:
@@ -1616,8 +1632,8 @@ def boss_drop_effect(e, b):
 # -----------------------------------------------------------------  gameover / victory
 def gen_gameover(e):
     e.imethod("gameover")
-    screen_top(e, "YOU DIED", "the Mirewood drinks another Delver", M_GAMEOVER)
-    e.say("    You fall. The Mirewood drinks another Delver.")
+    screen_top(e, "YOU DIED", "the Mirewood drinks another Delver", M_GAMEOVER, tone="1;31")
+    e.say(col("    You fall. The Mirewood drinks another Delver.", "31"))
     e.say_string(e.lit("    Level "), e.num(e.f("level")), e.lit(", "), e.num(e.f("kills")), e.lit(" kills, floor "),
                  e.num(e.f("floor")), e.lit("."))
     e.say_blank()
@@ -1642,7 +1658,7 @@ def gen_gameover(e):
 
 def gen_victory(e):
     e.imethod("victory")
-    screen_top(e, "VICTORY", "the Sunken Crown is broken", M_VICTORY)
+    screen_top(e, "VICTORY", "the Sunken Crown is broken", M_VICTORY, tone="1;33")
     e.say("  ================================================================")
     for ln in C.ENDING:
         e.say("   " + ln) if ln else e.say_blank()

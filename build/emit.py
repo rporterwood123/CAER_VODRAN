@@ -12,7 +12,9 @@ Hard language facts this emitter respects (verified against the compiler):
   * `if`/`while` take a SINGLE pre-computed boolean operand (no inline compares).
   * Arithmetic in an assignment block is left-to-right, NO precedence.
   * print == println (newline every time) -> build whole lines, print once.
-  * String literals may NOT contain backslashes or double-quotes.
+  * String literals now take C-style backslash escapes (\\n \\t \\r \\" \\\\ \\0
+    \\uXXXX); safe_str() escapes specials and renders control bytes (e.g. ESC) as
+    \\uXXXX, so ANSI codes become readable escapes the compiler decodes.
   * Strings have no reassignment statement: a given string var name is declared
     ONCE per method (re-declaration is a duplicate-variable error). Use fresh
     names; inside a loop a single declaration is fine (one slot, re-stored).
@@ -114,8 +116,29 @@ ARITH = {"+": "plus", "-": "minus", "*": "mul", "/": "div", "%": "mod"}
 
 
 def safe_str(s):
-    """Strings can't contain backslashes or double quotes; strip/replace them."""
-    return str(s).replace("\\", "/").replace('"', "'")
+    """Escape a Python string for an ActionC string literal.
+
+    The compiler decodes C-style escapes (\\n \\t \\r \\" \\\\ \\0 \\uXXXX) at compile
+    time, so we escape backslash and double-quote and render any control byte --
+    notably ESC (0x1b) for ANSI codes -- as a readable \\uXXXX sequence rather than
+    embedding a raw control character in the generated source."""
+    out = []
+    for ch in str(s):
+        if ch == "\\":
+            out.append("\\\\")
+        elif ch == '"':
+            out.append('\\"')
+        elif ch == "\n":
+            out.append("\\n")
+        elif ch == "\t":
+            out.append("\\t")
+        elif ch == "\r":
+            out.append("\\r")
+        elif ord(ch) < 0x20:
+            out.append("\\u%04x" % ord(ch))
+        else:
+            out.append(ch)
+    return "".join(out)
 
 
 class Emit:

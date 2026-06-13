@@ -109,7 +109,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF title
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -126,29 +126,29 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
@@ -415,7 +415,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF classSelect
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -432,34 +432,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  =============== THE CHOOSING ==============="
-        TALK TO THE HAND "  choose your path, Delver"
+        TALK TO THE HAND "  \u001b[1;36m=============== THE CHOOSING ===============\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mchoose your path, Delver\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -469,18 +469,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -789,7 +792,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF actintro
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -806,34 +809,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  ================= THE TALE ================="
-        TALK TO THE HAND "  the story so far"
+        TALK TO THE HAND "  \u001b[1;36m================= THE TALE =================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mthe story so far\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -843,18 +846,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -891,7 +897,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF camp
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -908,34 +914,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  =================== CAMP ==================="
-        TALK TO THE HAND "  choose an action"
+        TALK TO THE HAND "  \u001b[1;36m=================== CAMP ===================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mchoose an action\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -945,18 +951,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -1449,7 +1458,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF shop
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -1466,34 +1475,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  ============= THE MIRE-PEDLAR =============="
-        TALK TO THE HAND "  spend your gold"
+        TALK TO THE HAND "  \u001b[1;36m============= THE MIRE-PEDLAR ==============\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mspend your gold\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -1503,18 +1512,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -2740,7 +2752,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF equip
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -2757,34 +2769,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  ================ EQUIPMENT ================="
-        TALK TO THE HAND "  manage your gear"
+        TALK TO THE HAND "  \u001b[1;36m================ EQUIPMENT =================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mmanage your gear\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -2794,18 +2806,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -5125,7 +5140,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF explore
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -5142,34 +5157,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  =============== THE DESCENT ================"
-        TALK TO THE HAND "  you press deeper"
+        TALK TO THE HAND "  \u001b[1;36m=============== THE DESCENT ================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2myou press deeper\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -5179,18 +5194,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -5545,7 +5563,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF combat
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -5562,34 +5580,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  ================== COMBAT =================="
-        TALK TO THE HAND "  to battle"
+        TALK TO THE HAND "  \u001b[1;36m================== COMBAT ==================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mto battle\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -5599,18 +5617,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -5686,9 +5707,9 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         TALK TO THE HAND ""
         I HAVE COME HERE TO CHEW BUBBLEGUM zzs9
-        AND KICK ASS "  A "
+        AND KICK ASS "  A \u001b[31m"
         AND KICK ASS ename
-        AND KICK ASS " attacks!"
+        AND KICK ASS "\u001b[0m attacks!"
         TALK TO THE HAND zzs9
         HEY CHRISTMAS TREE pstat
         YOU SET US UP LOOK AT ME.pstr
@@ -5782,9 +5803,9 @@ MY NAME IS MAXIMUS Game
             YOU HAVE NO RESPECT FOR LOGIC
             TALK TO THE HAND ""
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs14
-            AND KICK ASS "  "
+            AND KICK ASS "  \u001b[31m"
             AND KICK ASS ename
-            AND KICK ASS "   HP "
+            AND KICK ASS "\u001b[0m   HP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.ehp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.emaxhp
@@ -6316,7 +6337,7 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION pdmg
                     YOU'RE FIRED 2
                     ENOUGH TALK
-                    TALK TO THE HAND "  *** CRITICAL! ***"
+                    TALK TO THE HAND "\u001b[1;33m  *** CRITICAL! ***\u001b[0m"
                 YOU HAVE NO RESPECT FOR LOGIC
                 HEY CHRISTMAS TREE zzb42
                 YOU SET US UP 0
@@ -6490,9 +6511,9 @@ MY NAME IS MAXIMUS Game
                     ENOUGH TALK
                     TALK TO THE HAND ""
                     I HAVE COME HERE TO CHEW BUBBLEGUM zzs56
-                    AND KICK ASS "  The "
+                    AND KICK ASS "  \u001b[32mThe "
                     AND KICK ASS ename
-                    AND KICK ASS " is slain."
+                    AND KICK ASS " is slain.\u001b[0m"
                     TALK TO THE HAND zzs56
                     GET TO THE CHOPPER LOOK AT ME.xp
                     HERE IS MY INVITATION LOOK AT ME.xp
@@ -6507,11 +6528,11 @@ MY NAME IS MAXIMUS Game
                     GET UP 1
                     ENOUGH TALK
                     I HAVE COME HERE TO CHEW BUBBLEGUM zzs57
-                    AND KICK ASS "  +"
+                    AND KICK ASS "  \u001b[32m+"
                     AND KICK ASS SPELL IT OUT xpr
                     AND KICK ASS " XP, +"
                     AND KICK ASS SPELL IT OUT goldr
-                    AND KICK ASS " gold."
+                    AND KICK ASS " gold.\u001b[0m"
                     TALK TO THE HAND zzs57
                     HEY CHRISTMAS TREE canlvl
                     YOU SET US UP 0
@@ -6631,9 +6652,9 @@ MY NAME IS MAXIMUS Game
                         GET UP bump
                         ENOUGH TALK
                         I HAVE COME HERE TO CHEW BUBBLEGUM zzs58
-                        AND KICK ASS "  *** You reach level "
+                        AND KICK ASS "  \u001b[35m*** You reach level "
                         AND KICK ASS SPELL IT OUT LOOK AT ME.level
-                        AND KICK ASS "! ***"
+                        AND KICK ASS "! ***\u001b[0m"
                         TALK TO THE HAND zzs58
                         GET TO THE CHOPPER canlvl
                         HERE IS MY INVITATION LOOK AT ME.xp
@@ -6772,11 +6793,11 @@ MY NAME IS MAXIMUS Game
                             GET DOWN edmg
                             ENOUGH TALK
                             I HAVE COME HERE TO CHEW BUBBLEGUM zzs69
-                            AND KICK ASS "  The "
+                            AND KICK ASS "  \u001b[31mThe "
                             AND KICK ASS ename
                             AND KICK ASS " hits you for "
                             AND KICK ASS SPELL IT OUT edmg
-                            AND KICK ASS "."
+                            AND KICK ASS ".\u001b[0m"
                             TALK TO THE HAND zzs69
                             HEY CHRISTMAS TREE zzb70
                             YOU SET US UP 0
@@ -6896,7 +6917,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF bossfight
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -6913,34 +6934,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  =================== BOSS ==================="
-        TALK TO THE HAND "  to battle"
+        TALK TO THE HAND "  \u001b[1;36m=================== BOSS ===================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mto battle\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -6950,18 +6971,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -7258,9 +7282,9 @@ MY NAME IS MAXIMUS Game
             YOU HAVE NO RESPECT FOR LOGIC
             TALK TO THE HAND ""
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs17
-            AND KICK ASS "  "
+            AND KICK ASS "  \u001b[31m"
             AND KICK ASS ename
-            AND KICK ASS "   HP "
+            AND KICK ASS "\u001b[0m   HP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.ehp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.emaxhp
@@ -7776,7 +7800,7 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION pdmg
                     YOU'RE FIRED 2
                     ENOUGH TALK
-                    TALK TO THE HAND "  *** CRITICAL! ***"
+                    TALK TO THE HAND "\u001b[1;33m  *** CRITICAL! ***\u001b[0m"
                 YOU HAVE NO RESPECT FOR LOGIC
                 HEY CHRISTMAS TREE zzb44
                 YOU SET US UP 0
@@ -7925,11 +7949,11 @@ MY NAME IS MAXIMUS Game
                 GET UP 1
                 ENOUGH TALK
                 I HAVE COME HERE TO CHEW BUBBLEGUM zzs53
-                AND KICK ASS "  +"
+                AND KICK ASS "  \u001b[32m+"
                 AND KICK ASS SPELL IT OUT xpr
                 AND KICK ASS " XP, +"
                 AND KICK ASS SPELL IT OUT goldr
-                AND KICK ASS " gold."
+                AND KICK ASS " gold.\u001b[0m"
                 TALK TO THE HAND zzs53
                 CHOOSE YOUR DESTINY LOOK AT ME.bossid
                     WHAT IF I TOLD YOU 0
@@ -8095,9 +8119,9 @@ MY NAME IS MAXIMUS Game
                     GET UP bump
                     ENOUGH TALK
                     I HAVE COME HERE TO CHEW BUBBLEGUM zzs58
-                    AND KICK ASS "  *** You reach level "
+                    AND KICK ASS "  \u001b[35m*** You reach level "
                     AND KICK ASS SPELL IT OUT LOOK AT ME.level
-                    AND KICK ASS "! ***"
+                    AND KICK ASS "! ***\u001b[0m"
                     TALK TO THE HAND zzs58
                     GET TO THE CHOPPER canlvl
                     HERE IS MY INVITATION LOOK AT ME.xp
@@ -8277,11 +8301,11 @@ MY NAME IS MAXIMUS Game
                         GET DOWN edmg
                         ENOUGH TALK
                         I HAVE COME HERE TO CHEW BUBBLEGUM zzs66
-                        AND KICK ASS "  "
+                        AND KICK ASS "  \u001b[31m"
                         AND KICK ASS ename
                         AND KICK ASS " strikes you for "
                         AND KICK ASS SPELL IT OUT edmg
-                        AND KICK ASS "."
+                        AND KICK ASS ".\u001b[0m"
                         TALK TO THE HAND zzs66
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzb67
@@ -8344,7 +8368,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF event
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -8361,34 +8385,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  ================= AN OMEN =================="
-        TALK TO THE HAND "  the dark offers a choice"
+        TALK TO THE HAND "  \u001b[1;36m================= AN OMEN ==================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mthe dark offers a choice\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -8398,18 +8422,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
@@ -8951,7 +8978,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF gameover
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -8968,34 +8995,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  ================= YOU DIED ================="
-        TALK TO THE HAND "  the Mirewood drinks another Delver"
+        TALK TO THE HAND "  \u001b[1;31m================= YOU DIED =================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mthe Mirewood drinks another Delver\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -9005,25 +9032,28 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "    You fall. The Mirewood drinks another Delver."
+        TALK TO THE HAND "\u001b[31m    You fall. The Mirewood drinks another Delver.\u001b[0m"
         I HAVE COME HERE TO CHEW BUBBLEGUM zzs5
         AND KICK ASS "    Level "
         AND KICK ASS SPELL IT OUT LOOK AT ME.level
@@ -9272,7 +9302,7 @@ MY NAME IS MAXIMUS Game
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF victory
-        TALK TO THE HAND "[2J[3J[H"
+        TALK TO THE HAND "\u001b[2J\u001b[3J\u001b[H"
         HEY CHRISTMAS TREE zzb1
         YOU SET US UP 0
         GET TO THE CHOPPER zzb1
@@ -9289,34 +9319,34 @@ MY NAME IS MAXIMUS Game
             BECAUSE I'M GOING TO SAY PLEASE zzb2
                 CHOOSE YOUR DESTINY LOOK AT ME.crumb
                     WHAT IF I TOLD YOU 0
-                        TALK TO THE HAND "  > from:  the threshold"
+                        TALK TO THE HAND "\u001b[2m  > from:  the threshold\u001b[0m"
                     WHAT IF I TOLD YOU 1
-                        TALK TO THE HAND "  > from:  the choosing"
+                        TALK TO THE HAND "\u001b[2m  > from:  the choosing\u001b[0m"
                     WHAT IF I TOLD YOU 12
-                        TALK TO THE HAND "  > from:  the tale"
+                        TALK TO THE HAND "\u001b[2m  > from:  the tale\u001b[0m"
                     WHAT IF I TOLD YOU 2
-                        TALK TO THE HAND "  > from:  Camp"
+                        TALK TO THE HAND "\u001b[2m  > from:  Camp\u001b[0m"
                     WHAT IF I TOLD YOU 10
-                        TALK TO THE HAND "  > from:  the Mire-Pedlar"
+                        TALK TO THE HAND "\u001b[2m  > from:  the Mire-Pedlar\u001b[0m"
                     WHAT IF I TOLD YOU 11
-                        TALK TO THE HAND "  > from:  your gear"
+                        TALK TO THE HAND "\u001b[2m  > from:  your gear\u001b[0m"
                     WHAT IF I TOLD YOU 6
-                        TALK TO THE HAND "  > from:  the descent"
+                        TALK TO THE HAND "\u001b[2m  > from:  the descent\u001b[0m"
                     WHAT IF I TOLD YOU 3
-                        TALK TO THE HAND "  > from:  the fight"
+                        TALK TO THE HAND "\u001b[2m  > from:  the fight\u001b[0m"
                     WHAT IF I TOLD YOU 8
-                        TALK TO THE HAND "  > from:  the boss"
+                        TALK TO THE HAND "\u001b[2m  > from:  the boss\u001b[0m"
                     WHAT IF I TOLD YOU 7
-                        TALK TO THE HAND "  > from:  an omen"
+                        TALK TO THE HAND "\u001b[2m  > from:  an omen\u001b[0m"
                     WHAT IF I TOLD YOU 4
-                        TALK TO THE HAND "  > from:  death"
+                        TALK TO THE HAND "\u001b[2m  > from:  death\u001b[0m"
                     WHAT IF I TOLD YOU 5
-                        TALK TO THE HAND "  > from:  victory"
+                        TALK TO THE HAND "\u001b[2m  > from:  victory\u001b[0m"
                 FINISH HIM
             YOU HAVE NO RESPECT FOR LOGIC
         YOU HAVE NO RESPECT FOR LOGIC
-        TALK TO THE HAND "  ================= VICTORY =================="
-        TALK TO THE HAND "  the Sunken Crown is broken"
+        TALK TO THE HAND "  \u001b[1;33m================= VICTORY ==================\u001b[0m"
+        TALK TO THE HAND "  \u001b[2mthe Sunken Crown is broken\u001b[0m"
         TALK TO THE HAND ""
         HEY CHRISTMAS TREE zzb3
         YOU SET US UP 0
@@ -9326,18 +9356,21 @@ MY NAME IS MAXIMUS Game
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb3
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs4
-            AND KICK ASS "  HP "
+            AND KICK ASS "  \u001b[31mHP "
             AND KICK ASS SPELL IT OUT LOOK AT ME.hp
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxhp
-            AND KICK ASS "  res "
+            AND KICK ASS "\u001b[0m"
+            AND KICK ASS "  \u001b[36mres "
             AND KICK ASS SPELL IT OUT LOOK AT ME.res
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.maxres
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Lv "
             AND KICK ASS SPELL IT OUT LOOK AT ME.level
-            AND KICK ASS "  Gold "
+            AND KICK ASS "  \u001b[33mGold "
             AND KICK ASS SPELL IT OUT LOOK AT ME.gold
+            AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS "/12"
