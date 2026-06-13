@@ -40,7 +40,7 @@ FIELDS = [
     "wid", "wpow", "wspec", "aid", "tid",
     "eqhp", "eqres", "eqdef", "eqcrit", "ownw", "owna", "ownt",
     "potHeal", "potRes", "potCure", "bombs", "elixir",
-    "act", "floor", "room", "roomcount", "bossmask", "shopret", "brandbuff",
+    "act", "floor", "room", "roomcount", "bossmask", "shopret", "brandbuff", "nextshield",
     "eid", "ehp", "emaxhp", "eatk", "edef", "eabil",
     "estun", "epoison", "eweak", "pshield", "ppoison", "pweak",
     "isboss", "bossid", "bphase", "pendmon", "pendev",
@@ -227,7 +227,7 @@ def gen_boot(e):
     br = "|".join("#".join(str(x) for x in (b["name"], b["hp"], b["atk"], b["df"], b["xp"], b["gold"])) for b in C.BOSSES)
     e.string("db", e.lit(br)); e.write_file("db", BOSS)
     # per-floor monster id pools (record per floor, ids comma-separated)
-    pool = "|".join(",".join(str(i) for i in floor_pool(f)) for f in range(1, 13))
+    pool = "|".join(",".join(str(i) for i in floor_pool(f)) for f in range(1, 31))
     e.string("dp", e.lit(pool)); e.write_file("dp", POOL)
     e.assign("LOOK AT ME.mode", M_TITLE)
     e.end_imethod()
@@ -318,6 +318,7 @@ def gen_initclass(e):
     e.assign("LOOK AT ME.room", 0)
     e.assign("LOOK AT ME.bossmask", 0)
     e.assign("LOOK AT ME.brandbuff", 0)
+    e.assign("LOOK AT ME.nextshield", 0)
     # consumables
     e.assign("LOOK AT ME.potHeal", 3); e.assign("LOOK AT ME.potRes", 1)
     e.assign("LOOK AT ME.potCure", 1); e.assign("LOOK AT ME.bombs", 1); e.assign("LOOK AT ME.elixir", 0)
@@ -769,20 +770,31 @@ def gen_explore(e):
         e.if_cmp("bossfloor", "==", 1, to_boss, else_body=to_next)
 
     def present_room():
-        # roll room type: 0-54 combat, 55-74 event, 75-86 treasure, 87-94 rest, 95-99 elite
+        # room roll (0-99): 0-35 combat, 36-42 ambush, 43-48 elite, 49-60 event,
+        # 61-70 chest, 71-77 treasure, 78-83 shrine, 84-89 hazard, 90-94 lore, 95-99 rest
         floor_name_room(e)
         e.declare("roll", Emit.rnd(100))
         e.declare("rt", 0)  # room type
-        e.if_cmp("roll", ">=", 55, lambda: e.set("rt", 1))
-        e.if_cmp("roll", ">=", 75, lambda: e.set("rt", 2))
-        e.if_cmp("roll", ">=", 87, lambda: e.set("rt", 3))
-        e.if_cmp("roll", ">=", 95, lambda: e.set("rt", 4))
+        e.if_cmp("roll", ">=", 36, lambda: e.set("rt", 1))
+        e.if_cmp("roll", ">=", 43, lambda: e.set("rt", 2))
+        e.if_cmp("roll", ">=", 49, lambda: e.set("rt", 3))
+        e.if_cmp("roll", ">=", 61, lambda: e.set("rt", 4))
+        e.if_cmp("roll", ">=", 71, lambda: e.set("rt", 5))
+        e.if_cmp("roll", ">=", 78, lambda: e.set("rt", 6))
+        e.if_cmp("roll", ">=", 84, lambda: e.set("rt", 7))
+        e.if_cmp("roll", ">=", 90, lambda: e.set("rt", 8))
+        e.if_cmp("roll", ">=", 95, lambda: e.set("rt", 9))
         e.switch("rt", [
             (0, lambda: room_combat(e, elite=False)),
-            (1, lambda: room_event(e)),
-            (2, lambda: room_treasure(e)),
-            (3, lambda: room_rest(e)),
-            (4, lambda: room_combat(e, elite=True)),
+            (1, lambda: room_ambush(e)),
+            (2, lambda: room_combat(e, elite=True)),
+            (3, lambda: room_event(e)),
+            (4, lambda: room_chest(e)),
+            (5, lambda: room_treasure(e)),
+            (6, lambda: room_shrine(e)),
+            (7, lambda: room_hazard(e)),
+            (8, lambda: room_lore(e)),
+            (9, lambda: room_rest(e)),
         ])
     e.if_cmp("done", "==", 1, floor_done, else_body=present_room)
     e.end_imethod()
@@ -806,7 +818,7 @@ def room_combat(e, elite):
     e.declare("pf", e.f("floor"))
     if elite:
         e.assign("pf", e.f("floor"), ("+", 2))
-        e.if_cmp("pf", ">", 12, lambda: e.set("pf", 12))
+        e.if_cmp("pf", ">", 30, lambda: e.set("pf", 30))
     e.declare("pidx", "pf")
     e.assign("pidx", "pf", ("-", 1))
     poolrec = read_record(e, POOL, "pidx")
@@ -857,6 +869,148 @@ def room_event(e):
     e.declare("ev", Emit.rnd(len(C.EVENTS)))
     e.assign("LOOK AT ME.pendev", "ev")
     e.assign("LOOK AT ME.mode", M_EVENT)
+
+
+def room_pause(e):
+    e.say("  (press 1 to continue)")
+    e.declare("c", 0)
+    read_choice(e, "c")
+
+
+def room_ambush(e):
+    e.say("  Shapes peel from the dark all at once - an AMBUSH!")
+    e.assign("LOOK AT ME.potHeal", e.f("potHeal"), ("+", 1))
+    e.say("  (you tear a Mirewine Draught from a falling hand as they close)")
+    room_combat(e, elite=True)
+
+
+def chest_give(e, fld, label):
+    e.assign("LOOK AT ME." + fld, e.f(fld), ("+", 1))
+    e.say("  The chest holds " + label + ".")
+
+
+def room_chest(e):
+    e.say("  A strongbox sits half-buried in the dark, its lock long dead.")
+    e.declare("cr", Emit.rnd(100))
+
+    def gold():
+        e.declare("cg", Emit.rnd(25))
+        e.assign("cg", "cg", ("+", 15), ("+", e.f("floor")), ("+", e.f("floor")))
+        e.assign("LOOK AT ME.gold", e.f("gold"), ("+", "cg"))
+        e.say_string(e.lit("  The chest holds "), e.num("cg"), e.lit(" gold."))
+        room_pause(e)
+
+    def consum():
+        e.declare("ci", Emit.rnd(5))
+        e.switch("ci", [
+            (0, lambda: chest_give(e, "potHeal", "a Mirewine Draught")),
+            (1, lambda: chest_give(e, "potRes", "a Star Tonic")),
+            (2, lambda: chest_give(e, "potCure", "an Antidote")),
+            (3, lambda: chest_give(e, "bombs", "a Thornbomb")),
+            (4, lambda: chest_give(e, "elixir", "a Greater Elixir")),
+        ])
+        room_pause(e)
+
+    def gearloot():
+        e.declare("ga", e.f("act"))
+        e.declare("gi", Emit.rnd("ga"))
+        e.assign("gi", "gi", ("+", 1))  # 1..act
+        e.if_cmp("gi", ">", len(C.ARMORS) - 1, lambda: e.set("gi", len(C.ARMORS) - 1))
+        rec = read_record(e, ARM, "gi")
+        e.bit_set("LOOK AT ME.owna", "gi")
+        e.say_string(e.lit("  The chest holds armor - "), Emit.aget(rec, 0), e.lit(" (now owned)."))
+        room_pause(e)
+
+    def raretrinket():
+        e.declare("ta", e.f("act"))
+        e.declare("ti", Emit.rnd("ta"))
+        e.assign("ti", "ti", ("+", 1))  # 1..act
+        e.if_cmp("ti", ">", len(C.TRINKETS) - 1, lambda: e.set("ti", len(C.TRINKETS) - 1))
+        rec = read_record(e, TRK, "ti")
+        e.bit_set("LOOK AT ME.ownt", "ti")
+        e.say_string(e.lit("  The chest holds a trinket - "), Emit.aget(rec, 0), e.lit(" (now owned)."))
+        room_pause(e)
+
+    def mimic():
+        e.say("  ...and the lock grins back. It is a MIMIC!")
+        room_combat(e, elite=True)
+
+    e.if_cmp("cr", "<", 35, gold, else_body=lambda:
+        e.if_cmp("cr", "<", 60, consum, else_body=lambda:
+            e.if_cmp("cr", "<", 80, gearloot, else_body=lambda:
+                e.if_cmp("cr", "<", 92, raretrinket, else_body=mimic))))
+
+
+def room_shrine(e):
+    e.say("  A star-altar stands in a ring of cold, sourceless light.")
+    e.say("   1) Offer blood  - a charge of power (+4 dmg, next 8 hits)")
+    e.say("   2) Offer gold   - a ward to shield your next fight")
+    e.say("   3) Pray         - mend body and focus")
+    e.say("   0) Leave it be")
+    e.declare("sc", 0)
+    read_choice(e, "sc")
+
+    def blood():
+        e.assign("LOOK AT ME.hp", e.f("hp"), ("-", 5))
+        emit_clamp(e)
+        e.assign("LOOK AT ME.brandbuff", 8)
+        e.say("  You open a vein on the altar. Your weapon drinks the starlight.")
+
+    def ward():
+        def pay():
+            e.assign("LOOK AT ME.gold", e.f("gold"), ("-", 30))
+            e.assign("LOOK AT ME.nextshield", 10)
+            e.say("  The altar wreathes you in a ward. (it will shield your next fight)")
+        e.if_cmp(e.f("gold"), ">=", 30, pay,
+                 else_body=lambda: e.say("  You lack the 30 gold the altar asks."))
+
+    def pray():
+        e.declare("ph", e.f("maxhp"))
+        e.assign("ph", e.f("maxhp"), ("/", 3))
+        e.assign("LOOK AT ME.hp", e.f("hp"), ("+", "ph"))
+        e.assign("LOOK AT ME.res", e.f("res"), ("+", 8))
+        emit_clamp(e)
+        e.say_string(e.lit("  Warmth fills you. Recovered "), e.num("ph"), e.lit(" HP and some focus."))
+
+    e.switch("sc", [(1, blood), (2, ward), (3, pray)],
+             default=lambda: e.say("  You leave the altar to its silence."))
+    room_pause(e)
+
+
+def room_hazard(e):
+    e.say("  The way ahead turns deadly - a hazard of the deep castle.")
+    e.declare("hz", Emit.rnd(100))
+    e.declare("thr", e.f("pdex"))
+    e.assign("thr", e.f("pdex"), ("*", 3), ("+", 35))  # dodge chance scales with DEX
+
+    def safe():
+        e.say("  You read the danger in time and slip through, unscathed.")
+
+    def hit():
+        e.declare("hd", e.f("floor"))
+        e.assign("hd", e.f("floor"), ("+", 6))
+        e.assign("LOOK AT ME.hp", e.f("hp"), ("-", "hd"))
+        emit_clamp(e)
+        e.say_string(e.lit("  It catches you for "), e.num("hd"), e.lit(" damage."))
+
+    e.if_cmp("hz", "<", "thr", safe, else_body=hit)
+    room_pause(e)
+
+
+def room_lore(e):
+    e.say("  A memory bleeds from the wet stone, and for a moment you are elsewhere.")
+    cases = []
+    for a in sorted(C.LORE_FRAGMENTS):
+        def mk(a=a):
+            def inner():
+                for ln in C.LORE_FRAGMENTS[a]:
+                    e.say("   " + ln)
+            return inner
+        cases.append((a, mk()))
+    e.switch(e.f("act"), cases)
+    e.assign("LOOK AT ME.xp", e.f("xp"), ("+", 12))
+    e.say("  The memory fades. (+12 XP)")
+    room_pause(e)
 
 
 # Add a raw aget passthrough for clarity
@@ -986,7 +1140,10 @@ def gen_combat(e):
     e.if_cmp(e.f("isboss"), "==", 2, lambda: combat_elite_boost(e, "xpr", "goldr"))
     e.assign("LOOK AT ME.emaxhp", e.f("ehp"))
     e.assign("LOOK AT ME.estun", 0); e.assign("LOOK AT ME.epoison", 0)
-    e.assign("LOOK AT ME.eweak", 0); e.assign("LOOK AT ME.pshield", 0)
+    e.assign("LOOK AT ME.eweak", 0)
+    # a shrine ward (nextshield) carries into the fight as starting shield, then clears
+    e.assign("LOOK AT ME.pshield", e.f("nextshield"))
+    e.assign("LOOK AT ME.nextshield", 0)
     e.say_blank()
     e.say_string(e.lit("  A " + A_RED), "ename", e.lit(A_RST + " attacks!"))
     combat_loop(e, "xpr", "goldr", is_boss=False)
@@ -1367,6 +1524,9 @@ def gen_bossfight(e):
     e.assign("LOOK AT ME.eabil", 0)
     e.assign("LOOK AT ME.isboss", 1)
     e.assign("LOOK AT ME.bphase", 1)
+    # a shrine ward (nextshield) carries into the fight as starting shield, then clears
+    e.assign("LOOK AT ME.pshield", e.f("nextshield"))
+    e.assign("LOOK AT ME.nextshield", 0)
     e.string("ename", Emit.aget(rec, 0))
     # intro lore by bossid
     boss_intro(e)

@@ -570,6 +570,31 @@ ACT_INTRO = {
         "The whisper has a direction now. It is down. It has always been down."],
 }
 
+# ============================================================ LORE FRAGMENTS
+# Shown by 'lore' rooms, keyed by act (region). Two lines each. Pure flavor (+ small XP).
+LORE_FRAGMENTS = {
+    1: ["A surveyor's ghost mutters of a star that fell before the maps were drawn,",
+        "and a king who paid his masons in silence to wall the light away."],
+    2: ["Scratched into the gate-stone: 'We held three years. The thing inside held longer.'",
+        "The hand that carved it stopped mid-word."],
+    3: ["A drowned ledger lists the garrison's dead by the hundred, then simply: 'all'.",
+        "The final entry is your own name, in a hand you do not recognize."],
+    4: ["The banners name battles no history remembers, against an enemy with no name -",
+        "only a direction. Down. The court marched down, and did not march back."],
+    5: ["A scholar's note, the ink still wet after centuries: 'The Crown tells no lies.'",
+        "'That is the horror of it. Every promise it makes, it keeps.'"],
+    6: ["The muster-roll still calls the watch each dusk, and the ash still answers.",
+        "They were promised relief at dawn. No dawn has come to the Barracks since."],
+    7: ["The choir's first hymn was a prayer; the second, a bargain; the third had no words -",
+        "by then the singers had given the Crown their voices to hold for safekeeping."],
+    8: ["The star did not fall by accident, the crystals sing. It was thrown - or it leapt.",
+        "Something wanted to be buried here. Something is still glad that it is."],
+    9: ["The whisper tries on your memories like coats: your first kill, your last fear.",
+        "It wears them better than you do, and asks, gently, why you came so far to die."],
+    10:["This close, the Crown's voice is your own, older and certain and kind:",
+        "'You could put me on. You could end the descent. You could simply stop being afraid.'"],
+}
+
 INTRO = [
     "Long ago a star fell on the kingdom of Aelthmoor, and the court built",
     "Caer Vodran to cage its light. The mages called the shard the Sunken Crown,",
