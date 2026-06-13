@@ -89,7 +89,7 @@ MY NAME IS MAXIMUS Game
         AND KICK ASS "Cracked Charm#normal#0#0#0#0#0|Ring of Vigor#normal#12#0#0#0#110|Amulet of Focus#normal#0#12#0#0#110|Band of the Cat#magic#0#0#0#12#180|Aegis Signet#magic#6#0#4#0#220|Sanguine Locket#magic#18#0#0#5#300|Mythril Torc#magic#10#10#3#4#360|Starseed Pendant#unique#20#16#4#10#720"
         WRITE THAT DOWN dt TO "vodran_trk.dat"
         I HAVE COME HERE TO CHEW BUBBLEGUM db
-        AND KICK ASS "The Warden of Thorns#130#12#6#120#120|Maerith, the Hollow Choir#300#18#8#300#260|Vodran, the Sunken Crown#520#24#12#999#500"
+        AND KICK ASS "The Mire-Warden#110#11#5#120#110|The Gate-Golem#155#13#6#170#150|Sir Caedric, the Drowned#215#15#7#240#200|The Echo#290#17#8#320#260|The Ink-Wraith#375#19#9#420#320|Captain Vurm, Unfallen#460#22#10#540#390|Maerith of the Choir#560#25#11#680#470|The Crystalline Horror#650#28#12#820#560|The Mirror#730#31#13#980#660|Vodran, the Sunken Crown#820#34#15#1500#800"
         WRITE THAT DOWN db TO "vodran_boss.dat"
         I HAVE COME HERE TO CHEW BUBBLEGUM dp
         AND KICK ASS "0,1,2,5,9,10,12,14,15|0,1,2,3,5,6,7,8,9,10,12,13,14,15,16|1,2,3,4,6,7,8,10,11,12,13,15,16,17|3,4,6,7,8,11,13,16,17,18,23,26,30,35|11,18,19,20,22,23,24,26,27,29,30,31,33,34,35|18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35|19,20,21,22,23,24,25,27,28,29,30,31,32,33,34,35|20,21,24,25,27,28,29,31,32,34,36,41,46|36,37,39,41,42,43,44,46,49|36,37,38,39,40,41,42,43,44,45,46,47,48,49|37,38,39,40,42,43,44,45,46,47,48,49|38,39,40,42,43,44,45,47,48,49"
@@ -478,7 +478,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -849,22 +849,50 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
         TALK TO THE HAND "  ----------------------------------------------------------------"
         CHOOSE YOUR DESTINY LOOK AT ME.act
             WHAT IF I TOLD YOU 1
-                TALK TO THE HAND "   ACT I  -  THE MIREWOOD APPROACH"
+                TALK TO THE HAND "   ACT I  -  THE DROWNED MIRE"
                 TALK TO THE HAND "   They say a star fell on Aelthmoor and the castle drank it. They say the"
                 TALK TO THE HAND "   Mirewood grew to seal the wound. You go where the saying ends."
             WHAT IF I TOLD YOU 2
-                TALK TO THE HAND "   ACT II  -  THE HOLLOW HALLS"
-                TALK TO THE HAND "   The gate is broken behind you. Inside, the castle is not empty - it is"
-                TALK TO THE HAND "   occupied, by everything it used to be, hollowed and humming."
+                TALK TO THE HAND "   ACT II  -  THE BROKEN BARBICAN"
+                TALK TO THE HAND "   The bog is behind you; the first real stone is not. Caer Vodran's outer"
+                TALK TO THE HAND "   wall still stands its watch, though nothing living mans it."
             WHAT IF I TOLD YOU 3
-                TALK TO THE HAND "   ACT III  -  THE SUNKEN VAULT"
+                TALK TO THE HAND "   ACT III  -  THE FLOODED WARDS"
+                TALK TO THE HAND "   Inside the wall, the courts lie under black water to the knee. The garrison"
+                TALK TO THE HAND "   drowned at its posts an age ago, and has not yet noticed."
+            WHAT IF I TOLD YOU 4
+                TALK TO THE HAND "   ACT IV  -  THE HOLLOW HALLS"
+                TALK TO THE HAND "   The keep proper. Banners rot, hearths are cold, and the halls are not empty -"
+                TALK TO THE HAND "   they are occupied, by everything they used to be, hollowed and humming."
+            WHAT IF I TOLD YOU 5
+                TALK TO THE HAND "   ACT V  -  THE SUNKEN ARCHIVE"
+                TALK TO THE HAND "   Down into the drowned library, where the kingdom kept what it knew of the star."
+                TALK TO THE HAND "   The water here is more ink than water, and the ink has opinions."
+            WHAT IF I TOLD YOU 6
+                TALK TO THE HAND "   ACT VI  -  THE ASH BARRACKS"
+                TALK TO THE HAND "   The garrison that held the inner keep never stood down, never burned out -"
+                TALK TO THE HAND "   it only banked itself in ash, and waits in ranks for an order that never came."
+            WHAT IF I TOLD YOU 7
+                TALK TO THE HAND "   ACT VII  -  THE CHAPEL OF THE CHOIR"
+                TALK TO THE HAND "   Here the court tried to pray the whisper away, and the whisper answered."
+                TALK TO THE HAND "   It took their voices first, and then the rest of them, one held note at a time."
+            WHAT IF I TOLD YOU 8
+                TALK TO THE HAND "   ACT VIII  -  THE STAR-CRYPT"
+                TALK TO THE HAND "   Below the chapel the stone gives way to black crystal that remembers being sky."
+                TALK TO THE HAND "   A shard of the fallen star is buried here, and it is not buried deeply enough."
+            WHAT IF I TOLD YOU 9
+                TALK TO THE HAND "   ACT IX  -  THE WHISPERING DEEP"
+                TALK TO THE HAND "   The whisper is a wind now, and it has learned your cadence, your name, your face."
+                TALK TO THE HAND "   Down here, your own thoughts answer you - and they are not always on your side."
+            WHAT IF I TOLD YOU 10
+                TALK TO THE HAND "   ACT X  -  THE VAULT OF THE CROWN"
                 TALK TO THE HAND "   Below the foundations the stone goes warm and the angles go wrong."
                 TALK TO THE HAND "   The whisper has a direction now. It is down. It has always been down."
         FINISH HIM
@@ -954,34 +982,70 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
         CHOOSE YOUR DESTINY LOOK AT ME.floor
             WHAT IF I TOLD YOU 1
-                TALK TO THE HAND "  You make camp before:  The Mirewood Verge"
+                TALK TO THE HAND "  You make camp before:  Black Lily Causeway"
             WHAT IF I TOLD YOU 2
-                TALK TO THE HAND "  You make camp before:  The Drowned Path"
+                TALK TO THE HAND "  You make camp before:  The Sunken Track"
             WHAT IF I TOLD YOU 3
-                TALK TO THE HAND "  You make camp before:  The Broken Barbican"
+                TALK TO THE HAND "  You make camp before:  Mire-Warden's Reach"
             WHAT IF I TOLD YOU 4
-                TALK TO THE HAND "  You make camp before:  The Thorn Gate"
+                TALK TO THE HAND "  You make camp before:  The Shattered Gatehouse"
             WHAT IF I TOLD YOU 5
-                TALK TO THE HAND "  You make camp before:  The Hollow Hall"
+                TALK TO THE HAND "  You make camp before:  Murder-Hole Walk"
             WHAT IF I TOLD YOU 6
-                TALK TO THE HAND "  You make camp before:  The Sunken Library"
+                TALK TO THE HAND "  You make camp before:  The Portcullis Yard"
             WHAT IF I TOLD YOU 7
-                TALK TO THE HAND "  You make camp before:  The Barracks of Ash"
+                TALK TO THE HAND "  You make camp before:  The Drowned Courtyard"
             WHAT IF I TOLD YOU 8
-                TALK TO THE HAND "  You make camp before:  The Choir Chapel"
+                TALK TO THE HAND "  You make camp before:  The Weeping Cloister"
             WHAT IF I TOLD YOU 9
-                TALK TO THE HAND "  You make camp before:  The Sunken Stair"
+                TALK TO THE HAND "  You make camp before:  The Reflecting Cells"
             WHAT IF I TOLD YOU 10
-                TALK TO THE HAND "  You make camp before:  The Star-Crypt"
+                TALK TO THE HAND "  You make camp before:  The Hall of Banners"
             WHAT IF I TOLD YOU 11
-                TALK TO THE HAND "  You make camp before:  The Whispering Deep"
+                TALK TO THE HAND "  You make camp before:  The Cold Hearth"
             WHAT IF I TOLD YOU 12
+                TALK TO THE HAND "  You make camp before:  The Echoing Gallery"
+            WHAT IF I TOLD YOU 13
+                TALK TO THE HAND "  You make camp before:  The Drowned Stacks"
+            WHAT IF I TOLD YOU 14
+                TALK TO THE HAND "  You make camp before:  The Ink-Dark Reading Room"
+            WHAT IF I TOLD YOU 15
+                TALK TO THE HAND "  You make camp before:  The Cartographer's Vault"
+            WHAT IF I TOLD YOU 16
+                TALK TO THE HAND "  You make camp before:  The Rusted Armory"
+            WHAT IF I TOLD YOU 17
+                TALK TO THE HAND "  You make camp before:  The Cot-Rows"
+            WHAT IF I TOLD YOU 18
+                TALK TO THE HAND "  You make camp before:  The Muster Yard"
+            WHAT IF I TOLD YOU 19
+                TALK TO THE HAND "  You make camp before:  The Nave of Held Breath"
+            WHAT IF I TOLD YOU 20
+                TALK TO THE HAND "  You make camp before:  The Reliquary"
+            WHAT IF I TOLD YOU 21
+                TALK TO THE HAND "  You make camp before:  The High Choir"
+            WHAT IF I TOLD YOU 22
+                TALK TO THE HAND "  You make camp before:  The Black-Crystal Threshold"
+            WHAT IF I TOLD YOU 23
+                TALK TO THE HAND "  You make camp before:  The Singing Geode"
+            WHAT IF I TOLD YOU 24
+                TALK TO THE HAND "  You make camp before:  The Crypt of Sky"
+            WHAT IF I TOLD YOU 25
+                TALK TO THE HAND "  You make camp before:  The Hall of Your Voice"
+            WHAT IF I TOLD YOU 26
+                TALK TO THE HAND "  You make camp before:  The Drowned Mirror"
+            WHAT IF I TOLD YOU 27
+                TALK TO THE HAND "  You make camp before:  The Threshold of Self"
+            WHAT IF I TOLD YOU 28
+                TALK TO THE HAND "  You make camp before:  The Last Stair"
+            WHAT IF I TOLD YOU 29
+                TALK TO THE HAND "  You make camp before:  The Antechamber of the Star"
+            WHAT IF I TOLD YOU 30
                 TALK TO THE HAND "  You make camp before:  The Vault of the Crown"
             SAME OLD SAME OLD
                 TALK TO THE HAND "  You make camp before:  the dark"
@@ -1053,19 +1117,19 @@ MY NAME IS MAXIMUS Game
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 3
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 6
+                        HERE IS MY INVITATION 4
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 4
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 4
+                        HERE IS MY INVITATION 5
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 5
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 5
+                        HERE IS MY INVITATION 6
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 6
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 6
+                        HERE IS MY INVITATION 4
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 7
                         GET TO THE CHOPPER LOOK AT ME.roomcount
@@ -1073,21 +1137,93 @@ MY NAME IS MAXIMUS Game
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 8
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 4
+                        HERE IS MY INVITATION 6
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 9
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 5
+                        HERE IS MY INVITATION 4
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 10
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 6
+                        HERE IS MY INVITATION 5
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 11
                         GET TO THE CHOPPER LOOK AT ME.roomcount
-                        HERE IS MY INVITATION 5
+                        HERE IS MY INVITATION 6
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 12
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 4
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 13
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 5
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 14
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 6
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 15
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 4
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 16
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 5
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 17
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 6
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 18
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 4
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 19
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 5
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 20
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 6
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 21
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 4
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 22
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 5
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 23
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 6
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 24
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 4
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 25
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 5
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 26
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 6
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 27
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 4
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 28
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 5
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 29
+                        GET TO THE CHOPPER LOOK AT ME.roomcount
+                        HERE IS MY INVITATION 6
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 30
                         GET TO THE CHOPPER LOOK AT ME.roomcount
                         HERE IS MY INVITATION 4
                         ENOUGH TALK
@@ -1507,7 +1643,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -2801,7 +2937,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -5189,7 +5325,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -5596,7 +5732,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -6950,7 +7086,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -6998,17 +7134,59 @@ MY NAME IS MAXIMUS Game
         CHOOSE YOUR DESTINY LOOK AT ME.bossid
             WHAT IF I TOLD YOU 0
                 TALK TO THE HAND ""
-                TALK TO THE HAND "   The gatehouse groans. Roots tear from the masonry and stand upright,"
-                TALK TO THE HAND "   a knot of bark and rusted armor crowned in black thorns."
-                TALK TO THE HAND "   THE WARDEN OF THORNS wakes to keep its ancient watch."
+                TALK TO THE HAND "   The reeds part on a ring of standing roots. They knot together, rise,"
+                TALK TO THE HAND "   and take up a crown of black thorn and a drowned knight's rusted arms."
+                TALK TO THE HAND "   THE MIRE-WARDEN wakes to keep a watch older than the kingdom."
                 TALK TO THE HAND ""
             WHAT IF I TOLD YOU 1
                 TALK TO THE HAND ""
-                TALK TO THE HAND "   The chapel is full. A hundred hollow mouths hum one endless note."
-                TALK TO THE HAND "   At the altar floats MAERITH, once Archmage of Aelthmoor, now a chorus"
-                TALK TO THE HAND "   of stolen voices wearing her shape. She turns her eyeless face to you."
+                TALK TO THE HAND "   The half-fallen portcullis grinds. The gatehouse stone itself stands up,"
+                TALK TO THE HAND "   iron grate for a face, a century of siege ground into its fists."
+                TALK TO THE HAND "   THE GATE-GOLEM bars the way, as it was built and broken to do."
                 TALK TO THE HAND ""
             WHAT IF I TOLD YOU 2
+                TALK TO THE HAND ""
+                TALK TO THE HAND "   A knight stands waist-deep in the flooded ward, water pouring endlessly"
+                TALK TO THE HAND "   from the joints of his armor. He does not breathe; he has not, in an age."
+                TALK TO THE HAND "   SIR CAEDRIC, last captain of the wards, lifts a blade gone green with rot."
+                TALK TO THE HAND ""
+            WHAT IF I TOLD YOU 3
+                TALK TO THE HAND ""
+                TALK TO THE HAND "   The gallery is empty, but the air is crowded. Every step you have taken"
+                TALK TO THE HAND "   comes back wrong, and the wrongness gathers into a shape made of sound -"
+                TALK TO THE HAND "   THE ECHO, the hall's memory of every soldier who ever screamed here."
+                TALK TO THE HAND ""
+            WHAT IF I TOLD YOU 4
+                TALK TO THE HAND ""
+                TALK TO THE HAND "   Among the drowned stacks, the spilled ink of ten thousand books has"
+                TALK TO THE HAND "   learned to stand. It wears a reader's robe and a face of running text,"
+                TALK TO THE HAND "   THE INK-WRAITH, the Archive's last and maddest librarian."
+                TALK TO THE HAND ""
+            WHAT IF I TOLD YOU 5
+                TALK TO THE HAND ""
+                TALK TO THE HAND "   The muster yard rings with a horn that has no horn. From the cot-rows of"
+                TALK TO THE HAND "   grey ash rises a captain in fused armor, his garrison forming up behind."
+                TALK TO THE HAND "   CAPTAIN VURM never stood down, and will not, until you make him."
+                TALK TO THE HAND ""
+            WHAT IF I TOLD YOU 6
+                TALK TO THE HAND ""
+                TALK TO THE HAND "   A hundred hollow mouths hum one endless note. At the altar floats MAERITH,"
+                TALK TO THE HAND "   once Archmage of Aelthmoor, now a chorus of stolen voices wearing her shape."
+                TALK TO THE HAND "   She turns her eyeless face toward you, and the choir inhales."
+                TALK TO THE HAND ""
+            WHAT IF I TOLD YOU 7
+                TALK TO THE HAND ""
+                TALK TO THE HAND "   The geode sings at your heartbeat. Then the crystal answers with its own,"
+                TALK TO THE HAND "   tearing free of the walls into a thing of black glass and trapped starlight."
+                TALK TO THE HAND "   THE CRYSTALLINE HORROR unfolds, refracting a hundred wrong reflections of you."
+                TALK TO THE HAND ""
+            WHAT IF I TOLD YOU 8
+                TALK TO THE HAND ""
+                TALK TO THE HAND "   Something steps out of the still black water wearing your face, your scars,"
+                TALK TO THE HAND "   your blade - and your every habit of fighting, learned by watching you fall."
+                TALK TO THE HAND "   THE MIRROR smiles with your mouth and says your name in the whisper's voice."
+                TALK TO THE HAND ""
+            WHAT IF I TOLD YOU 9
                 TALK TO THE HAND ""
                 TALK TO THE HAND "   The vault is a wound in the world. At its center turns the Sunken Crown:"
                 TALK TO THE HAND "   a fallen star folded into a ring of black gold, whispering your name in a"
@@ -7128,9 +7306,37 @@ MY NAME IS MAXIMUS Game
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 1
                         GET TO THE CHOPPER p2t
-                        HERE IS MY INVITATION 66
+                        HERE IS MY INVITATION 60
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 2
+                        GET TO THE CHOPPER p2t
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 3
+                        GET TO THE CHOPPER p2t
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 4
+                        GET TO THE CHOPPER p2t
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 5
+                        GET TO THE CHOPPER p2t
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 6
+                        GET TO THE CHOPPER p2t
+                        HERE IS MY INVITATION 66
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 7
+                        GET TO THE CHOPPER p2t
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 8
+                        GET TO THE CHOPPER p2t
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 9
                         GET TO THE CHOPPER p2t
                         HERE IS MY INVITATION 70
                         ENOUGH TALK
@@ -7148,19 +7354,68 @@ MY NAME IS MAXIMUS Game
                     CHOOSE YOUR DESTINY LOOK AT ME.bossid
                         WHAT IF I TOLD YOU 0
                             TALK TO THE HAND ""
-                            TALK TO THE HAND "  >> The Warden hardens its bark. (defense rises)"
+                            TALK TO THE HAND "  >> The Warden's limbs lash faster - bark splits to bare cruel thorns! (attack rises)"
                             GET TO THE CHOPPER LOOK AT ME.eatk
                             HERE IS MY INVITATION LOOK AT ME.eatk
                             GET UP 3
                             ENOUGH TALK
                         WHAT IF I TOLD YOU 1
                             TALK TO THE HAND ""
-                            TALK TO THE HAND "  >> Maerith draws the choir's breath - the song mends her wounds! (heals)"
+                            TALK TO THE HAND "  >> The golem sheds its broken plates and strikes with bare, faster fists! (attack rises)"
                             GET TO THE CHOPPER LOOK AT ME.eatk
                             HERE IS MY INVITATION LOOK AT ME.eatk
                             GET UP 3
                             ENOUGH TALK
                         WHAT IF I TOLD YOU 2
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> Caedric remembers how to kill, and the drowned blade quickens! (attack rises)"
+                            GET TO THE CHOPPER LOOK AT ME.eatk
+                            HERE IS MY INVITATION LOOK AT ME.eatk
+                            GET UP 3
+                            ENOUGH TALK
+                        WHAT IF I TOLD YOU 3
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> The Echo layers a hundred voices into one and strikes louder! (attack rises)"
+                            GET TO THE CHOPPER LOOK AT ME.eatk
+                            HERE IS MY INVITATION LOOK AT ME.eatk
+                            GET UP 3
+                            ENOUGH TALK
+                        WHAT IF I TOLD YOU 4
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> The Ink-Wraith rewrites itself sharper, and its lashings quicken! (attack rises)"
+                            GET TO THE CHOPPER LOOK AT ME.eatk
+                            HERE IS MY INVITATION LOOK AT ME.eatk
+                            GET UP 3
+                            ENOUGH TALK
+                        WHAT IF I TOLD YOU 5
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> Vurm calls the cadence and his strikes fall faster, harder! (attack rises)"
+                            GET TO THE CHOPPER LOOK AT ME.eatk
+                            HERE IS MY INVITATION LOOK AT ME.eatk
+                            GET UP 3
+                            ENOUGH TALK
+                        WHAT IF I TOLD YOU 6
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> Maerith conducts the choir to a shriek and strikes on the beat! (attack rises)"
+                            GET TO THE CHOPPER LOOK AT ME.eatk
+                            HERE IS MY INVITATION LOOK AT ME.eatk
+                            GET UP 3
+                            ENOUGH TALK
+                        WHAT IF I TOLD YOU 7
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> The Horror sharpens every facet and its blows come quicker! (attack rises)"
+                            GET TO THE CHOPPER LOOK AT ME.eatk
+                            HERE IS MY INVITATION LOOK AT ME.eatk
+                            GET UP 3
+                            ENOUGH TALK
+                        WHAT IF I TOLD YOU 8
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> The Mirror learns your tempo and turns your own speed against you! (attack rises)"
+                            GET TO THE CHOPPER LOOK AT ME.eatk
+                            HERE IS MY INVITATION LOOK AT ME.eatk
+                            GET UP 3
+                            ENOUGH TALK
+                        WHAT IF I TOLD YOU 9
                             TALK TO THE HAND ""
                             TALK TO THE HAND "  >> Vodran bends the dark - gravity twists and it strikes with terrible weight! (attack rises)"
                             GET TO THE CHOPPER LOOK AT ME.eatk
@@ -7186,9 +7441,37 @@ MY NAME IS MAXIMUS Game
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 1
                         GET TO THE CHOPPER p3t
-                        HERE IS MY INVITATION 33
+                        HERE IS MY INVITATION 30
                         ENOUGH TALK
                     WHAT IF I TOLD YOU 2
+                        GET TO THE CHOPPER p3t
+                        HERE IS MY INVITATION 30
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 3
+                        GET TO THE CHOPPER p3t
+                        HERE IS MY INVITATION 30
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 4
+                        GET TO THE CHOPPER p3t
+                        HERE IS MY INVITATION 30
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 5
+                        GET TO THE CHOPPER p3t
+                        HERE IS MY INVITATION 30
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 6
+                        GET TO THE CHOPPER p3t
+                        HERE IS MY INVITATION 33
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 7
+                        GET TO THE CHOPPER p3t
+                        HERE IS MY INVITATION 30
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 8
+                        GET TO THE CHOPPER p3t
+                        HERE IS MY INVITATION 30
+                        ENOUGH TALK
+                    WHAT IF I TOLD YOU 9
                         GET TO THE CHOPPER p3t
                         HERE IS MY INVITATION 35
                         ENOUGH TALK
@@ -7232,13 +7515,34 @@ MY NAME IS MAXIMUS Game
                     CHOOSE YOUR DESTINY LOOK AT ME.bossid
                         WHAT IF I TOLD YOU 0
                             TALK TO THE HAND ""
-                            TALK TO THE HAND "  >> Thorns erupt - the Warden lashes in a frenzy! (attack rises)"
+                            TALK TO THE HAND "  >> It drags sap from the bog to knit its wounds and flails in a frenzy! (heals + rages)"
                         WHAT IF I TOLD YOU 1
                             TALK TO THE HAND ""
-                            TALK TO THE HAND "  >> The hollow voices SCREAM, tearing at your focus! (drains resource)"
+                            TALK TO THE HAND "  >> It hauls fallen stone into itself, re-forming as it pounds you! (heals + rages)"
                         WHAT IF I TOLD YOU 2
                             TALK TO THE HAND ""
-                            TALK TO THE HAND "  >> The star UNFOLDS. Reality thins. Vodran lashes with void and mends itself! (heals + enrages)"
+                            TALK TO THE HAND "  >> The flood pours back into his wounds and he fights past death! (heals + rages)"
+                        WHAT IF I TOLD YOU 3
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> It swallows your own cries to mend itself and shrieks anew! (heals + rages)"
+                        WHAT IF I TOLD YOU 4
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> It drinks the drowned library to refill its veins and rages! (heals + rages)"
+                        WHAT IF I TOLD YOU 5
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> The ash of his garrison pours into him and he fights renewed! (heals + rages)"
+                        WHAT IF I TOLD YOU 6
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> She draws the choir's breath into her wounds and sings on! (heals + rages)"
+                        WHAT IF I TOLD YOU 7
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> It draws light from the geode to mend its cracks and rages! (heals + rages)"
+                        WHAT IF I TOLD YOU 8
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> It heals the way you would have and fights with your desperation! (heals + rages)"
+                        WHAT IF I TOLD YOU 9
+                            TALK TO THE HAND ""
+                            TALK TO THE HAND "  >> The star UNFOLDS. Reality thins. Vodran lashes with void and mends itself! (heals + rages)"
                     FINISH HIM
                 YOU HAVE NO RESPECT FOR LOGIC
             YOU HAVE NO RESPECT FOR LOGIC
@@ -7887,13 +8191,41 @@ MY NAME IS MAXIMUS Game
                 CHOOSE YOUR DESTINY LOOK AT ME.bossid
                     WHAT IF I TOLD YOU 0
                         TALK TO THE HAND "   The Warden sloughs apart into wet timber and old steel."
-                        TALK TO THE HAND "   Within its hollow chest: a seed of something colder. The gate yawns open."
-                        TALK TO THE HAND "   Stairs spiral down into the castle proper."
+                        TALK TO THE HAND "   Where its heart should be, a cold seed pulses once, then stills."
+                        TALK TO THE HAND "   Beyond the roots, the first true stone of Caer Vodran stands waiting."
                     WHAT IF I TOLD YOU 1
+                        TALK TO THE HAND "   The golem comes apart at its old fracture lines, slab by slab,"
+                        TALK TO THE HAND "   and settles into rubble that finally stops pretending to be a wall."
+                        TALK TO THE HAND "   The inner courts lie open, ankle-deep in black water."
+                    WHAT IF I TOLD YOU 2
+                        TALK TO THE HAND "   Caedric sinks to one knee, and the water finally takes him under for good."
+                        TALK TO THE HAND "   His blade slips from a hand that seems, for a moment, almost grateful."
+                        TALK TO THE HAND "   A cold stair winds deeper, into the castle's hollowed heart."
+                    WHAT IF I TOLD YOU 3
+                        TALK TO THE HAND "   The Echo comes apart into a hundred fading cries, then silence -"
+                        TALK TO THE HAND "   a real silence, the first this hall has held in a hundred years."
+                        TALK TO THE HAND "   Drowned shelves and floating pages glimmer in the dark below."
+                    WHAT IF I TOLD YOU 4
+                        TALK TO THE HAND "   The wraith unspools into a slick of black water and ruined words"
+                        TALK TO THE HAND "   that finally, mercifully, mean nothing at all."
+                        TALK TO THE HAND "   A cartographer's vault gapes beyond, hung with maps of a lost sky."
+                    WHAT IF I TOLD YOU 5
+                        TALK TO THE HAND "   Vurm salutes - whether you or some long-dead king, you cannot tell -"
+                        TALK TO THE HAND "   and crumbles, and his soldiers with him, back into quiet ash."
+                        TALK TO THE HAND "   A nave opens ahead, holding one long, breathless note."
+                    WHAT IF I TOLD YOU 6
                         TALK TO THE HAND "   The choir falls silent, voice by voice, until only Maerith remains -"
                         TALK TO THE HAND "   and then she, too, unravels into drifting motes of cold light."
-                        TALK TO THE HAND "   Beneath the altar, a stair descends toward a buried star."
-                    WHAT IF I TOLD YOU 2
+                        TALK TO THE HAND "   The stone past the altar turns to black glass, and remembers the sky."
+                    WHAT IF I TOLD YOU 7
+                        TALK TO THE HAND "   The Horror shatters into a slow rain of singing glass that dims, and dies."
+                        TALK TO THE HAND "   In the quiet after, a single shard of true star-stuff floats, waiting."
+                        TALK TO THE HAND "   Below, the whisper takes on a voice you know far too well."
+                    WHAT IF I TOLD YOU 8
+                        TALK TO THE HAND "   You strike the blow you would never have seen coming, because it is yours."
+                        TALK TO THE HAND "   The Mirror cracks, and the thing behind your face flees back into the dark."
+                        TALK TO THE HAND "   Only the Last Stair remains, warm and faintly breathing, leading down."
+                    WHAT IF I TOLD YOU 9
                         TALK TO THE HAND "   You drive the final blow into the heart of the star. The whisper"
                         TALK TO THE HAND "   stutters, climbs to a shriek - and goes out, like a candle pinched cold."
                         TALK TO THE HAND "   The Mirewood exhales. Far above, for the first time in an age, it is morning."
@@ -7923,45 +8255,121 @@ MY NAME IS MAXIMUS Game
                         YOU SET US UP 0
                         GET TO THE CHOPPER zzm54
                         HERE IS MY INVITATION 1
-                        MOVE IT 9
+                        MOVE IT 3
                         ENOUGH TALK
                         GET TO THE CHOPPER LOOK AT ME.owna
                         HERE IS MY INVITATION LOOK AT ME.owna
                         DEAD OR ALIVE YOU'RE COMING WITH ME zzm54
                         ENOUGH TALK
-                        TALK TO THE HAND "  The boss yields the Wardenplate! (owned)"
+                        TALK TO THE HAND "  The boss yields the Studded Leather! (owned)"
                     WHAT IF I TOLD YOU 1
                         HEY CHRISTMAS TREE zzm55
                         YOU SET US UP 0
                         GET TO THE CHOPPER zzm55
                         HERE IS MY INVITATION 1
-                        MOVE IT 11
+                        MOVE IT 4
                         ENOUGH TALK
                         GET TO THE CHOPPER LOOK AT ME.owna
                         HERE IS MY INVITATION LOOK AT ME.owna
                         DEAD OR ALIVE YOU'RE COMING WITH ME zzm55
                         ENOUGH TALK
-                        TALK TO THE HAND "  The boss yields the Choir Vestments! (owned)"
+                        TALK TO THE HAND "  The boss yields the Iron Mail! (owned)"
                     WHAT IF I TOLD YOU 2
-                        HEY CHRISTMAS TREE zzb56
+                        HEY CHRISTMAS TREE zzm56
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb56
-                        HERE IS MY INVITATION LOOK AT ME.cls
-                        YOU ARE NOT YOU YOU ARE ME 0
+                        GET TO THE CHOPPER zzm56
+                        HERE IS MY INVITATION 1
+                        MOVE IT 4
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb56
-                            HEY CHRISTMAS TREE zzm57
-                            YOU SET US UP 0
-                            GET TO THE CHOPPER zzm57
-                            HERE IS MY INVITATION 1
-                            MOVE IT 11
-                            ENOUGH TALK
-                            GET TO THE CHOPPER LOOK AT ME.ownw
-                            HERE IS MY INVITATION LOOK AT ME.ownw
-                            DEAD OR ALIVE YOU'RE COMING WITH ME zzm57
-                            ENOUGH TALK
-                            TALK TO THE HAND "  The boss yields the Starfell Warhammer! (owned)"
-                        YOU HAVE NO RESPECT FOR LOGIC
+                        GET TO THE CHOPPER LOOK AT ME.ownt
+                        HERE IS MY INVITATION LOOK AT ME.ownt
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm56
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Aegis Signet! (owned)"
+                    WHAT IF I TOLD YOU 3
+                        HEY CHRISTMAS TREE zzm57
+                        YOU SET US UP 0
+                        GET TO THE CHOPPER zzm57
+                        HERE IS MY INVITATION 1
+                        MOVE IT 5
+                        ENOUGH TALK
+                        GET TO THE CHOPPER LOOK AT ME.owna
+                        HERE IS MY INVITATION LOOK AT ME.owna
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm57
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Knight Plate! (owned)"
+                    WHAT IF I TOLD YOU 4
+                        HEY CHRISTMAS TREE zzm58
+                        YOU SET US UP 0
+                        GET TO THE CHOPPER zzm58
+                        HERE IS MY INVITATION 1
+                        MOVE IT 7
+                        ENOUGH TALK
+                        GET TO THE CHOPPER LOOK AT ME.owna
+                        HERE IS MY INVITATION LOOK AT ME.owna
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm58
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Runed Robe! (owned)"
+                    WHAT IF I TOLD YOU 5
+                        HEY CHRISTMAS TREE zzm59
+                        YOU SET US UP 0
+                        GET TO THE CHOPPER zzm59
+                        HERE IS MY INVITATION 1
+                        MOVE IT 9
+                        ENOUGH TALK
+                        GET TO THE CHOPPER LOOK AT ME.owna
+                        HERE IS MY INVITATION LOOK AT ME.owna
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm59
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Wardenplate! (owned)"
+                    WHAT IF I TOLD YOU 6
+                        HEY CHRISTMAS TREE zzm60
+                        YOU SET US UP 0
+                        GET TO THE CHOPPER zzm60
+                        HERE IS MY INVITATION 1
+                        MOVE IT 11
+                        ENOUGH TALK
+                        GET TO THE CHOPPER LOOK AT ME.owna
+                        HERE IS MY INVITATION LOOK AT ME.owna
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm60
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Choir Vestments! (owned)"
+                    WHAT IF I TOLD YOU 7
+                        HEY CHRISTMAS TREE zzm61
+                        YOU SET US UP 0
+                        GET TO THE CHOPPER zzm61
+                        HERE IS MY INVITATION 1
+                        MOVE IT 10
+                        ENOUGH TALK
+                        GET TO THE CHOPPER LOOK AT ME.owna
+                        HERE IS MY INVITATION LOOK AT ME.owna
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm61
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Mythril Hauberk! (owned)"
+                    WHAT IF I TOLD YOU 8
+                        HEY CHRISTMAS TREE zzm62
+                        YOU SET US UP 0
+                        GET TO THE CHOPPER zzm62
+                        HERE IS MY INVITATION 1
+                        MOVE IT 8
+                        ENOUGH TALK
+                        GET TO THE CHOPPER LOOK AT ME.owna
+                        HERE IS MY INVITATION LOOK AT ME.owna
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm62
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Shadowweave! (owned)"
+                    WHAT IF I TOLD YOU 9
+                        HEY CHRISTMAS TREE zzm63
+                        YOU SET US UP 0
+                        GET TO THE CHOPPER zzm63
+                        HERE IS MY INVITATION 1
+                        MOVE IT 12
+                        ENOUGH TALK
+                        GET TO THE CHOPPER LOOK AT ME.owna
+                        HERE IS MY INVITATION LOOK AT ME.owna
+                        DEAD OR ALIVE YOU'RE COMING WITH ME zzm63
+                        ENOUGH TALK
+                        TALK TO THE HAND "  The boss yields the Starforged Mail! (owned)"
                 FINISH HIM
                 HEY CHRISTMAS TREE canlvl
                 YOU SET US UP 0
@@ -8080,25 +8488,25 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION 30
                     GET UP bump
                     ENOUGH TALK
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs58
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs64
                     AND KICK ASS "  \u001b[35m*** You reach level "
                     AND KICK ASS SPELL IT OUT LOOK AT ME.level
                     AND KICK ASS "! ***\u001b[0m"
-                    TALK TO THE HAND zzs58
+                    TALK TO THE HAND zzs64
                     GET TO THE CHOPPER canlvl
                     HERE IS MY INVITATION LOOK AT ME.xp
                     I'M GETTING TOO OLD FOR THIS LOOK AT ME.xpnext
                     ENOUGH TALK
                 CHILL
-                HEY CHRISTMAS TREE zzm59
+                HEY CHRISTMAS TREE zzm65
                 YOU SET US UP 0
-                GET TO THE CHOPPER zzm59
+                GET TO THE CHOPPER zzm65
                 HERE IS MY INVITATION 1
                 MOVE IT LOOK AT ME.bossid
                 ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.bossmask
                 HERE IS MY INVITATION LOOK AT ME.bossmask
-                DEAD OR ALIVE YOU'RE COMING WITH ME zzm59
+                DEAD OR ALIVE YOU'RE COMING WITH ME zzm65
                 ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.isboss
                 HERE IS MY INVITATION 0
@@ -8109,13 +8517,13 @@ MY NAME IS MAXIMUS Game
                 DO IT NOW
                 I WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY
                 TALK TO THE HAND ""
-                HEY CHRISTMAS TREE zzb60
+                HEY CHRISTMAS TREE zzb66
                 YOU SET US UP 0
-                GET TO THE CHOPPER zzb60
+                GET TO THE CHOPPER zzb66
                 HERE IS MY INVITATION LOOK AT ME.bossid
                 YOU ARE NOT YOU YOU ARE ME 9
                 ENOUGH TALK
-                BECAUSE I'M GOING TO SAY PLEASE zzb60
+                BECAUSE I'M GOING TO SAY PLEASE zzb66
                     GET TO THE CHOPPER LOOK AT ME.mode
                     HERE IS MY INVITATION 5
                     ENOUGH TALK
@@ -8128,7 +8536,7 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION LOOK AT ME.act
                     GET UP 1
                     ENOUGH TALK
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs61
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs67
                     AND KICK ASS SPELL IT OUT LOOK AT ME.cls
                     AND KICK ASS "#"
                     AND KICK ASS SPELL IT OUT LOOK AT ME.level
@@ -8184,46 +8592,46 @@ MY NAME IS MAXIMUS Game
                     AND KICK ASS SPELL IT OUT LOOK AT ME.floor
                     AND KICK ASS "#"
                     AND KICK ASS SPELL IT OUT LOOK AT ME.bossmask
-                    WRITE THAT DOWN zzs61 TO "vodran_save.dat"
+                    WRITE THAT DOWN zzs67 TO "vodran_save.dat"
                     GET TO THE CHOPPER LOOK AT ME.mode
                     HERE IS MY INVITATION 12
                     ENOUGH TALK
                 YOU HAVE NO RESPECT FOR LOGIC
             BULLSHIT
-                HEY CHRISTMAS TREE zzb62
+                HEY CHRISTMAS TREE zzb68
                 YOU SET US UP 0
-                GET TO THE CHOPPER zzb62
+                GET TO THE CHOPPER zzb68
                 HERE IS MY INVITATION acted
                 YOU ARE NOT YOU YOU ARE ME 1
                 ENOUGH TALK
-                BECAUSE I'M GOING TO SAY PLEASE zzb62
-                    HEY CHRISTMAS TREE zzb63
+                BECAUSE I'M GOING TO SAY PLEASE zzb68
+                    HEY CHRISTMAS TREE zzb69
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb63
+                    GET TO THE CHOPPER zzb69
                     HERE IS MY INVITATION LOOK AT ME.estun
                     LET OFF SOME STEAM BENNET 0
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb63
+                    BECAUSE I'M GOING TO SAY PLEASE zzb69
                         GET TO THE CHOPPER LOOK AT ME.estun
                         HERE IS MY INVITATION LOOK AT ME.estun
                         GET DOWN 1
                         ENOUGH TALK
-                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs64
+                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs70
                         AND KICK ASS "  "
                         AND KICK ASS ename
                         AND KICK ASS " reels."
-                        TALK TO THE HAND zzs64
+                        TALK TO THE HAND zzs70
                     BULLSHIT
                         GET TO THE CHOPPER eat
                         HERE IS MY INVITATION LOOK AT ME.eatk
                         ENOUGH TALK
-                        HEY CHRISTMAS TREE zzb65
+                        HEY CHRISTMAS TREE zzb71
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb65
+                        GET TO THE CHOPPER zzb71
                         HERE IS MY INVITATION LOOK AT ME.eweak
                         LET OFF SOME STEAM BENNET 0
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb65
+                        BECAUSE I'M GOING TO SAY PLEASE zzb71
                             GET TO THE CHOPPER eat
                             HERE IS MY INVITATION LOOK AT ME.eatk
                             GET DOWN 3
@@ -8239,13 +8647,13 @@ MY NAME IS MAXIMUS Game
                         GET DOWN defu
                         GET DOWN LOOK AT ME.pshield
                         ENOUGH TALK
-                        HEY CHRISTMAS TREE zzb66
+                        HEY CHRISTMAS TREE zzb72
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb66
+                        GET TO THE CHOPPER zzb72
                         HERE IS MY INVITATION edmg
                         YOU'RE THE DISEASE AND I'M THE CURE 1
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb66
+                        BECAUSE I'M GOING TO SAY PLEASE zzb72
                             GET TO THE CHOPPER edmg
                             HERE IS MY INVITATION 1
                             ENOUGH TALK
@@ -8254,33 +8662,33 @@ MY NAME IS MAXIMUS Game
                         HERE IS MY INVITATION LOOK AT ME.hp
                         GET DOWN edmg
                         ENOUGH TALK
-                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs67
+                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs73
                         AND KICK ASS "  \u001b[31m"
                         AND KICK ASS ename
                         AND KICK ASS " strikes you for "
                         AND KICK ASS SPELL IT OUT edmg
                         AND KICK ASS ".\u001b[0m"
-                        TALK TO THE HAND zzs67
+                        TALK TO THE HAND zzs73
                     YOU HAVE NO RESPECT FOR LOGIC
-                    HEY CHRISTMAS TREE zzb68
+                    HEY CHRISTMAS TREE zzb74
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb68
+                    GET TO THE CHOPPER zzb74
                     HERE IS MY INVITATION LOOK AT ME.pshield
                     LET OFF SOME STEAM BENNET 0
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb68
+                    BECAUSE I'M GOING TO SAY PLEASE zzb74
                         GET TO THE CHOPPER LOOK AT ME.pshield
                         HERE IS MY INVITATION LOOK AT ME.pshield
                         GET DOWN 1
                         ENOUGH TALK
                     YOU HAVE NO RESPECT FOR LOGIC
-                    HEY CHRISTMAS TREE zzb69
+                    HEY CHRISTMAS TREE zzb75
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb69
+                    GET TO THE CHOPPER zzb75
                     HERE IS MY INVITATION LOOK AT ME.hp
                     YOU'RE THE DISEASE AND I'M THE CURE 1
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb69
+                    BECAUSE I'M GOING TO SAY PLEASE zzb75
                         GET TO THE CHOPPER fighting
                         HERE IS MY INVITATION 0
                         ENOUGH TALK
@@ -8292,25 +8700,25 @@ MY NAME IS MAXIMUS Game
                         HERE IS MY INVITATION LOOK AT ME.res
                         GET UP 2
                         ENOUGH TALK
-                        HEY CHRISTMAS TREE zzb70
+                        HEY CHRISTMAS TREE zzb76
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb70
+                        GET TO THE CHOPPER zzb76
                         HERE IS MY INVITATION LOOK AT ME.wspec
                         YOU ARE NOT YOU YOU ARE ME 3
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb70
+                        BECAUSE I'M GOING TO SAY PLEASE zzb76
                             GET TO THE CHOPPER LOOK AT ME.res
                             HERE IS MY INVITATION LOOK AT ME.res
                             GET UP 2
                             ENOUGH TALK
                         YOU HAVE NO RESPECT FOR LOGIC
-                        HEY CHRISTMAS TREE zzb71
+                        HEY CHRISTMAS TREE zzb77
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb71
+                        GET TO THE CHOPPER zzb77
                         HERE IS MY INVITATION LOOK AT ME.res
                         LET OFF SOME STEAM BENNET LOOK AT ME.maxres
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb71
+                        BECAUSE I'M GOING TO SAY PLEASE zzb77
                             GET TO THE CHOPPER LOOK AT ME.res
                             HERE IS MY INVITATION LOOK AT ME.maxres
                             ENOUGH TALK
@@ -8393,7 +8801,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -9003,7 +9411,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC
@@ -9321,7 +9729,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "\u001b[0m"
             AND KICK ASS "  Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
-            AND KICK ASS "/12"
+            AND KICK ASS "/30"
             TALK TO THE HAND zzs4
             TALK TO THE HAND ""
         YOU HAVE NO RESPECT FOR LOGIC

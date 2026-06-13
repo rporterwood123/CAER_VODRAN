@@ -199,44 +199,149 @@ MONSTERS = [
     ("Starless Stalker", "Beast",    78, 30,6, 84, 40, 5, 9, 12),
 ]
 
-# ============================================================ BOSSES (3)
+# ============================================================ BOSSES (10)
 # Each: dict with stats, lore, and phase thresholds (% hp) -> behavior tags.
 # behaviors: harden(+def) | summon(heal) | shift(element flavor) | choir(heal) |
 #            silence(drain) | void(big hit) | enrage(+atk)
 BOSSES = [
     dict(
-        id=0, name="The Warden of Thorns", floor=4, act=1,
-        hp=130, atk=12, df=6, xp=120, gold=120,
+        id=0, name="The Mire-Warden", floor=3, act=1,
+        hp=110, atk=11, df=5, xp=120, gold=110,
         intro=[
-            "The gatehouse groans. Roots tear from the masonry and stand upright,",
-            "a knot of bark and rusted armor crowned in black thorns.",
-            "THE WARDEN OF THORNS wakes to keep its ancient watch."],
+            "The reeds part on a ring of standing roots. They knot together, rise,",
+            "and take up a crown of black thorn and a drowned knight's rusted arms.",
+            "THE MIRE-WARDEN wakes to keep a watch older than the kingdom."],
         defeat=[
             "The Warden sloughs apart into wet timber and old steel.",
-            "Within its hollow chest: a seed of something colder. The gate yawns open.",
-            "Stairs spiral down into the castle proper."],
+            "Where its heart should be, a cold seed pulses once, then stills.",
+            "Beyond the roots, the first true stone of Caer Vodran stands waiting."],
+        drop="Studded Leather",
+        phase2=60, phase3=30,
+        p2="The Warden's limbs lash faster - bark splits to bare cruel thorns! (attack rises)",
+        p3="It drags sap from the bog to knit its wounds and flails in a frenzy! (heals + rages)"),
+    dict(
+        id=1, name="The Gate-Golem", floor=6, act=2,
+        hp=155, atk=13, df=6, xp=170, gold=150,
+        intro=[
+            "The half-fallen portcullis grinds. The gatehouse stone itself stands up,",
+            "iron grate for a face, a century of siege ground into its fists.",
+            "THE GATE-GOLEM bars the way, as it was built and broken to do."],
+        defeat=[
+            "The golem comes apart at its old fracture lines, slab by slab,",
+            "and settles into rubble that finally stops pretending to be a wall.",
+            "The inner courts lie open, ankle-deep in black water."],
+        drop="Iron Mail",
+        phase2=60, phase3=30,
+        p2="The golem sheds its broken plates and strikes with bare, faster fists! (attack rises)",
+        p3="It hauls fallen stone into itself, re-forming as it pounds you! (heals + rages)"),
+    dict(
+        id=2, name="Sir Caedric, the Drowned", floor=9, act=3,
+        hp=215, atk=15, df=7, xp=240, gold=200,
+        intro=[
+            "A knight stands waist-deep in the flooded ward, water pouring endlessly",
+            "from the joints of his armor. He does not breathe; he has not, in an age.",
+            "SIR CAEDRIC, last captain of the wards, lifts a blade gone green with rot."],
+        defeat=[
+            "Caedric sinks to one knee, and the water finally takes him under for good.",
+            "His blade slips from a hand that seems, for a moment, almost grateful.",
+            "A cold stair winds deeper, into the castle's hollowed heart."],
+        drop="Aegis Signet",
+        phase2=60, phase3=30,
+        p2="Caedric remembers how to kill, and the drowned blade quickens! (attack rises)",
+        p3="The flood pours back into his wounds and he fights past death! (heals + rages)"),
+    dict(
+        id=3, name="The Echo", floor=12, act=4,
+        hp=290, atk=17, df=8, xp=320, gold=260,
+        intro=[
+            "The gallery is empty, but the air is crowded. Every step you have taken",
+            "comes back wrong, and the wrongness gathers into a shape made of sound -",
+            "THE ECHO, the hall's memory of every soldier who ever screamed here."],
+        defeat=[
+            "The Echo comes apart into a hundred fading cries, then silence -",
+            "a real silence, the first this hall has held in a hundred years.",
+            "Drowned shelves and floating pages glimmer in the dark below."],
+        drop="Knight Plate",
+        phase2=60, phase3=30,
+        p2="The Echo layers a hundred voices into one and strikes louder! (attack rises)",
+        p3="It swallows your own cries to mend itself and shrieks anew! (heals + rages)"),
+    dict(
+        id=4, name="The Ink-Wraith", floor=15, act=5,
+        hp=375, atk=19, df=9, xp=420, gold=320,
+        intro=[
+            "Among the drowned stacks, the spilled ink of ten thousand books has",
+            "learned to stand. It wears a reader's robe and a face of running text,",
+            "THE INK-WRAITH, the Archive's last and maddest librarian."],
+        defeat=[
+            "The wraith unspools into a slick of black water and ruined words",
+            "that finally, mercifully, mean nothing at all.",
+            "A cartographer's vault gapes beyond, hung with maps of a lost sky."],
+        drop="Runed Robe",
+        phase2=60, phase3=30,
+        p2="The Ink-Wraith rewrites itself sharper, and its lashings quicken! (attack rises)",
+        p3="It drinks the drowned library to refill its veins and rages! (heals + rages)"),
+    dict(
+        id=5, name="Captain Vurm, Unfallen", floor=18, act=6,
+        hp=460, atk=22, df=10, xp=540, gold=390,
+        intro=[
+            "The muster yard rings with a horn that has no horn. From the cot-rows of",
+            "grey ash rises a captain in fused armor, his garrison forming up behind.",
+            "CAPTAIN VURM never stood down, and will not, until you make him."],
+        defeat=[
+            "Vurm salutes - whether you or some long-dead king, you cannot tell -",
+            "and crumbles, and his soldiers with him, back into quiet ash.",
+            "A nave opens ahead, holding one long, breathless note."],
         drop="Wardenplate",
         phase2=60, phase3=30,
-        p2="The Warden hardens its bark. (defense rises)",
-        p3="Thorns erupt - the Warden lashes in a frenzy! (attack rises)"),
+        p2="Vurm calls the cadence and his strikes fall faster, harder! (attack rises)",
+        p3="The ash of his garrison pours into him and he fights renewed! (heals + rages)"),
     dict(
-        id=1, name="Maerith, the Hollow Choir", floor=8, act=2,
-        hp=300, atk=18, df=8, xp=300, gold=260,
+        id=6, name="Maerith of the Choir", floor=21, act=7,
+        hp=560, atk=25, df=11, xp=680, gold=470,
         intro=[
-            "The chapel is full. A hundred hollow mouths hum one endless note.",
-            "At the altar floats MAERITH, once Archmage of Aelthmoor, now a chorus",
-            "of stolen voices wearing her shape. She turns her eyeless face to you."],
+            "A hundred hollow mouths hum one endless note. At the altar floats MAERITH,",
+            "once Archmage of Aelthmoor, now a chorus of stolen voices wearing her shape.",
+            "She turns her eyeless face toward you, and the choir inhales."],
         defeat=[
             "The choir falls silent, voice by voice, until only Maerith remains -",
             "and then she, too, unravels into drifting motes of cold light.",
-            "Beneath the altar, a stair descends toward a buried star."],
+            "The stone past the altar turns to black glass, and remembers the sky."],
         drop="Choir Vestments",
         phase2=66, phase3=33,
-        p2="Maerith draws the choir's breath - the song mends her wounds! (heals)",
-        p3="The hollow voices SCREAM, tearing at your focus! (drains resource)"),
+        p2="Maerith conducts the choir to a shriek and strikes on the beat! (attack rises)",
+        p3="She draws the choir's breath into her wounds and sings on! (heals + rages)"),
     dict(
-        id=2, name="Vodran, the Sunken Crown", floor=12, act=3,
-        hp=520, atk=24, df=12, xp=999, gold=500,
+        id=7, name="The Crystalline Horror", floor=24, act=8,
+        hp=650, atk=28, df=12, xp=820, gold=560,
+        intro=[
+            "The geode sings at your heartbeat. Then the crystal answers with its own,",
+            "tearing free of the walls into a thing of black glass and trapped starlight.",
+            "THE CRYSTALLINE HORROR unfolds, refracting a hundred wrong reflections of you."],
+        defeat=[
+            "The Horror shatters into a slow rain of singing glass that dims, and dies.",
+            "In the quiet after, a single shard of true star-stuff floats, waiting.",
+            "Below, the whisper takes on a voice you know far too well."],
+        drop="Mythril Hauberk",
+        phase2=60, phase3=30,
+        p2="The Horror sharpens every facet and its blows come quicker! (attack rises)",
+        p3="It draws light from the geode to mend its cracks and rages! (heals + rages)"),
+    dict(
+        id=8, name="The Mirror", floor=27, act=9,
+        hp=730, atk=31, df=13, xp=980, gold=660,
+        intro=[
+            "Something steps out of the still black water wearing your face, your scars,",
+            "your blade - and your every habit of fighting, learned by watching you fall.",
+            "THE MIRROR smiles with your mouth and says your name in the whisper's voice."],
+        defeat=[
+            "You strike the blow you would never have seen coming, because it is yours.",
+            "The Mirror cracks, and the thing behind your face flees back into the dark.",
+            "Only the Last Stair remains, warm and faintly breathing, leading down."],
+        drop="Shadowweave",
+        phase2=60, phase3=30,
+        p2="The Mirror learns your tempo and turns your own speed against you! (attack rises)",
+        p3="It heals the way you would have and fights with your desperation! (heals + rages)"),
+    dict(
+        id=9, name="Vodran, the Sunken Crown", floor=30, act=10,
+        hp=820, atk=34, df=15, xp=1500, gold=800,
         intro=[
             "The vault is a wound in the world. At its center turns the Sunken Crown:",
             "a fallen star folded into a ring of black gold, whispering your name in a",
@@ -245,27 +350,55 @@ BOSSES = [
             "You drive the final blow into the heart of the star. The whisper",
             "stutters, climbs to a shriek - and goes out, like a candle pinched cold.",
             "The Mirewood exhales. Far above, for the first time in an age, it is morning."],
-        drop="Starfell Warhammer",
+        drop="Starforged Mail",
         phase2=70, phase3=35,
         p2="Vodran bends the dark - gravity twists and it strikes with terrible weight! (attack rises)",
-        p3="The star UNFOLDS. Reality thins. Vodran lashes with void and mends itself! (heals + enrages)"),
+        p3="The star UNFOLDS. Reality thins. Vodran lashes with void and mends itself! (heals + rages)"),
 ]
 
-# ============================================================ FLOORS (12, 3 acts)
-# (name, act, rooms, flavor) ; floors 4/8/12 culminate in the act boss.
+# ============================================================ FLOORS (30, 10 acts)
+# (name, act, rooms, flavor) ; every 3rd floor (3,6,...,30) culminates in the act boss.
 FLOORS = [
-    ("The Mirewood Verge",     1, 5, "Black water and crooked birches. The castle is a rumor of stone ahead."),
-    ("The Drowned Path",       1, 5, "A causeway half-sunk in bog. Things move beneath the lilies."),
-    ("The Broken Barbican",    1, 6, "Shattered outerworks choked in bramble. The gatehouse looms."),
-    ("The Thorn Gate",         1, 4, "The great gate, sealed in living thorn. Something guards it."),
-    ("The Hollow Hall",        2, 5, "Inside at last. Banners rot on the walls; armor stands too still."),
-    ("The Sunken Library",     2, 6, "Drowned shelves and floating pages. Knowledge gone to mildew and worse."),
-    ("The Barracks of Ash",    2, 5, "Rows of cots and rusted racks. The garrison never stood down."),
-    ("The Choir Chapel",       2, 4, "A vaulted nave humming with a single held note. Maerith waits."),
-    ("The Sunken Stair",       3, 5, "Down past the foundations, where the stone turns wrong and warm."),
-    ("The Star-Crypt",         3, 6, "A cavern of black crystal. The walls remember being sky."),
-    ("The Whispering Deep",    3, 5, "The whisper is a wind now. Your own thoughts answer in its voice."),
-    ("The Vault of the Crown", 3, 4, "The heart of the wound. The Sunken Crown turns, and waits for you."),
+    # Act 1 - The Drowned Mire
+    ("Black Lily Causeway",        1, 5, "Black water and crooked birches; the causeway sinks with every step."),
+    ("The Sunken Track",           1, 5, "A road the bog swallowed whole. Marshlights bob over it, and lie."),
+    ("Mire-Warden's Reach",        1, 4, "The reeds open on a ring of standing roots. Something tall begins to unfold."),
+    # Act 2 - The Broken Barbican
+    ("The Shattered Gatehouse",    2, 5, "Outerworks ground to rubble and bramble - the first true stone of Caer Vodran."),
+    ("Murder-Hole Walk",           2, 6, "A gauntlet of dark slots overhead. The walls have not forgotten their purpose."),
+    ("The Portcullis Yard",        2, 4, "An iron grate hangs half-fallen. Beyond it, something vast tests the chains."),
+    # Act 3 - The Flooded Wards
+    ("The Drowned Courtyard",      3, 5, "Black water across a parade ground; armor rusts where men once stood."),
+    ("The Weeping Cloister",       3, 6, "Arched walks running with cold water that tastes of old grief."),
+    ("The Reflecting Cells",       3, 4, "Flooded oubliettes. Your face stares back from every pool, a beat too late."),
+    # Act 4 - The Hollow Halls
+    ("The Hall of Banners",        4, 5, "Rotted standards of a dead court. The armor beneath them stands too straight."),
+    ("The Cold Hearth",            4, 6, "A great hall whose fires went out an age ago. The cold here listens."),
+    ("The Echoing Gallery",        4, 4, "A long gallery that answers every sound with a voice not quite yours."),
+    # Act 5 - The Sunken Archive
+    ("The Drowned Stacks",         5, 5, "Shelves to the dark ceiling, pages dissolving into ink-black water."),
+    ("The Ink-Dark Reading Room",  5, 6, "Tables set for scholars centuries gone. The ink still moves."),
+    ("The Cartographer's Vault",   5, 4, "Maps of a sky no one remembers. Something has been redrawing them."),
+    # Act 6 - The Ash Barracks
+    ("The Rusted Armory",          6, 5, "Racks of weapons fused with rust and ash. The garrison kept its edge too long."),
+    ("The Cot-Rows",               6, 6, "Endless cots of grey ash in the shape of sleeping men. Some still turn over."),
+    ("The Muster Yard",            6, 4, "A drill-square scarred by ten thousand marches. A horn sounds that has no horn."),
+    # Act 7 - The Chapel of the Choir
+    ("The Nave of Held Breath",    7, 5, "A vaulted nave where the silence is a held note, waiting to break."),
+    ("The Reliquary",              7, 6, "Shrines to a saint who became a sound. The relics hum when you near them."),
+    ("The High Choir",             7, 4, "A hundred hollow mouths turn toward you as one, and inhale."),
+    # Act 8 - The Star-Crypt
+    ("The Black-Crystal Threshold",8, 5, "The stone turns to black glass that remembers being sky."),
+    ("The Singing Geode",          8, 6, "A cavern of crystal that rings at your heartbeat and answers with its own."),
+    ("The Crypt of Sky",           8, 4, "A vault where a shard of the fallen star is entombed, and dreaming."),
+    # Act 9 - The Whispering Deep
+    ("The Hall of Your Voice",     9, 5, "The whisper has your cadence now. It greets you by a name only you know."),
+    ("The Drowned Mirror",         9, 6, "Still black water that shows you doing things you have not done. Yet."),
+    ("The Threshold of Self",      9, 4, "Something steps out of the dark wearing your face, your scars, your blade."),
+    # Act 10 - The Vault of the Crown
+    ("The Last Stair",            10, 5, "Steps cut into the wound of the world, warm and faintly breathing."),
+    ("The Antechamber of the Star",10,6, "Light with no source. Gravity leans toward the center like a held breath."),
+    ("The Vault of the Crown",    10, 4, "The heart of it all. The Sunken Crown turns on nothing, and says your name."),
 ]
 
 # ============================================================ EVENTS (non-combat rooms)
@@ -312,13 +445,34 @@ EVENTS = [
 
 # misc lore shown at act transitions
 ACT_INTRO = {
-    1: ["ACT I  -  THE MIREWOOD APPROACH",
+    1: ["ACT I  -  THE DROWNED MIRE",
         "They say a star fell on Aelthmoor and the castle drank it. They say the",
         "Mirewood grew to seal the wound. You go where the saying ends."],
-    2: ["ACT II  -  THE HOLLOW HALLS",
-        "The gate is broken behind you. Inside, the castle is not empty - it is",
-        "occupied, by everything it used to be, hollowed and humming."],
-    3: ["ACT III  -  THE SUNKEN VAULT",
+    2: ["ACT II  -  THE BROKEN BARBICAN",
+        "The bog is behind you; the first real stone is not. Caer Vodran's outer",
+        "wall still stands its watch, though nothing living mans it."],
+    3: ["ACT III  -  THE FLOODED WARDS",
+        "Inside the wall, the courts lie under black water to the knee. The garrison",
+        "drowned at its posts an age ago, and has not yet noticed."],
+    4: ["ACT IV  -  THE HOLLOW HALLS",
+        "The keep proper. Banners rot, hearths are cold, and the halls are not empty -",
+        "they are occupied, by everything they used to be, hollowed and humming."],
+    5: ["ACT V  -  THE SUNKEN ARCHIVE",
+        "Down into the drowned library, where the kingdom kept what it knew of the star.",
+        "The water here is more ink than water, and the ink has opinions."],
+    6: ["ACT VI  -  THE ASH BARRACKS",
+        "The garrison that held the inner keep never stood down, never burned out -",
+        "it only banked itself in ash, and waits in ranks for an order that never came."],
+    7: ["ACT VII  -  THE CHAPEL OF THE CHOIR",
+        "Here the court tried to pray the whisper away, and the whisper answered.",
+        "It took their voices first, and then the rest of them, one held note at a time."],
+    8: ["ACT VIII  -  THE STAR-CRYPT",
+        "Below the chapel the stone gives way to black crystal that remembers being sky.",
+        "A shard of the fallen star is buried here, and it is not buried deeply enough."],
+    9: ["ACT IX  -  THE WHISPERING DEEP",
+        "The whisper is a wind now, and it has learned your cadence, your name, your face.",
+        "Down here, your own thoughts answer you - and they are not always on your side."],
+    10:["ACT X  -  THE VAULT OF THE CROWN",
         "Below the foundations the stone goes warm and the angles go wrong.",
         "The whisper has a direction now. It is down. It has always been down."],
 }

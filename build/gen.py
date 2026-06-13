@@ -130,7 +130,7 @@ def stats_line(e):
                      e.lit("  " + A_CYN + "res "), e.num(e.f("res")), e.lit("/"), e.num(e.f("maxres")), e.lit(A_RST),
                      e.lit("  Lv "), e.num(e.f("level")),
                      e.lit("  " + A_YEL + "Gold "), e.num(e.f("gold")), e.lit(A_RST),
-                     e.lit("  Floor "), e.num(e.f("floor")), e.lit("/12"))
+                     e.lit("  Floor "), e.num(e.f("floor")), e.lit("/30"))
         e.say_blank()
     e.if_cmp(e.f("started"), "==", 1, show)
 
@@ -151,7 +151,11 @@ def read_choice(e, var):
 
 # ---- floor -> monster id pool (ids whose [minfloor,maxfloor] covers the floor) ----
 def floor_pool(f):
-    ids = [i for i, m in enumerate(C.MONSTERS) if m[8] <= f <= m[9]]
+    # STOPGAP (Phase 1): the bestiary only covers floors 1-12, so deeper floors
+    # reuse the act-III pool until Phase 2 adds floor 13-30 monsters. Revert the
+    # clamp once MONSTERS spans 1-30.
+    fp = f if f <= 12 else 12
+    ids = [i for i, m in enumerate(C.MONSTERS) if m[8] <= fp <= m[9]]
     return ids if ids else [0]
 
 
@@ -395,7 +399,8 @@ def gen_actintro(e):
     def show(aid):
         for ln in C.ACT_INTRO[aid]:
             e.say("   " + ln)
-    e.switch(e.f("act"), [(1, lambda: show(1)), (2, lambda: show(2)), (3, lambda: show(3))])
+    cases = [(a, (lambda a=a: (lambda: show(a)))()) for a in sorted(C.ACT_INTRO)]
+    e.switch(e.f("act"), cases)
     e.say("  ----------------------------------------------------------------")
     e.say_blank()
     e.say("  (press 1 to continue)")
