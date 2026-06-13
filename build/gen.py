@@ -49,7 +49,7 @@ FIELDS = [
     "wid", "wpow", "wspec", "aid", "tid",
     "eqhp", "eqres", "eqdef", "eqcrit", "eqthorns", "eqevade", "ownw", "owna", "ownt",
     "potHeal", "potRes", "potCure", "bombs", "elixir",
-    "act", "floor", "room", "roomcount", "bossmask", "shopret", "brandbuff", "nextshield",
+    "act", "floor", "room", "roomcount", "bossmask", "shopret", "brandbuff", "nextshield", "ambush",
     "eid", "ehp", "emaxhp", "eatk", "edef", "eabil",
     "estun", "epoison", "eweak", "pshield", "ppoison", "pweak",
     "isboss", "bossid", "bphase", "pendmon", "pendev",
@@ -330,6 +330,7 @@ def gen_initclass(e):
     e.assign("LOOK AT ME.bossmask", 0)
     e.assign("LOOK AT ME.brandbuff", 0)
     e.assign("LOOK AT ME.nextshield", 0)
+    e.assign("LOOK AT ME.ambush", 0)
     # consumables
     e.assign("LOOK AT ME.potHeal", 3); e.assign("LOOK AT ME.potRes", 1)
     e.assign("LOOK AT ME.potCure", 1); e.assign("LOOK AT ME.bombs", 1); e.assign("LOOK AT ME.elixir", 0)
@@ -924,8 +925,7 @@ def room_pause(e):
 
 def room_ambush(e):
     e.say("  Shapes peel from the dark all at once - an AMBUSH!")
-    e.assign("LOOK AT ME.potHeal", e.f("potHeal"), ("+", 1))
-    e.say("  (you tear a Mirewine Draught from a falling hand as they close)")
+    e.assign("LOOK AT ME.ambush", 1)  # bonus loot granted in the post-combat spoils
     room_combat(e, elite=True)
 
 
@@ -1093,10 +1093,18 @@ def event_body(e, ev):
     for i, (label, eff) in enumerate(ev["choices"]):
         cases.append((i + 1, (lambda eff=eff: (lambda: apply_effect(e, eff)))()))
     e.switch("c", cases, default=lambda: e.say("  You do nothing."))
-    # most events return to explore; shop sets its own mode
+    # most events return to explore; shop sets its own mode. Pause first so the
+    # outcome (gold/XP/items/curses) is readable before the next room clears.
     e.declare("isshop", 0)
     e.cmp("isshop", e.f("mode"), "==", M_SHOP, declare=False)
-    e.if_cmp("isshop", "==", 0, lambda: e.assign("LOOK AT ME.mode", M_EXPLORE))
+
+    def to_explore():
+        e.say_blank()
+        e.say("  (press 1 to continue)")
+        e.declare("ec", 0)
+        read_choice(e, "ec")
+        e.assign("LOOK AT ME.mode", M_EXPLORE)
+    e.if_cmp("isshop", "==", 0, to_explore)
 
 
 def apply_effect(e, eff):
@@ -1201,6 +1209,9 @@ def gen_combat(e):
     # a shrine ward (nextshield) carries into the fight as starting shield, then clears
     e.assign("LOOK AT ME.pshield", e.f("nextshield"))
     e.assign("LOOK AT ME.nextshield", 0)
+    # capture + clear the ambush flag so its bonus loot is granted in the spoils, once
+    e.declare("isambush", e.f("ambush"))
+    e.assign("LOOK AT ME.ambush", 0)
     e.say_blank()
     e.say_string(e.lit("  A " + A_RED), "ename", e.lit(A_RST + " attacks!"))
     combat_loop(e, "xpr", "goldr", is_boss=False)
@@ -1308,6 +1319,9 @@ def combat_loop(e, xpr, goldr, is_boss):
             e.assign("LOOK AT ME.kills", e.f("kills"), ("+", 1))
             e.say_string(e.lit("  " + A_GRN + "+"), e.num(xpr), e.lit(" XP, +"), e.num(goldr), e.lit(" gold." + A_RST))
             check_levelup(e)
+            # ambush bonus loot, shown here in the spoils (the up-front grab would be cleared)
+            e.if_cmp("isambush", "==", 1, lambda: (e.assign("LOOK AT ME.potHeal", e.f("potHeal"), ("+", 1)),
+                                                   e.say(col("  Ambush loot: a Mirewine Draught.", "32"))))
             e.say_blank()
             e.say("  (press 1 to gather the spoils)")
             read_choice(e, "choice")
