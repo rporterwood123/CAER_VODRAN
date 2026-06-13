@@ -138,7 +138,8 @@ CONSUMABLES = [
 
 # ============================================================ MONSTER RACES (12)
 RACES = ["Goblin", "Beast", "Hollow", "Spider", "Thornkin", "Wraith",
-         "Gargoyle", "Cultist", "Ooze", "Voidspawn", "Ratkin", "Bone"]
+         "Gargoyle", "Cultist", "Ooze", "Voidspawn", "Ratkin", "Bone",
+         "Construct", "Drowned", "Crystal", "Mirror", "Ink", "Star"]
 
 # ============================================================ NPC MONSTERS (50)
 # (name, race, hp, atk, def, xp, gold, abil, minfloor, maxfloor)
@@ -197,6 +198,60 @@ MONSTERS = [
     ("Crystalback Gargoyle","Gargoyle",100,24,15,90,48,4,10,12),
     ("Mirror Horror",    "Voidspawn",88, 28,8, 88, 44, 7, 10,12),
     ("Starless Stalker", "Beast",    78, 30,6, 84, 40, 5, 9, 12),
+    # --- Act V: The Sunken Archive (floors 13-15) ---
+    ("Ink Revenant",     "Wraith",   95, 24, 7, 74, 34, 6, 13, 15),
+    ("Drowned Scholar",  "Hollow",  112, 23, 9, 82, 38, 7, 13, 15),
+    ("Page-Wraith",      "Wraith",   92, 26, 6, 80, 36, 1, 13, 16),
+    ("Ink Ooze",         "Ooze",    150, 21, 8, 86, 32, 2, 13, 16),
+    ("Marginalia Swarm", "Ink",      88, 25, 5, 72, 40, 1, 14, 16),
+    ("Bound Tome-Beast", "Bone",    160, 22,13, 94, 44, 2, 14, 17),
+    ("Whispering Codex", "Cultist", 105, 27, 6, 90, 46, 6, 14, 17),
+    ("Lexivore",         "Ooze",    135, 25, 7, 96, 42, 3, 15, 17),
+    # --- Act VI: The Ash Barracks (floors 16-18) ---
+    ("Ash Footman",      "Hollow",  150, 26,11,100, 44, 0, 16, 18),
+    ("Cinder Pikeman",   "Hollow",  165, 29,12,112, 48, 0, 16, 19),
+    ("Rusted Sergeant",  "Construct",190,27,16,124, 56, 3, 16, 19),
+    ("Ash Archer",       "Hollow",  130, 31, 8,108, 46, 5, 17, 19),
+    ("Furnace Golem",    "Construct",230,25,18,134, 60, 4, 17, 20),
+    ("Ember Revenant",   "Wraith",  140, 33, 9,120, 52, 1, 17, 20),
+    ("Cot-Row Shambler", "Bone",    180, 26,13,116, 50, 2, 18, 20),
+    ("Drillmaster Ashen","Hollow",  170, 32,12,138, 62, 3, 18, 21),
+    # --- Act VII: The Chapel of the Choir (floors 19-21) ---
+    ("Choir Acolyte",    "Cultist", 160, 32, 9,128, 58, 2, 19, 21),
+    ("Held-Breath Monk", "Cultist", 175, 34,10,140, 62, 7, 19, 21),
+    ("Reliquary Gargoyle","Gargoyle",220,30,18,150, 66, 4, 19, 22),
+    ("Hymn-Wraith",      "Wraith",  165, 36, 8,146, 60, 6, 20, 22),
+    ("Silent Choirister","Cultist", 170, 35, 9,152, 64, 7, 20, 22),
+    ("Saint's Husk",     "Hollow",  240, 31,15,158, 70, 4, 20, 23),
+    ("Bell-Bone Ringer", "Bone",    210, 30,14,150, 62, 2, 21, 23),
+    ("Voice-Thief",      "Wraith",  180, 38, 8,168, 68, 6, 21, 24),
+    # --- Act VIII: The Star-Crypt (floors 22-24) ---
+    ("Crystal Lurker",   "Crystal", 230, 36,16,170, 72, 4, 22, 24),
+    ("Geode Horror",     "Crystal", 280, 34,20,184, 78, 4, 22, 24),
+    ("Shardling Swarm",  "Crystal", 190, 40,10,176, 70, 5, 22, 25),
+    ("Starlit Wraith",   "Wraith",  210, 42, 9,188, 74, 6, 23, 25),
+    ("Black-Glass Golem","Construct",320,33,24,200, 82, 4, 23, 26),
+    ("Sky-Memory",       "Voidspawn",220,44,10,196, 76, 7, 23, 26),
+    ("Prism Devourer",   "Ooze",    300, 36,14,206, 80, 2, 24, 26),
+    ("Crypt Sentinel",   "Gargoyle",300, 38,22,210, 84, 4, 24, 27),
+    # --- Act IX: The Whispering Deep (floors 25-27) ---
+    ("Echo of You",      "Mirror",  250, 46,12,220, 88, 5, 25, 27),
+    ("Whisper-Shade",    "Wraith",  230, 48,10,228, 86, 6, 25, 27),
+    ("Drowned Reflection","Mirror", 270, 45,13,236, 90, 7, 25, 28),
+    ("Hollow Twin",      "Mirror",  260, 47,12,240, 92, 3, 26, 28),
+    ("Deep Howler",      "Voidspawn",300,50,12,248, 94, 3, 26, 28),
+    ("Self-Doubt",       "Mirror",  240, 49,10,244, 90, 7, 26, 29),
+    ("Gravecaller Deep", "Bone",    320, 44,16,250, 92, 2, 27, 29),
+    ("Name-Eater",       "Voidspawn",280,52,11,260, 96, 6, 27, 30),
+    # --- Act X: The Vault of the Crown (floors 28-30) ---
+    ("Star-Devourer",    "Voidspawn",360,54,14,280,110, 6, 28, 30),
+    ("Crown Archon",     "Cultist", 340, 56,13,290,115, 2, 28, 30),
+    ("Vault Colossus",   "Bone",    460, 48,26,300,120, 4, 28, 30),
+    ("Gravity Wraith",   "Wraith",  320, 58,12,300,112, 6, 29, 30),
+    ("Fallen-Light Horror","Crystal",400,55,20,310,118, 4, 29, 30),
+    ("Void Archon",      "Voidspawn",380,60,14,320,122, 7, 29, 30),
+    ("Heart-of-Star Spawn","Star",  420, 58,16,330,125, 6, 30, 30),
+    ("The Crown's Shadow","Mirror", 400, 62,15,340,130, 5, 30, 30),
 ]
 
 # ============================================================ BOSSES (10)

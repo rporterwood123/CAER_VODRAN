@@ -151,11 +151,7 @@ def read_choice(e, var):
 
 # ---- floor -> monster id pool (ids whose [minfloor,maxfloor] covers the floor) ----
 def floor_pool(f):
-    # STOPGAP (Phase 1): the bestiary only covers floors 1-12, so deeper floors
-    # reuse the act-III pool until Phase 2 adds floor 13-30 monsters. Revert the
-    # clamp once MONSTERS spans 1-30.
-    fp = f if f <= 12 else 12
-    ids = [i for i, m in enumerate(C.MONSTERS) if m[8] <= fp <= m[9]]
+    ids = [i for i, m in enumerate(C.MONSTERS) if m[8] <= f <= m[9]]
     return ids if ids else [0]
 
 
