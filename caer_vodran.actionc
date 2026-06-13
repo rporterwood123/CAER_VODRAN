@@ -43,9 +43,7 @@ MY NAME IS MAXIMUS Game
     OPEN TO THE PUBLIC floor
     OPEN TO THE PUBLIC room
     OPEN TO THE PUBLIC roomcount
-    OPEN TO THE PUBLIC b0
-    OPEN TO THE PUBLIC b1
-    OPEN TO THE PUBLIC b2
+    OPEN TO THE PUBLIC bossmask
     OPEN TO THE PUBLIC shopret
     OPEN TO THE PUBLIC brandbuff
     OPEN TO THE PUBLIC eid
@@ -286,14 +284,8 @@ MY NAME IS MAXIMUS Game
                     GET TO THE CHOPPER LOOK AT ME.floor
                     HERE IS MY INVITATION DO THE MATH GET IN LINE zza6 AT 26
                     ENOUGH TALK
-                    GET TO THE CHOPPER LOOK AT ME.b0
+                    GET TO THE CHOPPER LOOK AT ME.bossmask
                     HERE IS MY INVITATION DO THE MATH GET IN LINE zza6 AT 27
-                    ENOUGH TALK
-                    GET TO THE CHOPPER LOOK AT ME.b1
-                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza6 AT 28
-                    ENOUGH TALK
-                    GET TO THE CHOPPER LOOK AT ME.b2
-                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza6 AT 29
                     ENOUGH TALK
                     GET TO THE CHOPPER LOOK AT ME.started
                     HERE IS MY INVITATION 1
@@ -562,13 +554,7 @@ MY NAME IS MAXIMUS Game
         GET TO THE CHOPPER LOOK AT ME.room
         HERE IS MY INVITATION 0
         ENOUGH TALK
-        GET TO THE CHOPPER LOOK AT ME.b0
-        HERE IS MY INVITATION 0
-        ENOUGH TALK
-        GET TO THE CHOPPER LOOK AT ME.b1
-        HERE IS MY INVITATION 0
-        ENOUGH TALK
-        GET TO THE CHOPPER LOOK AT ME.b2
+        GET TO THE CHOPPER LOOK AT ME.bossmask
         HERE IS MY INVITATION 0
         ENOUGH TALK
         GET TO THE CHOPPER LOOK AT ME.brandbuff
@@ -1379,11 +1365,7 @@ MY NAME IS MAXIMUS Game
                 AND KICK ASS "#"
                 AND KICK ASS SPELL IT OUT LOOK AT ME.floor
                 AND KICK ASS "#"
-                AND KICK ASS SPELL IT OUT LOOK AT ME.b0
-                AND KICK ASS "#"
-                AND KICK ASS SPELL IT OUT LOOK AT ME.b1
-                AND KICK ASS "#"
-                AND KICK ASS SPELL IT OUT LOOK AT ME.b2
+                AND KICK ASS SPELL IT OUT LOOK AT ME.bossmask
                 WRITE THAT DOWN zzs32 TO "vodran_save.dat"
                 TALK TO THE HAND "  Your progress is etched into the dark."
             WHAT IF I TOLD YOU 7
@@ -1442,11 +1424,7 @@ MY NAME IS MAXIMUS Game
                 AND KICK ASS "#"
                 AND KICK ASS SPELL IT OUT LOOK AT ME.floor
                 AND KICK ASS "#"
-                AND KICK ASS SPELL IT OUT LOOK AT ME.b0
-                AND KICK ASS "#"
-                AND KICK ASS SPELL IT OUT LOOK AT ME.b1
-                AND KICK ASS "#"
-                AND KICK ASS SPELL IT OUT LOOK AT ME.b2
+                AND KICK ASS SPELL IT OUT LOOK AT ME.bossmask
                 WRITE THAT DOWN zzs33 TO "vodran_save.dat"
                 TALK TO THE HAND "  You withdraw. The Crown waits."
                 GET TO THE CHOPPER LOOK AT ME.mode
@@ -5238,11 +5216,17 @@ MY NAME IS MAXIMUS Game
             YOU SET US UP LOOK AT ME.floor
             HEY CHRISTMAS TREE bossfloor
             YOU SET US UP 0
+            HEY CHRISTMAS TREE fmod
+            YOU SET US UP LOOK AT ME.floor
+            GET TO THE CHOPPER fmod
+            HERE IS MY INVITATION LOOK AT ME.floor
+            I LET HIM GO 3
+            ENOUGH TALK
             HEY CHRISTMAS TREE zzb6
             YOU SET US UP 0
             GET TO THE CHOPPER zzb6
-            HERE IS MY INVITATION f
-            YOU ARE NOT YOU YOU ARE ME 4
+            HERE IS MY INVITATION fmod
+            YOU ARE NOT YOU YOU ARE ME 0
             ENOUGH TALK
             BECAUSE I'M GOING TO SAY PLEASE zzb6
                 GET TO THE CHOPPER bossfloor
@@ -5252,32 +5236,10 @@ MY NAME IS MAXIMUS Game
             HEY CHRISTMAS TREE zzb7
             YOU SET US UP 0
             GET TO THE CHOPPER zzb7
-            HERE IS MY INVITATION f
-            YOU ARE NOT YOU YOU ARE ME 8
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb7
-                GET TO THE CHOPPER bossfloor
-                HERE IS MY INVITATION 1
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb8
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb8
-            HERE IS MY INVITATION f
-            YOU ARE NOT YOU YOU ARE ME 12
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb8
-                GET TO THE CHOPPER bossfloor
-                HERE IS MY INVITATION 1
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb9
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb9
             HERE IS MY INVITATION bossfloor
             YOU ARE NOT YOU YOU ARE ME 1
             ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb9
+            BECAUSE I'M GOING TO SAY PLEASE zzb7
                 TALK TO THE HAND ""
                 TALK TO THE HAND "  The way ahead opens into a vast chamber. Something waits."
                 GET TO THE CHOPPER LOOK AT ME.mode
@@ -5295,7 +5257,7 @@ MY NAME IS MAXIMUS Game
                 GET TO THE CHOPPER aa
                 HERE IS MY INVITATION LOOK AT ME.floor
                 GET DOWN 1
-                HE HAD TO SPLIT 4
+                HE HAD TO SPLIT 3
                 GET UP 1
                 ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.act
@@ -5307,7 +5269,7 @@ MY NAME IS MAXIMUS Game
             YOU HAVE NO RESPECT FOR LOGIC
         BULLSHIT
             TALK TO THE HAND ""
-            I HAVE COME HERE TO CHEW BUBBLEGUM zzs10
+            I HAVE COME HERE TO CHEW BUBBLEGUM zzs8
             AND KICK ASS "  -- Floor "
             AND KICK ASS SPELL IT OUT LOOK AT ME.floor
             AND KICK ASS ", room "
@@ -5315,51 +5277,51 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS "/"
             AND KICK ASS SPELL IT OUT LOOK AT ME.roomcount
             AND KICK ASS " --"
-            TALK TO THE HAND zzs10
+            TALK TO THE HAND zzs8
             HEY CHRISTMAS TREE roll
             YOU SET US UP GO AHEAD MAKE MY DAY 100
             HEY CHRISTMAS TREE rt
             YOU SET US UP 0
+            HEY CHRISTMAS TREE zzb9
+            YOU SET US UP 0
+            GET TO THE CHOPPER zzb9
+            HERE IS MY INVITATION roll
+            I'M GETTING TOO OLD FOR THIS 55
+            ENOUGH TALK
+            BECAUSE I'M GOING TO SAY PLEASE zzb9
+                GET TO THE CHOPPER rt
+                HERE IS MY INVITATION 1
+                ENOUGH TALK
+            YOU HAVE NO RESPECT FOR LOGIC
+            HEY CHRISTMAS TREE zzb10
+            YOU SET US UP 0
+            GET TO THE CHOPPER zzb10
+            HERE IS MY INVITATION roll
+            I'M GETTING TOO OLD FOR THIS 75
+            ENOUGH TALK
+            BECAUSE I'M GOING TO SAY PLEASE zzb10
+                GET TO THE CHOPPER rt
+                HERE IS MY INVITATION 2
+                ENOUGH TALK
+            YOU HAVE NO RESPECT FOR LOGIC
             HEY CHRISTMAS TREE zzb11
             YOU SET US UP 0
             GET TO THE CHOPPER zzb11
             HERE IS MY INVITATION roll
-            I'M GETTING TOO OLD FOR THIS 55
+            I'M GETTING TOO OLD FOR THIS 87
             ENOUGH TALK
             BECAUSE I'M GOING TO SAY PLEASE zzb11
                 GET TO THE CHOPPER rt
-                HERE IS MY INVITATION 1
+                HERE IS MY INVITATION 3
                 ENOUGH TALK
             YOU HAVE NO RESPECT FOR LOGIC
             HEY CHRISTMAS TREE zzb12
             YOU SET US UP 0
             GET TO THE CHOPPER zzb12
             HERE IS MY INVITATION roll
-            I'M GETTING TOO OLD FOR THIS 75
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb12
-                GET TO THE CHOPPER rt
-                HERE IS MY INVITATION 2
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb13
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb13
-            HERE IS MY INVITATION roll
-            I'M GETTING TOO OLD FOR THIS 87
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb13
-                GET TO THE CHOPPER rt
-                HERE IS MY INVITATION 3
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb14
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb14
-            HERE IS MY INVITATION roll
             I'M GETTING TOO OLD FOR THIS 95
             ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb14
+            BECAUSE I'M GOING TO SAY PLEASE zzb12
                 GET TO THE CHOPPER rt
                 HERE IS MY INVITATION 4
                 ENOUGH TALK
@@ -5374,19 +5336,19 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION pf
                     GET DOWN 1
                     ENOUGH TALK
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs15
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs13
                     AND KICK ASS WHAT'S IN THE BOX "vodran_pool.dat"
-                    DIVIDE AND CONQUER zza16 zzs15 "|"
-                    DIVIDE AND CONQUER zza17 GET IN LINE zza16 AT pidx "#"
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs18
-                    AND KICK ASS GET IN LINE zza17 AT 0
-                    DIVIDE AND CONQUER zza19 zzs18 ","
+                    DIVIDE AND CONQUER zza14 zzs13 "|"
+                    DIVIDE AND CONQUER zza15 GET IN LINE zza14 AT pidx "#"
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs16
+                    AND KICK ASS GET IN LINE zza15 AT 0
+                    DIVIDE AND CONQUER zza17 zzs16 ","
                     HEY CHRISTMAS TREE pn
-                    YOU SET US UP HOW MANY OF THEM zza19
+                    YOU SET US UP HOW MANY OF THEM zza17
                     HEY CHRISTMAS TREE pick
                     YOU SET US UP GO AHEAD MAKE MY DAY pn
                     GET TO THE CHOPPER LOOK AT ME.pendmon
-                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza19 AT pick
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza17 AT pick
                     ENOUGH TALK
                     GET TO THE CHOPPER LOOK AT ME.isboss
                     HERE IS MY INVITATION 0
@@ -5417,20 +5379,20 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION LOOK AT ME.gold
                     GET UP g
                     ENOUGH TALK
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs20
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs18
                     AND KICK ASS "  +"
                     AND KICK ASS SPELL IT OUT g
                     AND KICK ASS " gold."
-                    TALK TO THE HAND zzs20
+                    TALK TO THE HAND zzs18
                     HEY CHRISTMAS TREE r
                     YOU SET US UP GO AHEAD MAKE MY DAY 100
-                    HEY CHRISTMAS TREE zzb21
+                    HEY CHRISTMAS TREE zzb19
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb21
+                    GET TO THE CHOPPER zzb19
                     HERE IS MY INVITATION r
                     YOU'RE THE DISEASE AND I'M THE CURE 40
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb21
+                    BECAUSE I'M GOING TO SAY PLEASE zzb19
                         GET TO THE CHOPPER LOOK AT ME.potHeal
                         HERE IS MY INVITATION LOOK AT ME.potHeal
                         GET UP 1
@@ -5460,44 +5422,44 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION LOOK AT ME.res
                     GET UP 4
                     ENOUGH TALK
-                    HEY CHRISTMAS TREE zzb22
+                    HEY CHRISTMAS TREE zzb20
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb22
+                    GET TO THE CHOPPER zzb20
                     HERE IS MY INVITATION LOOK AT ME.hp
                     LET OFF SOME STEAM BENNET LOOK AT ME.maxhp
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb22
+                    BECAUSE I'M GOING TO SAY PLEASE zzb20
                         GET TO THE CHOPPER LOOK AT ME.hp
                         HERE IS MY INVITATION LOOK AT ME.maxhp
                         ENOUGH TALK
                     YOU HAVE NO RESPECT FOR LOGIC
-                    HEY CHRISTMAS TREE zzb23
+                    HEY CHRISTMAS TREE zzb21
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb23
+                    GET TO THE CHOPPER zzb21
                     HERE IS MY INVITATION LOOK AT ME.res
                     LET OFF SOME STEAM BENNET LOOK AT ME.maxres
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb23
+                    BECAUSE I'M GOING TO SAY PLEASE zzb21
                         GET TO THE CHOPPER LOOK AT ME.res
                         HERE IS MY INVITATION LOOK AT ME.maxres
                         ENOUGH TALK
                     YOU HAVE NO RESPECT FOR LOGIC
-                    HEY CHRISTMAS TREE zzb24
+                    HEY CHRISTMAS TREE zzb22
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb24
+                    GET TO THE CHOPPER zzb22
                     HERE IS MY INVITATION LOOK AT ME.hp
                     YOU'RE THE DISEASE AND I'M THE CURE 1
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb24
+                    BECAUSE I'M GOING TO SAY PLEASE zzb22
                         GET TO THE CHOPPER LOOK AT ME.hp
                         HERE IS MY INVITATION 1
                         ENOUGH TALK
                     YOU HAVE NO RESPECT FOR LOGIC
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs25
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs23
                     AND KICK ASS "  Recovered "
                     AND KICK ASS SPELL IT OUT h
                     AND KICK ASS " HP."
-                    TALK TO THE HAND zzs25
+                    TALK TO THE HAND zzs23
                     TALK TO THE HAND "  (press 1 to continue)"
                     GET TO THE CHOPPER c
                     HERE IS MY INVITATION 0
@@ -5514,13 +5476,13 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION LOOK AT ME.floor
                     GET UP 2
                     ENOUGH TALK
-                    HEY CHRISTMAS TREE zzb26
+                    HEY CHRISTMAS TREE zzb24
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb26
+                    GET TO THE CHOPPER zzb24
                     HERE IS MY INVITATION pf
                     LET OFF SOME STEAM BENNET 12
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb26
+                    BECAUSE I'M GOING TO SAY PLEASE zzb24
                         GET TO THE CHOPPER pf
                         HERE IS MY INVITATION 12
                         ENOUGH TALK
@@ -5532,21 +5494,21 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION pf
                     GET DOWN 1
                     ENOUGH TALK
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs27
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs25
                     AND KICK ASS WHAT'S IN THE BOX "vodran_pool.dat"
-                    DIVIDE AND CONQUER zza28 zzs27 "|"
-                    DIVIDE AND CONQUER zza29 GET IN LINE zza28 AT pidx "#"
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs30
-                    AND KICK ASS GET IN LINE zza29 AT 0
-                    DIVIDE AND CONQUER zza31 zzs30 ","
+                    DIVIDE AND CONQUER zza26 zzs25 "|"
+                    DIVIDE AND CONQUER zza27 GET IN LINE zza26 AT pidx "#"
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs28
+                    AND KICK ASS GET IN LINE zza27 AT 0
+                    DIVIDE AND CONQUER zza29 zzs28 ","
                     GET TO THE CHOPPER pn
-                    HERE IS MY INVITATION HOW MANY OF THEM zza31
+                    HERE IS MY INVITATION HOW MANY OF THEM zza29
                     ENOUGH TALK
                     GET TO THE CHOPPER pick
                     HERE IS MY INVITATION GO AHEAD MAKE MY DAY pn
                     ENOUGH TALK
                     GET TO THE CHOPPER LOOK AT ME.pendmon
-                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza31 AT pick
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza29 AT pick
                     ENOUGH TALK
                     GET TO THE CHOPPER LOOK AT ME.isboss
                     HERE IS MY INVITATION 0
@@ -8128,20 +8090,16 @@ MY NAME IS MAXIMUS Game
                     I'M GETTING TOO OLD FOR THIS LOOK AT ME.xpnext
                     ENOUGH TALK
                 CHILL
-                CHOOSE YOUR DESTINY LOOK AT ME.bossid
-                    WHAT IF I TOLD YOU 0
-                        GET TO THE CHOPPER LOOK AT ME.b0
-                        HERE IS MY INVITATION 1
-                        ENOUGH TALK
-                    WHAT IF I TOLD YOU 1
-                        GET TO THE CHOPPER LOOK AT ME.b1
-                        HERE IS MY INVITATION 1
-                        ENOUGH TALK
-                    WHAT IF I TOLD YOU 2
-                        GET TO THE CHOPPER LOOK AT ME.b2
-                        HERE IS MY INVITATION 1
-                        ENOUGH TALK
-                FINISH HIM
+                HEY CHRISTMAS TREE zzm59
+                YOU SET US UP 0
+                GET TO THE CHOPPER zzm59
+                HERE IS MY INVITATION 1
+                MOVE IT LOOK AT ME.bossid
+                ENOUGH TALK
+                GET TO THE CHOPPER LOOK AT ME.bossmask
+                HERE IS MY INVITATION LOOK AT ME.bossmask
+                DEAD OR ALIVE YOU'RE COMING WITH ME zzm59
+                ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.isboss
                 HERE IS MY INVITATION 0
                 ENOUGH TALK
@@ -8151,13 +8109,13 @@ MY NAME IS MAXIMUS Game
                 DO IT NOW
                 I WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY
                 TALK TO THE HAND ""
-                HEY CHRISTMAS TREE zzb59
+                HEY CHRISTMAS TREE zzb60
                 YOU SET US UP 0
-                GET TO THE CHOPPER zzb59
+                GET TO THE CHOPPER zzb60
                 HERE IS MY INVITATION LOOK AT ME.bossid
-                YOU ARE NOT YOU YOU ARE ME 2
+                YOU ARE NOT YOU YOU ARE ME 9
                 ENOUGH TALK
-                BECAUSE I'M GOING TO SAY PLEASE zzb59
+                BECAUSE I'M GOING TO SAY PLEASE zzb60
                     GET TO THE CHOPPER LOOK AT ME.mode
                     HERE IS MY INVITATION 5
                     ENOUGH TALK
@@ -8170,7 +8128,7 @@ MY NAME IS MAXIMUS Game
                     HERE IS MY INVITATION LOOK AT ME.act
                     GET UP 1
                     ENOUGH TALK
-                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs60
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs61
                     AND KICK ASS SPELL IT OUT LOOK AT ME.cls
                     AND KICK ASS "#"
                     AND KICK ASS SPELL IT OUT LOOK AT ME.level
@@ -8225,51 +8183,47 @@ MY NAME IS MAXIMUS Game
                     AND KICK ASS "#"
                     AND KICK ASS SPELL IT OUT LOOK AT ME.floor
                     AND KICK ASS "#"
-                    AND KICK ASS SPELL IT OUT LOOK AT ME.b0
-                    AND KICK ASS "#"
-                    AND KICK ASS SPELL IT OUT LOOK AT ME.b1
-                    AND KICK ASS "#"
-                    AND KICK ASS SPELL IT OUT LOOK AT ME.b2
-                    WRITE THAT DOWN zzs60 TO "vodran_save.dat"
+                    AND KICK ASS SPELL IT OUT LOOK AT ME.bossmask
+                    WRITE THAT DOWN zzs61 TO "vodran_save.dat"
                     GET TO THE CHOPPER LOOK AT ME.mode
                     HERE IS MY INVITATION 12
                     ENOUGH TALK
                 YOU HAVE NO RESPECT FOR LOGIC
             BULLSHIT
-                HEY CHRISTMAS TREE zzb61
+                HEY CHRISTMAS TREE zzb62
                 YOU SET US UP 0
-                GET TO THE CHOPPER zzb61
+                GET TO THE CHOPPER zzb62
                 HERE IS MY INVITATION acted
                 YOU ARE NOT YOU YOU ARE ME 1
                 ENOUGH TALK
-                BECAUSE I'M GOING TO SAY PLEASE zzb61
-                    HEY CHRISTMAS TREE zzb62
+                BECAUSE I'M GOING TO SAY PLEASE zzb62
+                    HEY CHRISTMAS TREE zzb63
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb62
+                    GET TO THE CHOPPER zzb63
                     HERE IS MY INVITATION LOOK AT ME.estun
                     LET OFF SOME STEAM BENNET 0
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb62
+                    BECAUSE I'M GOING TO SAY PLEASE zzb63
                         GET TO THE CHOPPER LOOK AT ME.estun
                         HERE IS MY INVITATION LOOK AT ME.estun
                         GET DOWN 1
                         ENOUGH TALK
-                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs63
+                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs64
                         AND KICK ASS "  "
                         AND KICK ASS ename
                         AND KICK ASS " reels."
-                        TALK TO THE HAND zzs63
+                        TALK TO THE HAND zzs64
                     BULLSHIT
                         GET TO THE CHOPPER eat
                         HERE IS MY INVITATION LOOK AT ME.eatk
                         ENOUGH TALK
-                        HEY CHRISTMAS TREE zzb64
+                        HEY CHRISTMAS TREE zzb65
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb64
+                        GET TO THE CHOPPER zzb65
                         HERE IS MY INVITATION LOOK AT ME.eweak
                         LET OFF SOME STEAM BENNET 0
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb64
+                        BECAUSE I'M GOING TO SAY PLEASE zzb65
                             GET TO THE CHOPPER eat
                             HERE IS MY INVITATION LOOK AT ME.eatk
                             GET DOWN 3
@@ -8285,13 +8239,13 @@ MY NAME IS MAXIMUS Game
                         GET DOWN defu
                         GET DOWN LOOK AT ME.pshield
                         ENOUGH TALK
-                        HEY CHRISTMAS TREE zzb65
+                        HEY CHRISTMAS TREE zzb66
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb65
+                        GET TO THE CHOPPER zzb66
                         HERE IS MY INVITATION edmg
                         YOU'RE THE DISEASE AND I'M THE CURE 1
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb65
+                        BECAUSE I'M GOING TO SAY PLEASE zzb66
                             GET TO THE CHOPPER edmg
                             HERE IS MY INVITATION 1
                             ENOUGH TALK
@@ -8300,33 +8254,33 @@ MY NAME IS MAXIMUS Game
                         HERE IS MY INVITATION LOOK AT ME.hp
                         GET DOWN edmg
                         ENOUGH TALK
-                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs66
+                        I HAVE COME HERE TO CHEW BUBBLEGUM zzs67
                         AND KICK ASS "  \u001b[31m"
                         AND KICK ASS ename
                         AND KICK ASS " strikes you for "
                         AND KICK ASS SPELL IT OUT edmg
                         AND KICK ASS ".\u001b[0m"
-                        TALK TO THE HAND zzs66
+                        TALK TO THE HAND zzs67
                     YOU HAVE NO RESPECT FOR LOGIC
-                    HEY CHRISTMAS TREE zzb67
+                    HEY CHRISTMAS TREE zzb68
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb67
+                    GET TO THE CHOPPER zzb68
                     HERE IS MY INVITATION LOOK AT ME.pshield
                     LET OFF SOME STEAM BENNET 0
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb67
+                    BECAUSE I'M GOING TO SAY PLEASE zzb68
                         GET TO THE CHOPPER LOOK AT ME.pshield
                         HERE IS MY INVITATION LOOK AT ME.pshield
                         GET DOWN 1
                         ENOUGH TALK
                     YOU HAVE NO RESPECT FOR LOGIC
-                    HEY CHRISTMAS TREE zzb68
+                    HEY CHRISTMAS TREE zzb69
                     YOU SET US UP 0
-                    GET TO THE CHOPPER zzb68
+                    GET TO THE CHOPPER zzb69
                     HERE IS MY INVITATION LOOK AT ME.hp
                     YOU'RE THE DISEASE AND I'M THE CURE 1
                     ENOUGH TALK
-                    BECAUSE I'M GOING TO SAY PLEASE zzb68
+                    BECAUSE I'M GOING TO SAY PLEASE zzb69
                         GET TO THE CHOPPER fighting
                         HERE IS MY INVITATION 0
                         ENOUGH TALK
@@ -8338,25 +8292,25 @@ MY NAME IS MAXIMUS Game
                         HERE IS MY INVITATION LOOK AT ME.res
                         GET UP 2
                         ENOUGH TALK
-                        HEY CHRISTMAS TREE zzb69
+                        HEY CHRISTMAS TREE zzb70
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb69
+                        GET TO THE CHOPPER zzb70
                         HERE IS MY INVITATION LOOK AT ME.wspec
                         YOU ARE NOT YOU YOU ARE ME 3
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb69
+                        BECAUSE I'M GOING TO SAY PLEASE zzb70
                             GET TO THE CHOPPER LOOK AT ME.res
                             HERE IS MY INVITATION LOOK AT ME.res
                             GET UP 2
                             ENOUGH TALK
                         YOU HAVE NO RESPECT FOR LOGIC
-                        HEY CHRISTMAS TREE zzb70
+                        HEY CHRISTMAS TREE zzb71
                         YOU SET US UP 0
-                        GET TO THE CHOPPER zzb70
+                        GET TO THE CHOPPER zzb71
                         HERE IS MY INVITATION LOOK AT ME.res
                         LET OFF SOME STEAM BENNET LOOK AT ME.maxres
                         ENOUGH TALK
-                        BECAUSE I'M GOING TO SAY PLEASE zzb70
+                        BECAUSE I'M GOING TO SAY PLEASE zzb71
                             GET TO THE CHOPPER LOOK AT ME.res
                             HERE IS MY INVITATION LOOK AT ME.maxres
                             ENOUGH TALK
@@ -9165,14 +9119,8 @@ MY NAME IS MAXIMUS Game
             GET TO THE CHOPPER LOOK AT ME.floor
             HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 26
             ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.b0
+            GET TO THE CHOPPER LOOK AT ME.bossmask
             HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 27
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.b1
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 28
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.b2
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 29
             ENOUGH TALK
             GET TO THE CHOPPER LOOK AT ME.started
             HERE IS MY INVITATION 1

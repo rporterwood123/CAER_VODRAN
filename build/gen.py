@@ -40,7 +40,7 @@ FIELDS = [
     "wid", "wpow", "wspec", "aid", "tid",
     "eqhp", "eqres", "eqdef", "eqcrit", "ownw", "owna", "ownt",
     "potHeal", "potRes", "potCure", "bombs", "elixir",
-    "act", "floor", "room", "roomcount", "b0", "b1", "b2", "shopret", "brandbuff",
+    "act", "floor", "room", "roomcount", "bossmask", "shopret", "brandbuff",
     "eid", "ehp", "emaxhp", "eatk", "edef", "eabil",
     "estun", "epoison", "eweak", "pshield", "ppoison", "pweak",
     "isboss", "bossid", "bphase", "pendmon", "pendev",
@@ -51,7 +51,7 @@ SAVE_FIELDS = ["cls", "level", "xp", "xpnext", "hp", "basehp", "res", "baseres",
                "pstr", "pint", "pdex", "pdef", "gold", "kills",
                "wid", "aid", "tid", "ownw", "owna", "ownt",
                "potHeal", "potRes", "potCure", "bombs", "elixir",
-               "act", "floor", "b0", "b1", "b2"]
+               "act", "floor", "bossmask"]
 
 
 # =====================================================================  screen presentation
@@ -316,7 +316,7 @@ def gen_initclass(e):
     e.assign("LOOK AT ME.act", 1)
     e.assign("LOOK AT ME.floor", 1)
     e.assign("LOOK AT ME.room", 0)
-    e.assign("LOOK AT ME.b0", 0); e.assign("LOOK AT ME.b1", 0); e.assign("LOOK AT ME.b2", 0)
+    e.assign("LOOK AT ME.bossmask", 0)
     e.assign("LOOK AT ME.brandbuff", 0)
     # consumables
     e.assign("LOOK AT ME.potHeal", 3); e.assign("LOOK AT ME.potRes", 1)
@@ -756,12 +756,12 @@ def gen_explore(e):
 
     def floor_done():
         e.declare("isboss", 0)
-        # boss on floors 4, 8, 12
+        # boss on every 3rd floor (3,6,...,30): 2 explore floors + 1 boss per act
         e.declare("f", e.f("floor"))
         e.declare("bossfloor", 0)
-        e.if_cmp("f", "==", 4, lambda: e.set("bossfloor", 1))
-        e.if_cmp("f", "==", 8, lambda: e.set("bossfloor", 1))
-        e.if_cmp("f", "==", 12, lambda: e.set("bossfloor", 1))
+        e.declare("fmod", e.f("floor"))
+        e.assign("fmod", e.f("floor"), ("%", 3))
+        e.if_cmp("fmod", "==", 0, lambda: e.set("bossfloor", 1))
         def to_boss():
             e.say_blank()
             e.say("  The way ahead opens into a vast chamber. Something waits.")
@@ -795,10 +795,9 @@ def gen_explore(e):
 
 
 def floor_to_act_expr(e):
-    # compute act from new floor: floors 1-4=1,5-8=2,9-12=3. We just bumped floor.
-    # act = ((floor-1)/4)+1
+    # 3 floors per act, boss on the 3rd: act = ((floor-1)/3)+1
     e.declare("aa", e.f("floor"))
-    e.assign("aa", e.f("floor"), ("-", 1), ("/", 4), ("+", 1))
+    e.assign("aa", e.f("floor"), ("-", 1), ("/", 3), ("+", 1))
     return "aa"
 
 
@@ -1573,14 +1572,8 @@ def boss_defeat(e, xpr, goldr):
         drop_cases.append((b["id"], (lambda eff=eff: (lambda: eff()))()))
     e.switch(e.f("bossid"), drop_cases)
     check_levelup(e)
-    # mark boss dead, advance
-    def b0():
-        e.assign("LOOK AT ME.b0", 1)
-    def b1():
-        e.assign("LOOK AT ME.b1", 1)
-    def b2():
-        e.assign("LOOK AT ME.b2", 1)
-    e.switch(e.f("bossid"), [(0, b0), (1, b1), (2, b2)])
+    # mark this boss defeated (one bit per boss id), advance
+    e.bit_set("LOOK AT ME.bossmask", e.f("bossid"))
     e.assign("LOOK AT ME.isboss", 0)
     e.say_blank()
     e.say("  (press 1 to gather the spoils)")
@@ -1593,7 +1586,7 @@ def boss_defeat(e, xpr, goldr):
         e.assign("LOOK AT ME.act", e.f("act"), ("+", 1))
         save_inline(e)
         e.assign("LOOK AT ME.mode", M_ACTINTRO)
-    e.if_cmp(e.f("bossid"), "==", 2, finalwin, else_body=advance)
+    e.if_cmp(e.f("bossid"), "==", 9, finalwin, else_body=advance)
 
 
 def boss_drop_effect(e, b):
