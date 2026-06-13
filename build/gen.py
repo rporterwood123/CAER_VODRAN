@@ -1138,8 +1138,20 @@ def apply_effect(e, eff):
                                         e.say("  A dart grazes you for 8.")))
         elif tok == "trinketchance":
             e.declare("tc", Emit.rnd(100))
-            e.if_cmp("tc", "<", 50, lambda: (e.bit_set("LOOK AT ME.ownt", 1),
-                                             e.say("  You find a Ring of Vigor among their effects!")))
+
+            def found():
+                # a salvageable trinket, scaled to how deep this dead delver got
+                e.declare("lt", e.f("act"))
+                e.declare("li", Emit.rnd("lt"))
+                e.assign("li", "li", ("+", 1))  # 1..act
+                e.if_cmp("li", ">", len(C.TRINKETS) - 1, lambda: e.set("li", len(C.TRINKETS) - 1))
+                rec = read_record(e, TRK, "li")
+                e.bit_set("LOOK AT ME.ownt", "li")
+                e.say_string(e.lit("  Among their effects you find a trinket: "), Emit.aget(rec, 0), e.lit(" (now owned)."))
+
+            def nothing():
+                e.say("  Their trinket has long since rotted to nothing.")
+            e.if_cmp("tc", "<", 60, found, else_body=nothing)
         elif tok == "shop":
             e.assign("LOOK AT ME.shopret", M_EXPLORE)
             e.assign("LOOK AT ME.mode", M_SHOP)
