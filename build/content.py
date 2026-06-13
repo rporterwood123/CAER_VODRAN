@@ -61,6 +61,12 @@ WEAPONS = {
         ("Bloodthorn Blade",   "unique", "mythril", 20, 460, 1),
         ("Doomforge Greatsword","unique","mythril", 24, 600, 6),
         ("Starfell Warhammer", "unique", "star",    30, 999, 5),
+        ("Eclipse Cleaver",    "unique", "eclipse",  32,1200, 6),
+        ("Drowned Kingsblade", "unique", "eclipse",  35,1500, 1),
+        ("Gravewarden Maul",   "unique", "voidglass",38,1900, 5),
+        ("Choirbreaker",       "unique", "voidglass",42,2400, 2),
+        ("Voidcleaver",        "unique", "star",      46,3000, 6),
+        ("Crownfall Edge",     "unique", "star",      50,4000, 5),
     ],
     1: [  # Mage - staves, wands, orbs
         ("Cracked Wand",      "normal", "wood",     4,   0, 0),
@@ -75,6 +81,12 @@ WEAPONS = {
         ("Whispering Tome",   "unique", "bone",     20, 460, 3),
         ("Voidcaller Staff",  "unique", "star",     24, 600, 5),
         ("Starlit Scepter",   "unique", "star",     30, 999, 2),
+        ("Eclipse Wand",      "unique", "eclipse",  32,1200, 5),
+        ("Drowned Grimoire",  "unique", "eclipse",  35,1500, 3),
+        ("Gravewarden Staff", "unique", "voidglass",38,1900, 5),
+        ("Choirsong Orb",     "unique", "voidglass",42,2400, 2),
+        ("Voidcaller Scepter","unique", "star",     46,3000, 3),
+        ("Crownfall Rod",     "unique", "star",     50,4000, 5),
     ],
     2: [  # Rogue - daggers, knives, bows
         ("Bent Dagger",       "normal", "iron",     4,   0, 0),
@@ -89,6 +101,12 @@ WEAPONS = {
         ("Nightfang",         "unique", "mythril",  20, 460, 1),
         ("Whisperwind Blades","unique", "mythril",  24, 600, 4),
         ("Starpiercer",       "unique", "star",     30, 999, 2),
+        ("Eclipse Fang",      "unique", "eclipse",  32,1200, 4),
+        ("Drowned Stilettos", "unique", "eclipse",  35,1500, 1),
+        ("Gravewarden Kris",  "unique", "voidglass",38,1900, 2),
+        ("Choirbane Blades",  "unique", "voidglass",42,2400, 4),
+        ("Voidpiercer",       "unique", "star",     46,3000, 2),
+        ("Crownfall Daggers", "unique", "star",     50,4000, 4),
     ],
 }
 WEAPON_SPECIAL_NAME = {
@@ -111,6 +129,13 @@ ARMORS = [
     ("Mythril Hauberk",   "mythril", "magic",  11, 26, 8, 480),
     ("Choir Vestments",   "cloth",   "unique", 6, 18, 30, 540),
     ("Starforged Mail",   "star",    "unique", 16, 44, 14, 980),
+    ("Thornmail",         "iron",    "unique", 14, 30,  0, 640),
+    ("Mistcloak",         "leather", "unique",  9, 20,  8, 620),
+    ("Voidplate",         "voidglass","unique",18, 40,  6,1100),
+    ("Choir Regalia",     "cloth",   "unique",  8, 24, 40,1000),
+    ("Gravewarden Hauberk","mythril","unique", 15, 34, 12,1200),
+    ("Eclipse Mail",      "eclipse", "unique", 20, 50, 16,1800),
+    ("Crown Aegis",       "star",    "unique", 24, 60, 22,3000),
 ]
 
 # ============================================================ TRINKETS
@@ -124,7 +149,20 @@ TRINKETS = [
     ("Sanguine Locket",    "magic", 18,  0, 0, 5, 300),
     ("Mythril Torc",       "magic", 10, 10, 3, 4, 360),
     ("Starseed Pendant",   "unique",20, 16, 4, 10,720),
+    ("Bramble Ring",       "unique",10,  0, 4, 4, 560),
+    ("Phantom Charm",      "unique", 8,  8, 2, 6, 580),
+    ("Voidstar Pendant",   "unique",26, 20, 5, 12,1200),
+    ("Choir Reliquary",    "unique",18, 28, 4, 8, 1100),
+    ("Gravewarden Seal",   "unique",22, 14, 8, 8, 1300),
+    ("Crown Shard",        "unique",30, 24, 8, 16,2400),
 ]
+
+# ============================================================ SHOP GATING
+# Earliest act (1-10) each item is offered, indexed into the tables above.
+# Spreads gear acquisition across all 10 acts (was tier->act for 3 acts).
+WEAPON_GATE  = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 10]          # 18 per class
+ARMOR_GATE   = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10]   # 20 armors
+TRINKET_GATE = [1, 1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9, 10]                       # 14 trinkets
 
 # ============================================================ CONSUMABLES
 # field name, label, price, effect note. Counts tracked as Game fields.

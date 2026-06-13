@@ -30,7 +30,7 @@ TRK = "vodran_trk.dat"
 BOSS = "vodran_boss.dat"
 POOL = "vodran_pool.dat"
 
-NW = 12  # weapons per class
+NW = 18  # weapons per class
 
 # ---- all int fields ----
 FIELDS = [
@@ -546,11 +546,6 @@ def gen_shop(e):
     e.end_imethod()
 
 
-def _act_gate_weapon(idx):
-    # weapon local idx 0-11 -> earliest act available (normal a1, magic a2, unique a3)
-    return 1 if idx <= 3 else (2 if idx <= 7 else 3)
-
-
 def shop_weapons(e):
     e.say_blank()
     e.say("  -- Weapons for your discipline --")
@@ -558,9 +553,7 @@ def shop_weapons(e):
     for cls in (0, 1, 2):
         def block(cls=cls):
             for idx, w in enumerate(C.WEAPONS[cls]):
-                gate = _act_gate_weapon(idx)
-                if gate > 99:
-                    continue
+                gate = C.WEAPON_GATE[idx]   # earliest act this weapon is sold
                 name, tier, mat, power, price, spec = w
                 spname = C.WEAPON_SPECIAL_NAME.get(spec, "")
                 tag = "[%s %s%s]" % (tier, mat, (" " + spname) if spname else "")
@@ -605,11 +598,11 @@ def shop_list(e, kind):
     for idx, r in enumerate(rows):
         if kind == "armor":
             name, mat, tier, df, hp, rs, price = r
-            gate = 1 if tier == "normal" else (2 if tier == "magic" else 3)
+            gate = C.ARMOR_GATE[idx]
             tag = "[%s %s] def+%d hp+%d res+%d" % (tier, mat, df, hp, rs)
         else:
             name, tier, hp, rs, df, crit, price = r
-            gate = 1 if tier == "normal" else (2 if tier == "magic" else 3)
+            gate = C.TRINKET_GATE[idx]
             tag = "[%s] hp+%d res+%d def+%d crit+%d" % (tier, hp, rs, df, crit)
         label = "   %2d) %-20s %4dg %s" % (idx + 1, name, price, tag)
         e.if_cmp(e.f("act"), ">=", gate, (lambda lbl=label: (lambda: e.say(lbl)))())
