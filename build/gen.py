@@ -686,6 +686,15 @@ def buy_consum(e, fld, price, label):
 
 
 # -----------------------------------------------------------------  equipment screen
+def _eff_tag(efftype, effval):
+    # short bonus tag for a passive armor/trinket effect (thorns/evasion)
+    if efftype == 1:
+        return "  [thorns %d%%]" % effval
+    if efftype == 2:
+        return "  [evade %d%%]" % effval
+    return ""
+
+
 def gen_equip(e):
     e.imethod("equip")
     screen_top(e, "EQUIPMENT", "manage your gear", M_EQUIP)
@@ -696,8 +705,9 @@ def gen_equip(e):
         e.say_blank()
         e.say("  --------- EQUIPMENT ---------")
         gear_line(e)
-        e.say_string(e.lit("  def+"), e.num(e.f("eqdef")), e.lit("  hp+"), e.num(e.f("eqhp")),
-                     e.lit("  res+"), e.num(e.f("eqres")), e.lit("  crit+"), e.num(e.f("eqcrit")))
+        e.say_string(e.lit("  Equipped totals:  def+"), e.num(e.f("eqdef")), e.lit("  hp+"), e.num(e.f("eqhp")),
+                     e.lit("  res+"), e.num(e.f("eqres")), e.lit("  crit+"), e.num(e.f("eqcrit")),
+                     e.lit("  thorns+"), e.num(e.f("eqthorns")), e.lit("  evade+"), e.num(e.f("eqevade")))
         e.say("   1) Equip a weapon you own")
         e.say("   2) Equip armor you own")
         e.say("   3) Equip a trinket you own")
@@ -723,24 +733,35 @@ def equip_pick(e, kind):
         rows = C.ARMORS; ownf = "owna"; idf = "aid"; n = len(C.ARMORS)
     else:
         rows = C.TRINKETS; ownf = "ownt"; idf = "tid"; n = len(C.TRINKETS)
-    e.say("  Owned " + kind + "s:")
-    # list owned items (bit set)
+    e.say("  Owned " + kind + "s (with their bonuses):")
+    # list owned items (bit set), each labelled with its stat bonuses
     for idx in range(n):
         if kind == "weapon":
-            # names depend on class
+            # names + power depend on class
             for cls in (0, 1, 2):
-                nm = C.WEAPONS[cls][idx][0]
+                w = C.WEAPONS[cls][idx]
+                spname = C.WEAPON_SPECIAL_NAME.get(w[5], "")
+                sptag = ("  [" + spname + "]") if spname else ""
+                label = "   %2d) %-22s pow %2d%s" % (idx + 1, w[0], w[3], sptag)
                 cond_owned = e.bit_test(e.f(ownf), str(idx))
                 # show only if this class and owned
-                def mk(cls=cls, idx=idx, nm=nm, cond=cond_owned):
+                def mk(cls=cls, label=label, cond=cond_owned):
                     def inner():
-                        e.if_cmp(cond, "==", 1, (lambda: e.say("   %2d) %s" % (idx + 1, nm))))
+                        e.if_cmp(cond, "==", 1, (lambda: e.say(label)))
                     return inner
                 e.if_cmp(e.f("cls"), "==", cls, mk())
-        else:
-            nm = rows[idx][0]
+        elif kind == "armor":
+            a = C.ARMORS[idx]
+            et, ev = C.ARMOR_EFFECT.get(idx, (0, 0))
+            label = "   %2d) %-20s def+%d hp+%d res+%d%s" % (idx + 1, a[0], a[3], a[4], a[5], _eff_tag(et, ev))
             cond_owned = e.bit_test(e.f(ownf), str(idx))
-            e.if_cmp(cond_owned, "==", 1, (lambda idx=idx, nm=nm: (lambda: e.say("   %2d) %s" % (idx + 1, nm))))())
+            e.if_cmp(cond_owned, "==", 1, (lambda label=label: (lambda: e.say(label)))())
+        else:
+            t = C.TRINKETS[idx]
+            et, ev = C.TRINKET_EFFECT.get(idx, (0, 0))
+            label = "   %2d) %-20s hp+%d res+%d def+%d crit+%d%s" % (idx + 1, t[0], t[2], t[3], t[4], t[5], _eff_tag(et, ev))
+            cond_owned = e.bit_test(e.f(ownf), str(idx))
+            e.if_cmp(cond_owned, "==", 1, (lambda label=label: (lambda: e.say(label)))())
     e.say("  Equip which number?")
     e.declare("c", 0)
     read_choice(e, "c")

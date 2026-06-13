@@ -3553,7 +3553,7 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS GET IN LINE zza14 AT 0
             TALK TO THE HAND zzs15
             I HAVE COME HERE TO CHEW BUBBLEGUM zzs16
-            AND KICK ASS "  def+"
+            AND KICK ASS "  Equipped totals:  def+"
             AND KICK ASS SPELL IT OUT LOOK AT ME.eqdef
             AND KICK ASS "  hp+"
             AND KICK ASS SPELL IT OUT LOOK AT ME.eqhp
@@ -3561,6 +3561,10 @@ MY NAME IS MAXIMUS Game
             AND KICK ASS SPELL IT OUT LOOK AT ME.eqres
             AND KICK ASS "  crit+"
             AND KICK ASS SPELL IT OUT LOOK AT ME.eqcrit
+            AND KICK ASS "  thorns+"
+            AND KICK ASS SPELL IT OUT LOOK AT ME.eqthorns
+            AND KICK ASS "  evade+"
+            AND KICK ASS SPELL IT OUT LOOK AT ME.eqevade
             TALK TO THE HAND zzs16
             TALK TO THE HAND "   1) Equip a weapon you own"
             TALK TO THE HAND "   2) Equip armor you own"
@@ -3573,7 +3577,7 @@ MY NAME IS MAXIMUS Game
             TALK TO THE HAND ""
             CHOOSE YOUR DESTINY c
                 WHAT IF I TOLD YOU 1
-                    TALK TO THE HAND "  Owned weapons:"
+                    TALK TO THE HAND "  Owned weapons (with their bonuses):"
                     HEY CHRISTMAS TREE zzm17
                     YOU SET US UP 0
                     GET TO THE CHOPPER zzm17
@@ -3606,7 +3610,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb21
-                            TALK TO THE HAND "    1) Rusted Shortsword"
+                            TALK TO THE HAND "    1) Rusted Shortsword      pow  4"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm22
@@ -3641,7 +3645,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb26
-                            TALK TO THE HAND "    1) Cracked Wand"
+                            TALK TO THE HAND "    1) Cracked Wand           pow  4"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm27
@@ -3676,7 +3680,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb31
-                            TALK TO THE HAND "    1) Bent Dagger"
+                            TALK TO THE HAND "    1) Bent Dagger            pow  4"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm32
@@ -3711,7 +3715,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb36
-                            TALK TO THE HAND "    2) Iron Longsword"
+                            TALK TO THE HAND "    2) Iron Longsword         pow  6"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm37
@@ -3746,7 +3750,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb41
-                            TALK TO THE HAND "    2) Apprentice Staff"
+                            TALK TO THE HAND "    2) Apprentice Staff       pow  6  [regen]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm42
@@ -3781,7 +3785,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb46
-                            TALK TO THE HAND "    2) Hunting Knife"
+                            TALK TO THE HAND "    2) Hunting Knife          pow  6"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm47
@@ -3816,7 +3820,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb51
-                            TALK TO THE HAND "    3) Woodsman Axe"
+                            TALK TO THE HAND "    3) Woodsman Axe           pow  7"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm52
@@ -3851,7 +3855,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb56
-                            TALK TO THE HAND "    3) Birch Cane"
+                            TALK TO THE HAND "    3) Birch Cane             pow  7"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm57
@@ -3886,7 +3890,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb61
-                            TALK TO THE HAND "    3) Twin Shivs"
+                            TALK TO THE HAND "    3) Twin Shivs             pow  7  [double]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm62
@@ -3921,7 +3925,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb66
-                            TALK TO THE HAND "    4) Soldier Mace"
+                            TALK TO THE HAND "    4) Soldier Mace           pow  8"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm67
@@ -3956,7 +3960,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb71
-                            TALK TO THE HAND "    4) Bone Focus"
+                            TALK TO THE HAND "    4) Bone Focus             pow  8"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm72
@@ -3991,7 +3995,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb76
-                            TALK TO THE HAND "    4) Leather Dirk"
+                            TALK TO THE HAND "    4) Leather Dirk           pow  8"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm77
@@ -4026,7 +4030,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb81
-                            TALK TO THE HAND "    5) Knight Broadsword"
+                            TALK TO THE HAND "    5) Knight Broadsword      pow 10  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm82
@@ -4061,7 +4065,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb86
-                            TALK TO THE HAND "    5) Runed Staff"
+                            TALK TO THE HAND "    5) Runed Staff            pow 10  [regen]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm87
@@ -4096,7 +4100,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb91
-                            TALK TO THE HAND "    5) Poisoner Kris"
+                            TALK TO THE HAND "    5) Poisoner Kris          pow 10"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm92
@@ -4131,7 +4135,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb96
-                            TALK TO THE HAND "    6) Mirewood Halberd"
+                            TALK TO THE HAND "    6) Mirewood Halberd       pow 12"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm97
@@ -4166,7 +4170,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb101
-                            TALK TO THE HAND "    6) Frostglass Wand"
+                            TALK TO THE HAND "    6) Frostglass Wand        pow 12  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm102
@@ -4201,7 +4205,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb106
-                            TALK TO THE HAND "    6) Shadowsteel Dagger"
+                            TALK TO THE HAND "    6) Shadowsteel Dagger     pow 12  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm107
@@ -4236,7 +4240,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb111
-                            TALK TO THE HAND "    7) Warden Greataxe"
+                            TALK TO THE HAND "    7) Warden Greataxe        pow 14  [execute]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm112
@@ -4271,7 +4275,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb116
-                            TALK TO THE HAND "    7) Emberheart Rod"
+                            TALK TO THE HAND "    7) Emberheart Rod         pow 14  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm117
@@ -4306,7 +4310,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb121
-                            TALK TO THE HAND "    7) Duelist Rapier"
+                            TALK TO THE HAND "    7) Duelist Rapier         pow 14  [double]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm122
@@ -4341,7 +4345,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb126
-                            TALK TO THE HAND "    8) Ironheart Maul"
+                            TALK TO THE HAND "    8) Ironheart Maul         pow 16"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm127
@@ -4376,7 +4380,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb131
-                            TALK TO THE HAND "    8) Mythril Scepter"
+                            TALK TO THE HAND "    8) Mythril Scepter        pow 16  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm132
@@ -4411,7 +4415,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb136
-                            TALK TO THE HAND "    8) Mythril Stiletto"
+                            TALK TO THE HAND "    8) Mythril Stiletto       pow 16  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm137
@@ -4446,7 +4450,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb141
-                            TALK TO THE HAND "    9) Mythril Saber"
+                            TALK TO THE HAND "    9) Mythril Saber          pow 18  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm142
@@ -4481,7 +4485,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb146
-                            TALK TO THE HAND "    9) Choirglass Orb"
+                            TALK TO THE HAND "    9) Choirglass Orb         pow 18  [regen]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm147
@@ -4516,7 +4520,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb151
-                            TALK TO THE HAND "    9) Mirewood Longbow"
+                            TALK TO THE HAND "    9) Mirewood Longbow       pow 18"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm152
@@ -4551,7 +4555,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb156
-                            TALK TO THE HAND "   10) Bloodthorn Blade"
+                            TALK TO THE HAND "   10) Bloodthorn Blade       pow 20  [lifesteal]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm157
@@ -4586,7 +4590,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb161
-                            TALK TO THE HAND "   10) Whispering Tome"
+                            TALK TO THE HAND "   10) Whispering Tome        pow 20  [regen]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm162
@@ -4621,7 +4625,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb166
-                            TALK TO THE HAND "   10) Nightfang"
+                            TALK TO THE HAND "   10) Nightfang              pow 20  [lifesteal]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm167
@@ -4656,7 +4660,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb171
-                            TALK TO THE HAND "   11) Doomforge Greatsword"
+                            TALK TO THE HAND "   11) Doomforge Greatsword   pow 24  [execute]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm172
@@ -4691,7 +4695,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb176
-                            TALK TO THE HAND "   11) Voidcaller Staff"
+                            TALK TO THE HAND "   11) Voidcaller Staff       pow 24  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm177
@@ -4726,7 +4730,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb181
-                            TALK TO THE HAND "   11) Whisperwind Blades"
+                            TALK TO THE HAND "   11) Whisperwind Blades     pow 24  [double]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm182
@@ -4761,7 +4765,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb186
-                            TALK TO THE HAND "   12) Starfell Warhammer"
+                            TALK TO THE HAND "   12) Starfell Warhammer     pow 30  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm187
@@ -4796,7 +4800,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb191
-                            TALK TO THE HAND "   12) Starlit Scepter"
+                            TALK TO THE HAND "   12) Starlit Scepter        pow 30  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm192
@@ -4831,7 +4835,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb196
-                            TALK TO THE HAND "   12) Starpiercer"
+                            TALK TO THE HAND "   12) Starpiercer            pow 30  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm197
@@ -4866,7 +4870,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb201
-                            TALK TO THE HAND "   13) Eclipse Cleaver"
+                            TALK TO THE HAND "   13) Eclipse Cleaver        pow 32  [execute]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm202
@@ -4901,7 +4905,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb206
-                            TALK TO THE HAND "   13) Eclipse Wand"
+                            TALK TO THE HAND "   13) Eclipse Wand           pow 32  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm207
@@ -4936,7 +4940,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb211
-                            TALK TO THE HAND "   13) Eclipse Fang"
+                            TALK TO THE HAND "   13) Eclipse Fang           pow 32  [double]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm212
@@ -4971,7 +4975,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb216
-                            TALK TO THE HAND "   14) Drowned Kingsblade"
+                            TALK TO THE HAND "   14) Drowned Kingsblade     pow 35  [lifesteal]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm217
@@ -5006,7 +5010,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb221
-                            TALK TO THE HAND "   14) Drowned Grimoire"
+                            TALK TO THE HAND "   14) Drowned Grimoire       pow 35  [regen]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm222
@@ -5041,7 +5045,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb226
-                            TALK TO THE HAND "   14) Drowned Stilettos"
+                            TALK TO THE HAND "   14) Drowned Stilettos      pow 35  [lifesteal]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm227
@@ -5076,7 +5080,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb231
-                            TALK TO THE HAND "   15) Gravewarden Maul"
+                            TALK TO THE HAND "   15) Gravewarden Maul       pow 38  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm232
@@ -5111,7 +5115,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb236
-                            TALK TO THE HAND "   15) Gravewarden Staff"
+                            TALK TO THE HAND "   15) Gravewarden Staff      pow 38  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm237
@@ -5146,7 +5150,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb241
-                            TALK TO THE HAND "   15) Gravewarden Kris"
+                            TALK TO THE HAND "   15) Gravewarden Kris       pow 38  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm242
@@ -5181,7 +5185,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb246
-                            TALK TO THE HAND "   16) Choirbreaker"
+                            TALK TO THE HAND "   16) Choirbreaker           pow 42  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm247
@@ -5216,7 +5220,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb251
-                            TALK TO THE HAND "   16) Choirsong Orb"
+                            TALK TO THE HAND "   16) Choirsong Orb          pow 42  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm252
@@ -5251,7 +5255,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb256
-                            TALK TO THE HAND "   16) Choirbane Blades"
+                            TALK TO THE HAND "   16) Choirbane Blades       pow 42  [double]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm257
@@ -5286,7 +5290,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb261
-                            TALK TO THE HAND "   17) Voidcleaver"
+                            TALK TO THE HAND "   17) Voidcleaver            pow 46  [execute]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm262
@@ -5321,7 +5325,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb266
-                            TALK TO THE HAND "   17) Voidcaller Scepter"
+                            TALK TO THE HAND "   17) Voidcaller Scepter     pow 46  [regen]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm267
@@ -5356,7 +5360,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb271
-                            TALK TO THE HAND "   17) Voidpiercer"
+                            TALK TO THE HAND "   17) Voidpiercer            pow 46  [+crit]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm272
@@ -5391,7 +5395,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb276
-                            TALK TO THE HAND "   18) Crownfall Edge"
+                            TALK TO THE HAND "   18) Crownfall Edge         pow 50  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm277
@@ -5426,7 +5430,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb281
-                            TALK TO THE HAND "   18) Crownfall Rod"
+                            TALK TO THE HAND "   18) Crownfall Rod          pow 50  [brand]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm282
@@ -5461,7 +5465,7 @@ MY NAME IS MAXIMUS Game
                         YOU ARE NOT YOU YOU ARE ME 1
                         ENOUGH TALK
                         BECAUSE I'M GOING TO SAY PLEASE zzb286
-                            TALK TO THE HAND "   18) Crownfall Daggers"
+                            TALK TO THE HAND "   18) Crownfall Daggers      pow 50  [double]"
                         YOU HAVE NO RESPECT FOR LOGIC
                     YOU HAVE NO RESPECT FOR LOGIC
                     TALK TO THE HAND "  Equip which number?"
@@ -5560,7 +5564,7 @@ MY NAME IS MAXIMUS Game
                         TALK TO THE HAND "  No such item."
                     YOU HAVE NO RESPECT FOR LOGIC
                 WHAT IF I TOLD YOU 2
-                    TALK TO THE HAND "  Owned armors:"
+                    TALK TO THE HAND "  Owned armors (with their bonuses):"
                     HEY CHRISTMAS TREE zzm297
                     YOU SET US UP 0
                     GET TO THE CHOPPER zzm297
@@ -5586,7 +5590,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb300
-                        TALK TO THE HAND "    1) Traveler Clothes"
+                        TALK TO THE HAND "    1) Traveler Clothes     def+0 hp+0 res+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm301
                     YOU SET US UP 0
@@ -5613,7 +5617,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb304
-                        TALK TO THE HAND "    2) Tattered Leathers"
+                        TALK TO THE HAND "    2) Tattered Leathers    def+2 hp+4 res+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm305
                     YOU SET US UP 0
@@ -5640,7 +5644,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb308
-                        TALK TO THE HAND "    3) Padded Vest"
+                        TALK TO THE HAND "    3) Padded Vest          def+3 hp+6 res+2"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm309
                     YOU SET US UP 0
@@ -5667,7 +5671,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb312
-                        TALK TO THE HAND "    4) Studded Leather"
+                        TALK TO THE HAND "    4) Studded Leather      def+5 hp+10 res+4"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm313
                     YOU SET US UP 0
@@ -5694,7 +5698,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb316
-                        TALK TO THE HAND "    5) Iron Mail"
+                        TALK TO THE HAND "    5) Iron Mail            def+6 hp+14 res+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm317
                     YOU SET US UP 0
@@ -5721,7 +5725,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb320
-                        TALK TO THE HAND "    6) Knight Plate"
+                        TALK TO THE HAND "    6) Knight Plate         def+9 hp+22 res+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm321
                     YOU SET US UP 0
@@ -5748,7 +5752,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb324
-                        TALK TO THE HAND "    7) Apprentice Robe"
+                        TALK TO THE HAND "    7) Apprentice Robe      def+1 hp+4 res+10"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm325
                     YOU SET US UP 0
@@ -5775,7 +5779,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb328
-                        TALK TO THE HAND "    8) Runed Robe"
+                        TALK TO THE HAND "    8) Runed Robe           def+3 hp+8 res+22"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm329
                     YOU SET US UP 0
@@ -5802,7 +5806,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb332
-                        TALK TO THE HAND "    9) Shadowweave"
+                        TALK TO THE HAND "    9) Shadowweave          def+7 hp+16 res+10"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm333
                     YOU SET US UP 0
@@ -5829,7 +5833,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb336
-                        TALK TO THE HAND "   10) Wardenplate"
+                        TALK TO THE HAND "   10) Wardenplate          def+13 hp+34 res+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm337
                     YOU SET US UP 0
@@ -5856,7 +5860,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb340
-                        TALK TO THE HAND "   11) Mythril Hauberk"
+                        TALK TO THE HAND "   11) Mythril Hauberk      def+11 hp+26 res+8"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm341
                     YOU SET US UP 0
@@ -5883,7 +5887,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb344
-                        TALK TO THE HAND "   12) Choir Vestments"
+                        TALK TO THE HAND "   12) Choir Vestments      def+6 hp+18 res+30"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm345
                     YOU SET US UP 0
@@ -5910,7 +5914,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb348
-                        TALK TO THE HAND "   13) Starforged Mail"
+                        TALK TO THE HAND "   13) Starforged Mail      def+16 hp+44 res+14"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm349
                     YOU SET US UP 0
@@ -5937,7 +5941,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb352
-                        TALK TO THE HAND "   14) Thornmail"
+                        TALK TO THE HAND "   14) Thornmail            def+14 hp+30 res+0  [thorns 25%]"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm353
                     YOU SET US UP 0
@@ -5964,7 +5968,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb356
-                        TALK TO THE HAND "   15) Mistcloak"
+                        TALK TO THE HAND "   15) Mistcloak            def+9 hp+20 res+8  [evade 20%]"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm357
                     YOU SET US UP 0
@@ -5991,7 +5995,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb360
-                        TALK TO THE HAND "   16) Voidplate"
+                        TALK TO THE HAND "   16) Voidplate            def+18 hp+40 res+6"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm361
                     YOU SET US UP 0
@@ -6018,7 +6022,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb364
-                        TALK TO THE HAND "   17) Choir Regalia"
+                        TALK TO THE HAND "   17) Choir Regalia        def+8 hp+24 res+40"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm365
                     YOU SET US UP 0
@@ -6045,7 +6049,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb368
-                        TALK TO THE HAND "   18) Gravewarden Hauberk"
+                        TALK TO THE HAND "   18) Gravewarden Hauberk  def+15 hp+34 res+12"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm369
                     YOU SET US UP 0
@@ -6072,7 +6076,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb372
-                        TALK TO THE HAND "   19) Eclipse Mail"
+                        TALK TO THE HAND "   19) Eclipse Mail         def+20 hp+50 res+16"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm373
                     YOU SET US UP 0
@@ -6099,7 +6103,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb376
-                        TALK TO THE HAND "   20) Crown Aegis"
+                        TALK TO THE HAND "   20) Crown Aegis          def+24 hp+60 res+22"
                     YOU HAVE NO RESPECT FOR LOGIC
                     TALK TO THE HAND "  Equip which number?"
                     GET TO THE CHOPPER c
@@ -6334,7 +6338,7 @@ MY NAME IS MAXIMUS Game
                         TALK TO THE HAND "  No such item."
                     YOU HAVE NO RESPECT FOR LOGIC
                 WHAT IF I TOLD YOU 3
-                    TALK TO THE HAND "  Owned trinkets:"
+                    TALK TO THE HAND "  Owned trinkets (with their bonuses):"
                     HEY CHRISTMAS TREE zzm408
                     YOU SET US UP 0
                     GET TO THE CHOPPER zzm408
@@ -6360,7 +6364,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb411
-                        TALK TO THE HAND "    1) Cracked Charm"
+                        TALK TO THE HAND "    1) Cracked Charm        hp+0 res+0 def+0 crit+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm412
                     YOU SET US UP 0
@@ -6387,7 +6391,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb415
-                        TALK TO THE HAND "    2) Ring of Vigor"
+                        TALK TO THE HAND "    2) Ring of Vigor        hp+12 res+0 def+0 crit+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm416
                     YOU SET US UP 0
@@ -6414,7 +6418,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb419
-                        TALK TO THE HAND "    3) Amulet of Focus"
+                        TALK TO THE HAND "    3) Amulet of Focus      hp+0 res+12 def+0 crit+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm420
                     YOU SET US UP 0
@@ -6441,7 +6445,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb423
-                        TALK TO THE HAND "    4) Band of the Cat"
+                        TALK TO THE HAND "    4) Band of the Cat      hp+0 res+0 def+0 crit+12"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm424
                     YOU SET US UP 0
@@ -6468,7 +6472,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb427
-                        TALK TO THE HAND "    5) Aegis Signet"
+                        TALK TO THE HAND "    5) Aegis Signet         hp+6 res+0 def+4 crit+0"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm428
                     YOU SET US UP 0
@@ -6495,7 +6499,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb431
-                        TALK TO THE HAND "    6) Sanguine Locket"
+                        TALK TO THE HAND "    6) Sanguine Locket      hp+18 res+0 def+0 crit+5"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm432
                     YOU SET US UP 0
@@ -6522,7 +6526,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb435
-                        TALK TO THE HAND "    7) Mythril Torc"
+                        TALK TO THE HAND "    7) Mythril Torc         hp+10 res+10 def+3 crit+4"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm436
                     YOU SET US UP 0
@@ -6549,7 +6553,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb439
-                        TALK TO THE HAND "    8) Starseed Pendant"
+                        TALK TO THE HAND "    8) Starseed Pendant     hp+20 res+16 def+4 crit+10"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm440
                     YOU SET US UP 0
@@ -6576,7 +6580,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb443
-                        TALK TO THE HAND "    9) Bramble Ring"
+                        TALK TO THE HAND "    9) Bramble Ring         hp+10 res+0 def+4 crit+4  [thorns 15%]"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm444
                     YOU SET US UP 0
@@ -6603,7 +6607,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb447
-                        TALK TO THE HAND "   10) Phantom Charm"
+                        TALK TO THE HAND "   10) Phantom Charm        hp+8 res+8 def+2 crit+6  [evade 15%]"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm448
                     YOU SET US UP 0
@@ -6630,7 +6634,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb451
-                        TALK TO THE HAND "   11) Voidstar Pendant"
+                        TALK TO THE HAND "   11) Voidstar Pendant     hp+26 res+20 def+5 crit+12"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm452
                     YOU SET US UP 0
@@ -6657,7 +6661,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb455
-                        TALK TO THE HAND "   12) Choir Reliquary"
+                        TALK TO THE HAND "   12) Choir Reliquary      hp+18 res+28 def+4 crit+8"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm456
                     YOU SET US UP 0
@@ -6684,7 +6688,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb459
-                        TALK TO THE HAND "   13) Gravewarden Seal"
+                        TALK TO THE HAND "   13) Gravewarden Seal     hp+22 res+14 def+8 crit+8"
                     YOU HAVE NO RESPECT FOR LOGIC
                     HEY CHRISTMAS TREE zzm460
                     YOU SET US UP 0
@@ -6711,7 +6715,7 @@ MY NAME IS MAXIMUS Game
                     YOU ARE NOT YOU YOU ARE ME 1
                     ENOUGH TALK
                     BECAUSE I'M GOING TO SAY PLEASE zzb463
-                        TALK TO THE HAND "   14) Crown Shard"
+                        TALK TO THE HAND "   14) Crown Shard          hp+30 res+24 def+8 crit+16"
                     YOU HAVE NO RESPECT FOR LOGIC
                     TALK TO THE HAND "  Equip which number?"
                     GET TO THE CHOPPER c
