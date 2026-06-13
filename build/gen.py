@@ -38,7 +38,7 @@ FIELDS = [
     "hp", "basehp", "maxhp", "res", "baseres", "maxres",
     "pstr", "pint", "pdex", "pdef", "gold", "kills",
     "wid", "wpow", "wspec", "aid", "tid",
-    "eqhp", "eqres", "eqdef", "eqcrit", "ownw", "owna", "ownt",
+    "eqhp", "eqres", "eqdef", "eqcrit", "eqthorns", "eqevade", "ownw", "owna", "ownt",
     "potHeal", "potRes", "potCure", "bombs", "elixir",
     "act", "floor", "room", "roomcount", "bossmask", "shopret", "brandbuff", "nextshield",
     "eid", "ehp", "emaxhp", "eatk", "edef", "eabil",
@@ -217,11 +217,13 @@ def gen_boot(e):
             wrows.append((w[0], w[1], w[2], w[3], w[4], w[5]))
     wp = "|".join("#".join(str(x) for x in r) for r in wrows)
     e.string("dw", e.lit(wp)); e.write_file("dw", WPN)
-    # armor: name#mat#tier#def#hp#res#price
-    ar = "|".join("#".join(str(x) for x in r) for r in C.ARMORS)
+    # armor: name#mat#tier#def#hp#res#price#efftype#effval  (effect fields appended at idx 7,8)
+    ar = "|".join("#".join(str(x) for x in r) + "#" + "#".join(str(v) for v in C.ARMOR_EFFECT.get(i, (0, 0)))
+                  for i, r in enumerate(C.ARMORS))
     e.string("da", e.lit(ar)); e.write_file("da", ARM)
-    # trinkets: name#tier#hp#res#def#crit#price
-    tr = "|".join("#".join(str(x) for x in r) for r in C.TRINKETS)
+    # trinkets: name#tier#hp#res#def#crit#price#efftype#effval  (effect fields appended at idx 7,8)
+    tr = "|".join("#".join(str(x) for x in r) + "#" + "#".join(str(v) for v in C.TRINKET_EFFECT.get(i, (0, 0)))
+                  for i, r in enumerate(C.TRINKETS))
     e.string("dt", e.lit(tr)); e.write_file("dt", TRK)
     # bosses: name#hp#atk#def#xp#gold
     br = "|".join("#".join(str(x) for x in (b["name"], b["hp"], b["atk"], b["df"], b["xp"], b["gold"])) for b in C.BOSSES)
@@ -377,6 +379,19 @@ def emit_recompute_equip(e):
     e.assign("LOOK AT ME.eqhp", ahp, ("+", thp))
     e.assign("LOOK AT ME.eqres", ares, ("+", tres))
     e.assign("LOOK AT ME.eqcrit", tcrit)
+    # passive effects: armor/trinket efftype(idx7)/effval(idx8). 1=thorns%, 2=evasion%.
+    aet, aev, tet, tev = e.tmp("v"), e.tmp("v"), e.tmp("v"), e.tmp("v")
+    e.declare(aet, Emit.parse(Emit.aget(ar, 7)))
+    e.declare(aev, Emit.parse(Emit.aget(ar, 8)))
+    e.declare(tet, Emit.parse(Emit.aget(tr, 7)))
+    e.declare(tev, Emit.parse(Emit.aget(tr, 8)))
+    e.assign("LOOK AT ME.eqthorns", 0)
+    e.assign("LOOK AT ME.eqevade", 0)
+    e.if_cmp(aet, "==", 1, lambda: e.assign("LOOK AT ME.eqthorns", e.f("eqthorns"), ("+", aev)))
+    e.if_cmp(tet, "==", 1, lambda: e.assign("LOOK AT ME.eqthorns", e.f("eqthorns"), ("+", tev)))
+    e.if_cmp(aet, "==", 2, lambda: e.assign("LOOK AT ME.eqevade", e.f("eqevade"), ("+", aev)))
+    e.if_cmp(tet, "==", 2, lambda: e.assign("LOOK AT ME.eqevade", e.f("eqevade"), ("+", tev)))
+    e.if_cmp(e.f("eqevade"), ">", 60, lambda: e.assign("LOOK AT ME.eqevade", 60))  # clamp
     e.assign("LOOK AT ME.maxhp", e.f("basehp"), ("+", e.f("eqhp")))
     e.assign("LOOK AT ME.maxres", e.f("baseres"), ("+", e.f("eqres")))
     emit_clamp(e)
@@ -1269,9 +1284,24 @@ def combat_loop(e, xpr, goldr, is_boss):
                 # enemy crit ability (5)
                 e.if_cmp(e.f("eabil"), "==", 5, lambda: enemy_crit(e))
                 e.if_cmp("edmg", "<", 1, lambda: e.set("edmg", 1))
-                e.assign("LOOK AT ME.hp", e.f("hp"), ("-", "edmg"))
-                e.say_string(e.lit("  " + A_RED + "The "), "ename", e.lit(" hits you for "), e.num("edmg"), e.lit("." + A_RST))
-                enemy_ability_post(e)
+                # evasion: chance to dodge the hit entirely
+                e.declare("dodged", 0)
+                e.declare("evroll", Emit.rnd(100))
+                e.cmp("dodged", "evroll", "<", e.f("eqevade"), declare=False)
+
+                def landed():
+                    e.assign("LOOK AT ME.hp", e.f("hp"), ("-", "edmg"))
+                    e.say_string(e.lit("  " + A_RED + "The "), "ename", e.lit(" hits you for "), e.num("edmg"), e.lit("." + A_RST))
+                    # thorns: reflect a % of damage taken back at the attacker
+                    e.declare("refl", "edmg")
+                    e.assign("refl", "edmg", ("*", e.f("eqthorns")), ("/", 100))
+                    e.if_cmp("refl", ">", 0, lambda: (e.assign("LOOK AT ME.ehp", e.f("ehp"), ("-", "refl")),
+                                                      e.say_string(e.lit("  " + A_GRN + "[thorns] "), "ename", e.lit(" takes "), e.num("refl"), e.lit(" reflected." + A_RST))))
+                    enemy_ability_post(e)
+
+                def dodged_msg():
+                    e.say_string(e.lit("  " + A_CYN + "[evasion] you slip aside - "), "ename", e.lit(" misses!" + A_RST))
+                e.if_cmp("dodged", "==", 1, dodged_msg, else_body=landed)
             e.if_cmp(e.f("estun"), ">", 0, stunned, else_body=strike)
             e.if_cmp(e.f("pshield"), ">", 0, lambda: e.assign("LOOK AT ME.pshield", e.f("pshield"), ("-", 1)))
             def dead():
@@ -1629,8 +1659,23 @@ def boss_loop(e, xpr, goldr):
                                                         e.assign("LOOK AT ME.eweak", e.f("eweak"), ("-", 1))))
                 e.assign("edmg", "eat", ("+", Emit.rnd(5)), ("-", "defu"), ("-", e.f("pshield")))
                 e.if_cmp("edmg", "<", 1, lambda: e.set("edmg", 1))
-                e.assign("LOOK AT ME.hp", e.f("hp"), ("-", "edmg"))
-                e.say_string(e.lit("  " + A_RED), "ename", e.lit(" strikes you for "), e.num("edmg"), e.lit("." + A_RST))
+                # evasion: chance to dodge the hit entirely
+                e.declare("dodged", 0)
+                e.declare("evroll", Emit.rnd(100))
+                e.cmp("dodged", "evroll", "<", e.f("eqevade"), declare=False)
+
+                def landed():
+                    e.assign("LOOK AT ME.hp", e.f("hp"), ("-", "edmg"))
+                    e.say_string(e.lit("  " + A_RED), "ename", e.lit(" strikes you for "), e.num("edmg"), e.lit("." + A_RST))
+                    # thorns: reflect a % of damage taken back at the boss
+                    e.declare("refl", "edmg")
+                    e.assign("refl", "edmg", ("*", e.f("eqthorns")), ("/", 100))
+                    e.if_cmp("refl", ">", 0, lambda: (e.assign("LOOK AT ME.ehp", e.f("ehp"), ("-", "refl")),
+                                                      e.say_string(e.lit("  " + A_GRN + "[thorns] "), "ename", e.lit(" takes "), e.num("refl"), e.lit(" reflected." + A_RST))))
+
+                def dodged_msg():
+                    e.say_string(e.lit("  " + A_CYN + "[evasion] you slip aside - "), "ename", e.lit(" misses!" + A_RST))
+                e.if_cmp("dodged", "==", 1, dodged_msg, else_body=landed)
             e.if_cmp(e.f("estun"), ">", 0, stunned, else_body=strike)
             e.if_cmp(e.f("pshield"), ">", 0, lambda: e.assign("LOOK AT ME.pshield", e.f("pshield"), ("-", 1)))
             def dead():

@@ -157,6 +157,20 @@ TRINKETS = [
     ("Crown Shard",        "unique",30, 24, 8, 16,2400),
 ]
 
+# ============================================================ GEAR EFFECTS
+# Passive effects granted by armor/trinkets, by index into the tables above.
+# (efftype, effval):  efftype 1 = thorns (effval% of damage reflected),
+#                     2 = evasion (effval% chance to fully dodge a hit).
+# Indices not listed have no effect. Aggregated into eqthorns/eqevade on equip.
+ARMOR_EFFECT = {
+    13: (1, 25),   # Thornmail  - reflect 25%
+    14: (2, 20),   # Mistcloak  - dodge 20%
+}
+TRINKET_EFFECT = {
+    8: (1, 15),    # Bramble Ring  - reflect 15%
+    9: (2, 15),    # Phantom Charm - dodge 15%
+}
+
 # ============================================================ SHOP GATING
 # Earliest act (1-10) each item is offered, indexed into the tables above.
 # Spreads gear acquisition across all 10 acts (was tier->act for 3 acts).
