@@ -694,7 +694,7 @@ MY NAME IS MAXIMUS Game
                 HERE IS MY INVITATION 4
                 ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.pdef
-                HERE IS MY INVITATION 5
+                HERE IS MY INVITATION 4
                 ENOUGH TALK
             WHAT IF I TOLD YOU 1
                 GET TO THE CHOPPER LOOK AT ME.basehp
@@ -713,7 +713,7 @@ MY NAME IS MAXIMUS Game
                 HERE IS MY INVITATION 5
                 ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.pdef
-                HERE IS MY INVITATION 2
+                HERE IS MY INVITATION 3
                 ENOUGH TALK
             WHAT IF I TOLD YOU 2
                 GET TO THE CHOPPER LOOK AT ME.basehp
@@ -732,7 +732,7 @@ MY NAME IS MAXIMUS Game
                 HERE IS MY INVITATION 9
                 ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.pdef
-                HERE IS MY INVITATION 3
+                HERE IS MY INVITATION 4
                 ENOUGH TALK
             SAME OLD SAME OLD
                 GET TO THE CHOPPER LOOK AT ME.basehp
@@ -751,7 +751,7 @@ MY NAME IS MAXIMUS Game
                 HERE IS MY INVITATION 4
                 ENOUGH TALK
                 GET TO THE CHOPPER LOOK AT ME.pdef
-                HERE IS MY INVITATION 5
+                HERE IS MY INVITATION 4
                 ENOUGH TALK
         FINISH HIM
         HEY CHRISTMAS TREE zzv1
@@ -12294,12 +12294,12 @@ MY NAME IS MAXIMUS Game
             HERE IS MY INVITATION 2
             ENOUGH TALK
         BULLSHIT
-            TALK TO THE HAND "    No camp was saved. Your tale ends here."
-            GET TO THE CHOPPER LOOK AT ME.mode
-            HERE IS MY INVITATION 0
-            ENOUGH TALK
+            TALK TO THE HAND "    No camp was saved. A new Delver must take up the search."
             GET TO THE CHOPPER LOOK AT ME.started
             HERE IS MY INVITATION 0
+            ENOUGH TALK
+            GET TO THE CHOPPER LOOK AT ME.mode
+            HERE IS MY INVITATION 1
             ENOUGH TALK
         YOU HAVE NO RESPECT FOR LOGIC
     DISMISSED SOLDIER

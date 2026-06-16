@@ -16,7 +16,7 @@ free of '|', '#', backslash and double-quote (gen sanitizes, but stay clean).
 CLASSES = {
     0: dict(
         name="Fighter", res="Stamina", wkind="blade",
-        maxhp=36, maxres=12, st=8, it=2, dx=4, df=5,
+        maxhp=36, maxres=12, st=8, it=2, dx=4, df=4,
         ghp=7, gres=2, gst=3, git=1, gdx=2, gdf=2,
         sigcost=5, utilcost=3,
         a1="Strike", a2="Cleave", a3="Shield Bash",
@@ -25,7 +25,7 @@ CLASSES = {
         blurb="Iron and stamina. Cleave fells the wounded and staggers the strong."),
     1: dict(
         name="Mage", res="Mana", wkind="staff",
-        maxhp=22, maxres=24, st=3, it=9, dx=5, df=2,
+        maxhp=22, maxres=24, st=3, it=9, dx=5, df=3,
         ghp=4, gres=5, gst=1, git=3, gdx=2, gdf=1,
         sigcost=8, utilcost=4,
         a1="Firebolt", a2="Arcane Surge", a3="Hex",
@@ -34,7 +34,7 @@ CLASSES = {
         blurb="Star-fire and mana. Arcane Surge unmakes foes; Hex blunts their fury."),
     2: dict(
         name="Rogue", res="Energy", wkind="fang",
-        maxhp=28, maxres=16, st=5, it=4, dx=9, df=3,
+        maxhp=28, maxres=16, st=5, it=4, dx=9, df=4,
         ghp=5, gres=4, gst=2, git=2, gdx=3, gdf=1,
         sigcost=6, utilcost=4,
         a1="Slash", a2="Backstab", a3="Poison Strike",

@@ -341,17 +341,17 @@ def gen_initclass(e):
     def fighter():
         e.assign("LOOK AT ME.basehp", 36); e.assign("LOOK AT ME.baseres", 12)
         e.assign("LOOK AT ME.pstr", 8); e.assign("LOOK AT ME.pint", 2)
-        e.assign("LOOK AT ME.pdex", 4); e.assign("LOOK AT ME.pdef", 5)
+        e.assign("LOOK AT ME.pdex", 4); e.assign("LOOK AT ME.pdef", 4)
 
     def mage():
         e.assign("LOOK AT ME.basehp", 22); e.assign("LOOK AT ME.baseres", 24)
         e.assign("LOOK AT ME.pstr", 3); e.assign("LOOK AT ME.pint", 9)
-        e.assign("LOOK AT ME.pdex", 5); e.assign("LOOK AT ME.pdef", 2)
+        e.assign("LOOK AT ME.pdex", 5); e.assign("LOOK AT ME.pdef", 3)
 
     def rogue():
         e.assign("LOOK AT ME.basehp", 28); e.assign("LOOK AT ME.baseres", 16)
         e.assign("LOOK AT ME.pstr", 5); e.assign("LOOK AT ME.pint", 4)
-        e.assign("LOOK AT ME.pdex", 9); e.assign("LOOK AT ME.pdef", 3)
+        e.assign("LOOK AT ME.pdex", 9); e.assign("LOOK AT ME.pdef", 4)
 
     e.switch(e.f("cls"), [(0, fighter), (1, mage), (2, rogue)], default=fighter)
     emit_recompute_weapon(e)
@@ -1901,9 +1901,11 @@ def gen_gameover(e):
         e.assign("LOOK AT ME.ppoison", 0)
         e.assign("LOOK AT ME.mode", M_CAMP)
     def restart():
-        e.say("    No camp was saved. Your tale ends here.")
-        e.assign("LOOK AT ME.mode", M_TITLE)
+        # No checkpoint to fall back on: send the player to pick a class and
+        # begin a fresh delve, rather than silently respawning the old one.
+        e.say("    No camp was saved. A new Delver must take up the search.")
         e.assign("LOOK AT ME.started", 0)
+        e.assign("LOOK AT ME.mode", M_CLASS)
     e.if_cmp("hs", "==", 1, reload, else_body=restart)
     e.end_imethod()
 
