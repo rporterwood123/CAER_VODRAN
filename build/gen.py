@@ -763,27 +763,31 @@ def equip_pick(e, kind):
             label = "   %2d) %-20s hp+%d res+%d def+%d crit+%d%s" % (idx + 1, t[0], t[2], t[3], t[4], t[5], _eff_tag(et, ev))
             cond_owned = e.bit_test(e.f(ownf), str(idx))
             e.if_cmp(cond_owned, "==", 1, (lambda label=label: (lambda: e.say(label)))())
+    e.say("   0) Done (keep current)")
     e.say("  Equip which number?")
     e.declare("c", 0)
     read_choice(e, "c")
-    e.declare("idx", "c")
-    e.assign("idx", "c", ("-", 1))
-    def doit():
-        owned = e.bit_test(e.f(ownf), "idx")
-        def yes():
-            e.assign("LOOK AT ME." + idf, "idx")
-            if kind == "weapon":
-                emit_recompute_weapon(e)
-            else:
-                emit_recompute_equip(e)
-            e.say("  Equipped.")
-        e.if_cmp(owned, "==", 1, yes, else_body=lambda: e.say("  You do not own that."))
-    e.declare("ok1", 0)
-    e.cmp("ok1", "idx", ">=", 0, declare=False)
-    e.declare("ok2", 0)
-    e.cmp("ok2", "idx", "<", n, declare=False)
-    e.if_cmp("ok1", "==", 1, lambda: e.if_cmp("ok2", "==", 1, doit, else_body=lambda: e.say("  No such item.")),
-             else_body=lambda: e.say("  No such item."))
+    # 0 = Done: leave the current item equipped, no need to re-pick it.
+    def pick():
+        e.declare("idx", "c")
+        e.assign("idx", "c", ("-", 1))
+        def doit():
+            owned = e.bit_test(e.f(ownf), "idx")
+            def yes():
+                e.assign("LOOK AT ME." + idf, "idx")
+                if kind == "weapon":
+                    emit_recompute_weapon(e)
+                else:
+                    emit_recompute_equip(e)
+                e.say("  Equipped.")
+            e.if_cmp(owned, "==", 1, yes, else_body=lambda: e.say("  You do not own that."))
+        e.declare("ok1", 0)
+        e.cmp("ok1", "idx", ">=", 0, declare=False)
+        e.declare("ok2", 0)
+        e.cmp("ok2", "idx", "<", n, declare=False)
+        e.if_cmp("ok1", "==", 1, lambda: e.if_cmp("ok2", "==", 1, doit, else_body=lambda: e.say("  No such item.")),
+                 else_body=lambda: e.say("  No such item."))
+    e.if_cmp("c", "!=", 0, pick, else_body=lambda: e.say("  Kept current " + kind + "."))
 
 
 # -----------------------------------------------------------------  explore (floor rooms)
