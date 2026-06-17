@@ -115,7 +115,7 @@ Ten acts, three floors each (two to explore, one boss), down from the bog to the
 - **Act X — The Vault of the Crown** → **Vodran, the Sunken Crown**
 
 Each boss shifts behavior as its health falls (growing fiercer, mending itself, raging)
-and drops a unique piece of gear. Enemies and bosses hit ~20% harder than their base tuning.
+and drops a unique piece of gear. Enemies and bosses hit ~10% harder than their base tuning.
 
 ---
 

@@ -33,8 +33,8 @@ POOL = "vodran_pool.dat"
 NW = 18  # weapons per class
 
 # Global difficulty dial: enemy & boss HP and ATK are scaled by this at emit time.
-# Content tables hold base numbers; this is the one knob for "+20% difficulty".
-DIFFICULTY = 1.2
+# Content tables hold base numbers; this is the one knob for "+10% difficulty".
+DIFFICULTY = 1.1
 
 
 def _d(x):
