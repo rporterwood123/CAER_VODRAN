@@ -1443,9 +1443,15 @@ def _pweak_adjust(e):
                                             e.if_cmp("pdmg", "<", 1, lambda: e.set("pdmg", 1))))
 
 
+def _mage_dmg_bonus(e):
+    # Mage deals +15% combat damage on offensive spells (pdmg already >= 1 here).
+    e.if_cmp(e.f("cls"), "==", 1, lambda: e.assign("pdmg", "pdmg", ("*", 115), ("/", 100)))
+
+
 def atk_basic(e):
     e.assign("pdmg", "pstat", ("+", e.f("wpow")), ("+", Emit.rnd(4)), ("-", e.f("edef")))
     e.if_cmp("pdmg", "<", 1, lambda: e.set("pdmg", 1))
+    _mage_dmg_bonus(e)
     _pweak_adjust(e)
 
 
@@ -1469,6 +1475,7 @@ def atk_signature(e):
                          e.say("  ARCANE SURGE! Star-fire blooms."))),
             (2, lambda: (e.assign("LOOK AT ME.epoison", 3), e.say("  BACKSTAB from the dark!"))),
         ])
+        _mage_dmg_bonus(e)
         _pweak_adjust(e)
     e.if_cmp(e.f("res"), ">=", "cost", enough,
              else_body=lambda: (e.say("  Not enough resource. (wasted)"), e.set("pdmg", 0)))
