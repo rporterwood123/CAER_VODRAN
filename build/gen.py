@@ -1896,10 +1896,17 @@ def gen_gameover(e):
     e.say_string(e.lit("    Level "), e.num(e.f("level")), e.lit(", "), e.num(e.f("kills")), e.lit(" kills, floor "),
                  e.num(e.f("floor")), e.lit("."))
     e.say_blank()
-    e.say("  (press 1 to return)")
+    e.declare("hs", e.file_exists(SAVE))
+    # Offer the reload-to-camp line only when a checkpoint actually exists;
+    # the other two choices keep their numbers so the menu reads the same.
+    e.if_cmp("hs", "==", 1, lambda: e.say("   1) Return to your last camp   (reload save)"))
+    e.say("   2) Take up the search anew    (choose a new class)")
+    e.say("   3) Abandon the delve          (quit; your saved camp remains)")
+    e.say_blank()
+    e.say("  Enter a number:")
     e.declare("c", 0)
     read_choice(e, "c")
-    e.declare("hs", e.file_exists(SAVE))
+
     def reload():
         e.say("    The dark spits you back to your last camp...")
         load_inline(e)
@@ -1907,13 +1914,30 @@ def gen_gameover(e):
         e.assign("LOOK AT ME.res", e.f("maxres"))
         e.assign("LOOK AT ME.ppoison", 0)
         e.assign("LOOK AT ME.mode", M_CAMP)
-    def restart():
-        # No checkpoint to fall back on: send the player to pick a class and
-        # begin a fresh delve, rather than silently respawning the old one.
-        e.say("    No camp was saved. A new Delver must take up the search.")
+
+    def newclass():
+        # A fresh delve: send the player to re-pick a class rather than
+        # silently respawning the old one.
+        e.say("    A new Delver takes up the search.")
         e.assign("LOOK AT ME.started", 0)
         e.assign("LOOK AT ME.mode", M_CLASS)
-    e.if_cmp("hs", "==", 1, reload, else_body=restart)
+
+    def quit_delve():
+        # Leave the save untouched so "Continue your delve" works next launch.
+        e.say("    You let the dark have you. Your saved camp endures.")
+        e.assign("LOOK AT ME.mode", M_QUIT)
+
+    # 1 = reload (only meaningful with a save), 2 = new class, 3 = quit.
+    # On stray input fall back to the gentlest non-destructive choice:
+    # reload if a checkpoint exists, otherwise a fresh class pick.
+    def safe_default():
+        e.if_cmp("hs", "==", 1, reload, else_body=newclass)
+
+    e.switch("c", [
+        (1, safe_default),
+        (2, newclass),
+        (3, quit_delve),
+    ], default=safe_default)
     e.end_imethod()
 
 

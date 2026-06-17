@@ -12052,13 +12052,6 @@ MY NAME IS MAXIMUS Game
         AND KICK ASS "."
         TALK TO THE HAND zzs5
         TALK TO THE HAND ""
-        TALK TO THE HAND "  (press 1 to return)"
-        HEY CHRISTMAS TREE c
-        YOU SET US UP 0
-        GET YOUR ASS TO MARS c
-        DO IT NOW
-        I WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY
-        TALK TO THE HAND ""
         HEY CHRISTMAS TREE hs
         YOU SET US UP HONEY I'M HOME "vodran_save.dat"
         HEY CHRISTMAS TREE zzb6
@@ -12068,292 +12061,621 @@ MY NAME IS MAXIMUS Game
         YOU ARE NOT YOU YOU ARE ME 1
         ENOUGH TALK
         BECAUSE I'M GOING TO SAY PLEASE zzb6
-            TALK TO THE HAND "    The dark spits you back to your last camp..."
-            I HAVE COME HERE TO CHEW BUBBLEGUM zzs7
-            AND KICK ASS WHAT'S IN THE BOX "vodran_save.dat"
-            DIVIDE AND CONQUER zza8 zzs7 "#"
-            GET TO THE CHOPPER LOOK AT ME.cls
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 0
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.level
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 1
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.xp
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 2
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.xpnext
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 3
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.hp
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 4
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.basehp
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 5
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.res
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 6
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.baseres
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 7
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.pstr
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 8
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.pint
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 9
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.pdex
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 10
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.pdef
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 11
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.gold
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 12
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.kills
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 13
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.wid
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 14
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.aid
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 15
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.tid
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 16
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.ownw
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 17
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.owna
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 18
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.ownt
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 19
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.potHeal
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 20
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.potRes
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 21
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.potCure
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 22
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.bombs
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 23
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.elixir
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 24
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.act
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 25
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.floor
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 26
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.bossmask
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza8 AT 27
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.started
-            HERE IS MY INVITATION 1
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.room
-            HERE IS MY INVITATION 0
-            ENOUGH TALK
-            HEY CHRISTMAS TREE zzv9
-            YOU SET US UP LOOK AT ME.cls
-            GET TO THE CHOPPER zzv9
-            HERE IS MY INVITATION LOOK AT ME.cls
-            YOU'RE FIRED 18
-            GET UP LOOK AT ME.wid
-            ENOUGH TALK
-            I HAVE COME HERE TO CHEW BUBBLEGUM zzs10
-            AND KICK ASS WHAT'S IN THE BOX "vodran_wpn.dat"
-            DIVIDE AND CONQUER zza11 zzs10 "|"
-            DIVIDE AND CONQUER zza12 GET IN LINE zza11 AT zzv9 "#"
-            GET TO THE CHOPPER LOOK AT ME.wpow
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza12 AT 3
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.wspec
-            HERE IS MY INVITATION DO THE MATH GET IN LINE zza12 AT 5
-            ENOUGH TALK
-            I HAVE COME HERE TO CHEW BUBBLEGUM zzs20
-            AND KICK ASS WHAT'S IN THE BOX "vodran_arm.dat"
-            DIVIDE AND CONQUER zza21 zzs20 "|"
-            DIVIDE AND CONQUER zza22 GET IN LINE zza21 AT LOOK AT ME.aid "#"
-            HEY CHRISTMAS TREE zzv13
-            YOU SET US UP DO THE MATH GET IN LINE zza22 AT 3
-            HEY CHRISTMAS TREE zzv14
-            YOU SET US UP DO THE MATH GET IN LINE zza22 AT 4
-            HEY CHRISTMAS TREE zzv15
-            YOU SET US UP DO THE MATH GET IN LINE zza22 AT 5
-            I HAVE COME HERE TO CHEW BUBBLEGUM zzs23
-            AND KICK ASS WHAT'S IN THE BOX "vodran_trk.dat"
-            DIVIDE AND CONQUER zza24 zzs23 "|"
-            DIVIDE AND CONQUER zza25 GET IN LINE zza24 AT LOOK AT ME.tid "#"
-            HEY CHRISTMAS TREE zzv16
-            YOU SET US UP DO THE MATH GET IN LINE zza25 AT 2
-            HEY CHRISTMAS TREE zzv17
-            YOU SET US UP DO THE MATH GET IN LINE zza25 AT 3
-            HEY CHRISTMAS TREE zzv18
-            YOU SET US UP DO THE MATH GET IN LINE zza25 AT 4
-            HEY CHRISTMAS TREE zzv19
-            YOU SET US UP DO THE MATH GET IN LINE zza25 AT 5
-            GET TO THE CHOPPER LOOK AT ME.eqdef
-            HERE IS MY INVITATION zzv13
-            GET UP zzv18
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.eqhp
-            HERE IS MY INVITATION zzv14
-            GET UP zzv16
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.eqres
-            HERE IS MY INVITATION zzv15
-            GET UP zzv17
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.eqcrit
-            HERE IS MY INVITATION zzv19
-            ENOUGH TALK
-            HEY CHRISTMAS TREE zzv26
-            YOU SET US UP DO THE MATH GET IN LINE zza22 AT 7
-            HEY CHRISTMAS TREE zzv27
-            YOU SET US UP DO THE MATH GET IN LINE zza22 AT 8
-            HEY CHRISTMAS TREE zzv28
-            YOU SET US UP DO THE MATH GET IN LINE zza25 AT 7
-            HEY CHRISTMAS TREE zzv29
-            YOU SET US UP DO THE MATH GET IN LINE zza25 AT 8
-            GET TO THE CHOPPER LOOK AT ME.eqthorns
-            HERE IS MY INVITATION 0
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.eqevade
-            HERE IS MY INVITATION 0
-            ENOUGH TALK
-            HEY CHRISTMAS TREE zzb30
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb30
-            HERE IS MY INVITATION zzv26
-            YOU ARE NOT YOU YOU ARE ME 1
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb30
-                GET TO THE CHOPPER LOOK AT ME.eqthorns
-                HERE IS MY INVITATION LOOK AT ME.eqthorns
-                GET UP zzv27
+            TALK TO THE HAND "   1) Return to your last camp   (reload save)"
+        YOU HAVE NO RESPECT FOR LOGIC
+        TALK TO THE HAND "   2) Take up the search anew    (choose a new class)"
+        TALK TO THE HAND "   3) Abandon the delve          (quit; your saved camp remains)"
+        TALK TO THE HAND ""
+        TALK TO THE HAND "  Enter a number:"
+        HEY CHRISTMAS TREE c
+        YOU SET US UP 0
+        GET YOUR ASS TO MARS c
+        DO IT NOW
+        I WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY
+        TALK TO THE HAND ""
+        CHOOSE YOUR DESTINY c
+            WHAT IF I TOLD YOU 1
+                HEY CHRISTMAS TREE zzb7
+                YOU SET US UP 0
+                GET TO THE CHOPPER zzb7
+                HERE IS MY INVITATION hs
+                YOU ARE NOT YOU YOU ARE ME 1
                 ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb31
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb31
-            HERE IS MY INVITATION zzv28
-            YOU ARE NOT YOU YOU ARE ME 1
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb31
-                GET TO THE CHOPPER LOOK AT ME.eqthorns
-                HERE IS MY INVITATION LOOK AT ME.eqthorns
-                GET UP zzv29
+                BECAUSE I'M GOING TO SAY PLEASE zzb7
+                    TALK TO THE HAND "    The dark spits you back to your last camp..."
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs8
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_save.dat"
+                    DIVIDE AND CONQUER zza9 zzs8 "#"
+                    GET TO THE CHOPPER LOOK AT ME.cls
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.level
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 1
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.xp
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 2
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.xpnext
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 3
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.hp
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 4
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.basehp
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 5
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.res
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 6
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.baseres
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 7
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pstr
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 8
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pint
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 9
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pdex
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 10
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pdef
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 11
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.gold
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 12
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.kills
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 13
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.wid
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 14
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.aid
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 15
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.tid
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 16
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.ownw
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 17
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.owna
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 18
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.ownt
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 19
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.potHeal
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 20
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.potRes
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 21
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.potCure
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 22
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.bombs
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 23
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.elixir
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 24
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.act
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 25
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.floor
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 26
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.bossmask
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza9 AT 27
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.started
+                    HERE IS MY INVITATION 1
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.room
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzv10
+                    YOU SET US UP LOOK AT ME.cls
+                    GET TO THE CHOPPER zzv10
+                    HERE IS MY INVITATION LOOK AT ME.cls
+                    YOU'RE FIRED 18
+                    GET UP LOOK AT ME.wid
+                    ENOUGH TALK
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs11
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_wpn.dat"
+                    DIVIDE AND CONQUER zza12 zzs11 "|"
+                    DIVIDE AND CONQUER zza13 GET IN LINE zza12 AT zzv10 "#"
+                    GET TO THE CHOPPER LOOK AT ME.wpow
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza13 AT 3
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.wspec
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza13 AT 5
+                    ENOUGH TALK
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs21
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_arm.dat"
+                    DIVIDE AND CONQUER zza22 zzs21 "|"
+                    DIVIDE AND CONQUER zza23 GET IN LINE zza22 AT LOOK AT ME.aid "#"
+                    HEY CHRISTMAS TREE zzv14
+                    YOU SET US UP DO THE MATH GET IN LINE zza23 AT 3
+                    HEY CHRISTMAS TREE zzv15
+                    YOU SET US UP DO THE MATH GET IN LINE zza23 AT 4
+                    HEY CHRISTMAS TREE zzv16
+                    YOU SET US UP DO THE MATH GET IN LINE zza23 AT 5
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs24
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_trk.dat"
+                    DIVIDE AND CONQUER zza25 zzs24 "|"
+                    DIVIDE AND CONQUER zza26 GET IN LINE zza25 AT LOOK AT ME.tid "#"
+                    HEY CHRISTMAS TREE zzv17
+                    YOU SET US UP DO THE MATH GET IN LINE zza26 AT 2
+                    HEY CHRISTMAS TREE zzv18
+                    YOU SET US UP DO THE MATH GET IN LINE zza26 AT 3
+                    HEY CHRISTMAS TREE zzv19
+                    YOU SET US UP DO THE MATH GET IN LINE zza26 AT 4
+                    HEY CHRISTMAS TREE zzv20
+                    YOU SET US UP DO THE MATH GET IN LINE zza26 AT 5
+                    GET TO THE CHOPPER LOOK AT ME.eqdef
+                    HERE IS MY INVITATION zzv14
+                    GET UP zzv19
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqhp
+                    HERE IS MY INVITATION zzv15
+                    GET UP zzv17
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqres
+                    HERE IS MY INVITATION zzv16
+                    GET UP zzv18
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqcrit
+                    HERE IS MY INVITATION zzv20
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzv27
+                    YOU SET US UP DO THE MATH GET IN LINE zza23 AT 7
+                    HEY CHRISTMAS TREE zzv28
+                    YOU SET US UP DO THE MATH GET IN LINE zza23 AT 8
+                    HEY CHRISTMAS TREE zzv29
+                    YOU SET US UP DO THE MATH GET IN LINE zza26 AT 7
+                    HEY CHRISTMAS TREE zzv30
+                    YOU SET US UP DO THE MATH GET IN LINE zza26 AT 8
+                    GET TO THE CHOPPER LOOK AT ME.eqthorns
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqevade
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzb31
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb31
+                    HERE IS MY INVITATION zzv27
+                    YOU ARE NOT YOU YOU ARE ME 1
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb31
+                        GET TO THE CHOPPER LOOK AT ME.eqthorns
+                        HERE IS MY INVITATION LOOK AT ME.eqthorns
+                        GET UP zzv28
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb32
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb32
+                    HERE IS MY INVITATION zzv29
+                    YOU ARE NOT YOU YOU ARE ME 1
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb32
+                        GET TO THE CHOPPER LOOK AT ME.eqthorns
+                        HERE IS MY INVITATION LOOK AT ME.eqthorns
+                        GET UP zzv30
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb33
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb33
+                    HERE IS MY INVITATION zzv27
+                    YOU ARE NOT YOU YOU ARE ME 2
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb33
+                        GET TO THE CHOPPER LOOK AT ME.eqevade
+                        HERE IS MY INVITATION LOOK AT ME.eqevade
+                        GET UP zzv28
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb34
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb34
+                    HERE IS MY INVITATION zzv29
+                    YOU ARE NOT YOU YOU ARE ME 2
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb34
+                        GET TO THE CHOPPER LOOK AT ME.eqevade
+                        HERE IS MY INVITATION LOOK AT ME.eqevade
+                        GET UP zzv30
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb35
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb35
+                    HERE IS MY INVITATION LOOK AT ME.eqevade
+                    LET OFF SOME STEAM BENNET 60
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb35
+                        GET TO THE CHOPPER LOOK AT ME.eqevade
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    GET TO THE CHOPPER LOOK AT ME.maxhp
+                    HERE IS MY INVITATION LOOK AT ME.basehp
+                    GET UP LOOK AT ME.eqhp
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.maxres
+                    HERE IS MY INVITATION LOOK AT ME.baseres
+                    GET UP LOOK AT ME.eqres
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzb36
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb36
+                    HERE IS MY INVITATION LOOK AT ME.hp
+                    LET OFF SOME STEAM BENNET LOOK AT ME.maxhp
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb36
+                        GET TO THE CHOPPER LOOK AT ME.hp
+                        HERE IS MY INVITATION LOOK AT ME.maxhp
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb37
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb37
+                    HERE IS MY INVITATION LOOK AT ME.res
+                    LET OFF SOME STEAM BENNET LOOK AT ME.maxres
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb37
+                        GET TO THE CHOPPER LOOK AT ME.res
+                        HERE IS MY INVITATION LOOK AT ME.maxres
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb38
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb38
+                    HERE IS MY INVITATION LOOK AT ME.hp
+                    YOU'RE THE DISEASE AND I'M THE CURE 1
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb38
+                        GET TO THE CHOPPER LOOK AT ME.hp
+                        HERE IS MY INVITATION 1
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    GET TO THE CHOPPER LOOK AT ME.mode
+                    HERE IS MY INVITATION 2
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.hp
+                    HERE IS MY INVITATION LOOK AT ME.maxhp
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.res
+                    HERE IS MY INVITATION LOOK AT ME.maxres
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.ppoison
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.mode
+                    HERE IS MY INVITATION 2
+                    ENOUGH TALK
+                BULLSHIT
+                    TALK TO THE HAND "    A new Delver takes up the search."
+                    GET TO THE CHOPPER LOOK AT ME.started
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.mode
+                    HERE IS MY INVITATION 1
+                    ENOUGH TALK
+                YOU HAVE NO RESPECT FOR LOGIC
+            WHAT IF I TOLD YOU 2
+                TALK TO THE HAND "    A new Delver takes up the search."
+                GET TO THE CHOPPER LOOK AT ME.started
+                HERE IS MY INVITATION 0
                 ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb32
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb32
-            HERE IS MY INVITATION zzv26
-            YOU ARE NOT YOU YOU ARE ME 2
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb32
-                GET TO THE CHOPPER LOOK AT ME.eqevade
-                HERE IS MY INVITATION LOOK AT ME.eqevade
-                GET UP zzv27
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb33
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb33
-            HERE IS MY INVITATION zzv28
-            YOU ARE NOT YOU YOU ARE ME 2
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb33
-                GET TO THE CHOPPER LOOK AT ME.eqevade
-                HERE IS MY INVITATION LOOK AT ME.eqevade
-                GET UP zzv29
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb34
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb34
-            HERE IS MY INVITATION LOOK AT ME.eqevade
-            LET OFF SOME STEAM BENNET 60
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb34
-                GET TO THE CHOPPER LOOK AT ME.eqevade
-                HERE IS MY INVITATION 60
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            GET TO THE CHOPPER LOOK AT ME.maxhp
-            HERE IS MY INVITATION LOOK AT ME.basehp
-            GET UP LOOK AT ME.eqhp
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.maxres
-            HERE IS MY INVITATION LOOK AT ME.baseres
-            GET UP LOOK AT ME.eqres
-            ENOUGH TALK
-            HEY CHRISTMAS TREE zzb35
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb35
-            HERE IS MY INVITATION LOOK AT ME.hp
-            LET OFF SOME STEAM BENNET LOOK AT ME.maxhp
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb35
-                GET TO THE CHOPPER LOOK AT ME.hp
-                HERE IS MY INVITATION LOOK AT ME.maxhp
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb36
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb36
-            HERE IS MY INVITATION LOOK AT ME.res
-            LET OFF SOME STEAM BENNET LOOK AT ME.maxres
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb36
-                GET TO THE CHOPPER LOOK AT ME.res
-                HERE IS MY INVITATION LOOK AT ME.maxres
-                ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            HEY CHRISTMAS TREE zzb37
-            YOU SET US UP 0
-            GET TO THE CHOPPER zzb37
-            HERE IS MY INVITATION LOOK AT ME.hp
-            YOU'RE THE DISEASE AND I'M THE CURE 1
-            ENOUGH TALK
-            BECAUSE I'M GOING TO SAY PLEASE zzb37
-                GET TO THE CHOPPER LOOK AT ME.hp
+                GET TO THE CHOPPER LOOK AT ME.mode
                 HERE IS MY INVITATION 1
                 ENOUGH TALK
-            YOU HAVE NO RESPECT FOR LOGIC
-            GET TO THE CHOPPER LOOK AT ME.mode
-            HERE IS MY INVITATION 2
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.hp
-            HERE IS MY INVITATION LOOK AT ME.maxhp
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.res
-            HERE IS MY INVITATION LOOK AT ME.maxres
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.ppoison
-            HERE IS MY INVITATION 0
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.mode
-            HERE IS MY INVITATION 2
-            ENOUGH TALK
-        BULLSHIT
-            TALK TO THE HAND "    No camp was saved. A new Delver must take up the search."
-            GET TO THE CHOPPER LOOK AT ME.started
-            HERE IS MY INVITATION 0
-            ENOUGH TALK
-            GET TO THE CHOPPER LOOK AT ME.mode
-            HERE IS MY INVITATION 1
-            ENOUGH TALK
-        YOU HAVE NO RESPECT FOR LOGIC
+            WHAT IF I TOLD YOU 3
+                TALK TO THE HAND "    You let the dark have you. Your saved camp endures."
+                GET TO THE CHOPPER LOOK AT ME.mode
+                HERE IS MY INVITATION 9
+                ENOUGH TALK
+            SAME OLD SAME OLD
+                HEY CHRISTMAS TREE zzb39
+                YOU SET US UP 0
+                GET TO THE CHOPPER zzb39
+                HERE IS MY INVITATION hs
+                YOU ARE NOT YOU YOU ARE ME 1
+                ENOUGH TALK
+                BECAUSE I'M GOING TO SAY PLEASE zzb39
+                    TALK TO THE HAND "    The dark spits you back to your last camp..."
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs40
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_save.dat"
+                    DIVIDE AND CONQUER zza41 zzs40 "#"
+                    GET TO THE CHOPPER LOOK AT ME.cls
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.level
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 1
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.xp
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 2
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.xpnext
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 3
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.hp
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 4
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.basehp
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 5
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.res
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 6
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.baseres
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 7
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pstr
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 8
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pint
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 9
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pdex
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 10
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.pdef
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 11
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.gold
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 12
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.kills
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 13
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.wid
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 14
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.aid
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 15
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.tid
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 16
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.ownw
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 17
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.owna
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 18
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.ownt
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 19
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.potHeal
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 20
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.potRes
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 21
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.potCure
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 22
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.bombs
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 23
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.elixir
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 24
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.act
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 25
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.floor
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 26
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.bossmask
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza41 AT 27
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.started
+                    HERE IS MY INVITATION 1
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.room
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzv42
+                    YOU SET US UP LOOK AT ME.cls
+                    GET TO THE CHOPPER zzv42
+                    HERE IS MY INVITATION LOOK AT ME.cls
+                    YOU'RE FIRED 18
+                    GET UP LOOK AT ME.wid
+                    ENOUGH TALK
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs43
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_wpn.dat"
+                    DIVIDE AND CONQUER zza44 zzs43 "|"
+                    DIVIDE AND CONQUER zza45 GET IN LINE zza44 AT zzv42 "#"
+                    GET TO THE CHOPPER LOOK AT ME.wpow
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza45 AT 3
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.wspec
+                    HERE IS MY INVITATION DO THE MATH GET IN LINE zza45 AT 5
+                    ENOUGH TALK
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs53
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_arm.dat"
+                    DIVIDE AND CONQUER zza54 zzs53 "|"
+                    DIVIDE AND CONQUER zza55 GET IN LINE zza54 AT LOOK AT ME.aid "#"
+                    HEY CHRISTMAS TREE zzv46
+                    YOU SET US UP DO THE MATH GET IN LINE zza55 AT 3
+                    HEY CHRISTMAS TREE zzv47
+                    YOU SET US UP DO THE MATH GET IN LINE zza55 AT 4
+                    HEY CHRISTMAS TREE zzv48
+                    YOU SET US UP DO THE MATH GET IN LINE zza55 AT 5
+                    I HAVE COME HERE TO CHEW BUBBLEGUM zzs56
+                    AND KICK ASS WHAT'S IN THE BOX "vodran_trk.dat"
+                    DIVIDE AND CONQUER zza57 zzs56 "|"
+                    DIVIDE AND CONQUER zza58 GET IN LINE zza57 AT LOOK AT ME.tid "#"
+                    HEY CHRISTMAS TREE zzv49
+                    YOU SET US UP DO THE MATH GET IN LINE zza58 AT 2
+                    HEY CHRISTMAS TREE zzv50
+                    YOU SET US UP DO THE MATH GET IN LINE zza58 AT 3
+                    HEY CHRISTMAS TREE zzv51
+                    YOU SET US UP DO THE MATH GET IN LINE zza58 AT 4
+                    HEY CHRISTMAS TREE zzv52
+                    YOU SET US UP DO THE MATH GET IN LINE zza58 AT 5
+                    GET TO THE CHOPPER LOOK AT ME.eqdef
+                    HERE IS MY INVITATION zzv46
+                    GET UP zzv51
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqhp
+                    HERE IS MY INVITATION zzv47
+                    GET UP zzv49
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqres
+                    HERE IS MY INVITATION zzv48
+                    GET UP zzv50
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqcrit
+                    HERE IS MY INVITATION zzv52
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzv59
+                    YOU SET US UP DO THE MATH GET IN LINE zza55 AT 7
+                    HEY CHRISTMAS TREE zzv60
+                    YOU SET US UP DO THE MATH GET IN LINE zza55 AT 8
+                    HEY CHRISTMAS TREE zzv61
+                    YOU SET US UP DO THE MATH GET IN LINE zza58 AT 7
+                    HEY CHRISTMAS TREE zzv62
+                    YOU SET US UP DO THE MATH GET IN LINE zza58 AT 8
+                    GET TO THE CHOPPER LOOK AT ME.eqthorns
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.eqevade
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzb63
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb63
+                    HERE IS MY INVITATION zzv59
+                    YOU ARE NOT YOU YOU ARE ME 1
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb63
+                        GET TO THE CHOPPER LOOK AT ME.eqthorns
+                        HERE IS MY INVITATION LOOK AT ME.eqthorns
+                        GET UP zzv60
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb64
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb64
+                    HERE IS MY INVITATION zzv61
+                    YOU ARE NOT YOU YOU ARE ME 1
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb64
+                        GET TO THE CHOPPER LOOK AT ME.eqthorns
+                        HERE IS MY INVITATION LOOK AT ME.eqthorns
+                        GET UP zzv62
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb65
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb65
+                    HERE IS MY INVITATION zzv59
+                    YOU ARE NOT YOU YOU ARE ME 2
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb65
+                        GET TO THE CHOPPER LOOK AT ME.eqevade
+                        HERE IS MY INVITATION LOOK AT ME.eqevade
+                        GET UP zzv60
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb66
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb66
+                    HERE IS MY INVITATION zzv61
+                    YOU ARE NOT YOU YOU ARE ME 2
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb66
+                        GET TO THE CHOPPER LOOK AT ME.eqevade
+                        HERE IS MY INVITATION LOOK AT ME.eqevade
+                        GET UP zzv62
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb67
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb67
+                    HERE IS MY INVITATION LOOK AT ME.eqevade
+                    LET OFF SOME STEAM BENNET 60
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb67
+                        GET TO THE CHOPPER LOOK AT ME.eqevade
+                        HERE IS MY INVITATION 60
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    GET TO THE CHOPPER LOOK AT ME.maxhp
+                    HERE IS MY INVITATION LOOK AT ME.basehp
+                    GET UP LOOK AT ME.eqhp
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.maxres
+                    HERE IS MY INVITATION LOOK AT ME.baseres
+                    GET UP LOOK AT ME.eqres
+                    ENOUGH TALK
+                    HEY CHRISTMAS TREE zzb68
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb68
+                    HERE IS MY INVITATION LOOK AT ME.hp
+                    LET OFF SOME STEAM BENNET LOOK AT ME.maxhp
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb68
+                        GET TO THE CHOPPER LOOK AT ME.hp
+                        HERE IS MY INVITATION LOOK AT ME.maxhp
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb69
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb69
+                    HERE IS MY INVITATION LOOK AT ME.res
+                    LET OFF SOME STEAM BENNET LOOK AT ME.maxres
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb69
+                        GET TO THE CHOPPER LOOK AT ME.res
+                        HERE IS MY INVITATION LOOK AT ME.maxres
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    HEY CHRISTMAS TREE zzb70
+                    YOU SET US UP 0
+                    GET TO THE CHOPPER zzb70
+                    HERE IS MY INVITATION LOOK AT ME.hp
+                    YOU'RE THE DISEASE AND I'M THE CURE 1
+                    ENOUGH TALK
+                    BECAUSE I'M GOING TO SAY PLEASE zzb70
+                        GET TO THE CHOPPER LOOK AT ME.hp
+                        HERE IS MY INVITATION 1
+                        ENOUGH TALK
+                    YOU HAVE NO RESPECT FOR LOGIC
+                    GET TO THE CHOPPER LOOK AT ME.mode
+                    HERE IS MY INVITATION 2
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.hp
+                    HERE IS MY INVITATION LOOK AT ME.maxhp
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.res
+                    HERE IS MY INVITATION LOOK AT ME.maxres
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.ppoison
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.mode
+                    HERE IS MY INVITATION 2
+                    ENOUGH TALK
+                BULLSHIT
+                    TALK TO THE HAND "    A new Delver takes up the search."
+                    GET TO THE CHOPPER LOOK AT ME.started
+                    HERE IS MY INVITATION 0
+                    ENOUGH TALK
+                    GET TO THE CHOPPER LOOK AT ME.mode
+                    HERE IS MY INVITATION 1
+                    ENOUGH TALK
+                YOU HAVE NO RESPECT FOR LOGIC
+        FINISH HIM
     DISMISSED SOLDIER
 
     COMMANDER IN CHIEF victory
